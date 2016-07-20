@@ -14,9 +14,9 @@ class InsetImageView: UIImageView {
         return UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
     }
     
-    override func alignmentRectForFrame(frame: CGRect) -> CGRect {
-        return CGRectInset(frame, inset * 2, inset * 2)
-    }
+//    override func alignmentRectForFrame(frame: CGRect) -> CGRect {
+//        return CGRectInset(frame, inset * 2, inset * 2)
+//    }
 }
 
 class ExperimentCell: UITableViewCell {
