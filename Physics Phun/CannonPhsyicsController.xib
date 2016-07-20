@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CannonPhsyicsController" customModule="Physics_Phun" customModuleProvider="target">
+            <connections>
+                <outlet property="angleField" destination="kVP-ko-Omk" id="2tb-aA-UyK"/>
+                <outlet property="angleSlider" destination="HoP-il-BLt" id="ptS-bb-lqf"/>
+                <outlet property="spriteView" destination="mpz-D2-yz6" id="VSQ-LX-a83"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mpz-D2-yz6" customClass="SKView">
+                    <rect key="frame" x="0.0" y="66" width="600" height="270"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Angle ˚" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHm-fU-qza">
+                    <rect key="frame" x="19" y="357" width="57" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="45" minValue="0.0" maxValue="90" translatesAutoresizingMaskIntoConstraints="NO" id="HoP-il-BLt">
+                    <rect key="frame" x="17" y="386" width="244" height="31"/>
+                    <connections>
+                        <action selector="angleSliderChanged:" destination="-1" eventType="valueChanged" id="ELu-Yn-5Uo"/>
+                    </connections>
+                </slider>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="45" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kVP-ko-Omk">
+                    <rect key="frame" x="89" y="353" width="170" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                    <connections>
+                        <action selector="angleFieldChanged:" destination="-1" eventType="editingDidEnd" id="um5-PQ-BH5"/>
+                    </connections>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qB3-8M-dRo">
+                    <rect key="frame" x="56" y="543" width="489" height="41"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="41" id="Im6-Iy-bBT"/>
+                    </constraints>
+                    <state key="normal" title="Button">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="launchPressed:" destination="-1" eventType="touchUpInside" id="A3g-pE-xIF"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.13725490200000001" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="HoP-il-BLt" firstAttribute="top" secondItem="kVP-ko-Omk" secondAttribute="bottom" constant="3" id="1OH-8u-ae2"/>
+                <constraint firstItem="mpz-D2-yz6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="66" id="7JR-PJ-1eq"/>
+                <constraint firstItem="lHm-fU-qza" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="19" id="G59-6l-Ktv"/>
+                <constraint firstAttribute="trailing" secondItem="qB3-8M-dRo" secondAttribute="trailing" constant="55" id="O57-BE-c6n"/>
+                <constraint firstItem="lHm-fU-qza" firstAttribute="top" secondItem="mpz-D2-yz6" secondAttribute="bottom" constant="21" id="SFr-DV-nAL"/>
+                <constraint firstItem="kVP-ko-Omk" firstAttribute="trailing" secondItem="HoP-il-BLt" secondAttribute="trailing" id="aQG-Ua-eKp"/>
+                <constraint firstItem="mpz-D2-yz6" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.45" id="b2r-y4-DMt"/>
+                <constraint firstItem="qB3-8M-dRo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="56" id="blE-s7-vCg"/>
+                <constraint firstAttribute="bottom" secondItem="qB3-8M-dRo" secondAttribute="bottom" constant="16" id="cXP-mh-Z7l"/>
+                <constraint firstAttribute="trailing" secondItem="mpz-D2-yz6" secondAttribute="trailing" id="diB-f0-0xq"/>
+                <constraint firstItem="kVP-ko-Omk" firstAttribute="leading" secondItem="lHm-fU-qza" secondAttribute="trailing" constant="13" id="h9t-xr-Tek"/>
+                <constraint firstItem="HoP-il-BLt" firstAttribute="top" secondItem="lHm-fU-qza" secondAttribute="bottom" constant="8" id="i9c-bG-UTu"/>
+                <constraint firstItem="HoP-il-BLt" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.4" id="isq-2O-ZiA"/>
+                <constraint firstItem="lHm-fU-qza" firstAttribute="leading" secondItem="HoP-il-BLt" secondAttribute="leading" id="pRk-5x-wVR"/>
+                <constraint firstItem="mpz-D2-yz6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="zZM-mD-Kb2"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+        </view>
+    </objects>
+</document>
