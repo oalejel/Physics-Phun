@@ -7,27 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D26BAF71CFA025A00B61EB2 /* CannonScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D26BAF21CFA025A00B61EB2 /* CannonScene.swift */; };
+		3D26BAF81CFA025A00B61EB2 /* CannonPhsyicsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D26BAF31CFA025A00B61EB2 /* CannonPhsyicsController.swift */; };
+		3D26BAF91CFA025A00B61EB2 /* CannonPhsyicsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D26BAF41CFA025A00B61EB2 /* CannonPhsyicsController.xib */; };
+		3D26BAFA1CFA025A00B61EB2 /* c-base.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D26BAF51CFA025A00B61EB2 /* c-base.png */; };
+		3D26BAFB1CFA025A00B61EB2 /* cannon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D26BAF61CFA025A00B61EB2 /* cannon@2x.png */; };
+		3D342C8E1D3FF4C800F7BB43 /* Cannon_exp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D342C8D1D3FF4C800F7BB43 /* Cannon_exp@2x.png */; };
+		3D88C9F11D3FD001009C639F /* ExperimentTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D88C9F01D3FD001009C639F /* ExperimentTableController.swift */; };
+		3D88C9F41D3FD11B009C639F /* ExperimentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D88C9F21D3FD11B009C639F /* ExperimentCell.swift */; };
+		3D88C9F51D3FD11B009C639F /* ExperimentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D88C9F31D3FD11B009C639F /* ExperimentCell.xib */; };
+		3DD697991D3BDFDF000F4F54 /* PPCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD697981D3BDFDF000F4F54 /* PPCollectionController.swift */; };
+		3DD6979B1D3BE005000F4F54 /* PPCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD6979A1D3BE005000F4F54 /* PPCell.swift */; };
 		3DE065E61CDE6DD600891A66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE065E51CDE6DD600891A66 /* AppDelegate.swift */; };
 		3DE065E81CDE6DD600891A66 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE065E71CDE6DD600891A66 /* MasterViewController.swift */; };
-		3DE065EA1CDE6DD600891A66 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE065E91CDE6DD600891A66 /* DetailViewController.swift */; };
 		3DE065ED1CDE6DD600891A66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DE065EB1CDE6DD600891A66 /* Main.storyboard */; };
 		3DE065EF1CDE6DD600891A66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DE065EE1CDE6DD600891A66 /* Assets.xcassets */; };
 		3DE065F21CDE6DD600891A66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DE065F01CDE6DD600891A66 /* LaunchScreen.storyboard */; };
 		3DE065FA1CDE705100891A66 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DE065F91CDE705100891A66 /* SpriteKit.framework */; };
-		3DE065FC1CDE70B400891A66 /* CannonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE065FB1CDE70B400891A66 /* CannonViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D26BAF21CFA025A00B61EB2 /* CannonScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CannonScene.swift; sourceTree = "<group>"; };
+		3D26BAF31CFA025A00B61EB2 /* CannonPhsyicsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CannonPhsyicsController.swift; sourceTree = "<group>"; };
+		3D26BAF41CFA025A00B61EB2 /* CannonPhsyicsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CannonPhsyicsController.xib; sourceTree = "<group>"; };
+		3D26BAF51CFA025A00B61EB2 /* c-base.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "c-base.png"; sourceTree = "<group>"; };
+		3D26BAF61CFA025A00B61EB2 /* cannon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cannon@2x.png"; sourceTree = "<group>"; };
+		3D342C8D1D3FF4C800F7BB43 /* Cannon_exp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cannon_exp@2x.png"; sourceTree = "<group>"; };
+		3D88C9F01D3FD001009C639F /* ExperimentTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperimentTableController.swift; sourceTree = "<group>"; };
+		3D88C9F21D3FD11B009C639F /* ExperimentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperimentCell.swift; sourceTree = "<group>"; };
+		3D88C9F31D3FD11B009C639F /* ExperimentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExperimentCell.xib; sourceTree = "<group>"; };
+		3DD697981D3BDFDF000F4F54 /* PPCollectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPCollectionController.swift; sourceTree = "<group>"; };
+		3DD6979A1D3BE005000F4F54 /* PPCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPCell.swift; sourceTree = "<group>"; };
 		3DE065E21CDE6DD200891A66 /* Physics Phun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Physics Phun.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DE065E51CDE6DD600891A66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DE065E71CDE6DD600891A66 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		3DE065E91CDE6DD600891A66 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3DE065EC1CDE6DD600891A66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3DE065EE1CDE6DD600891A66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DE065F11CDE6DD600891A66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3DE065F31CDE6DD600891A66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DE065F91CDE705100891A66 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
-		3DE065FB1CDE70B400891A66 /* CannonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CannonViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +60,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D26BAFC1CFA02D600B61EB2 /* Cannon */ = {
+			isa = PBXGroup;
+			children = (
+				3D26BAF31CFA025A00B61EB2 /* CannonPhsyicsController.swift */,
+				3D26BAF21CFA025A00B61EB2 /* CannonScene.swift */,
+				3D26BAF41CFA025A00B61EB2 /* CannonPhsyicsController.xib */,
+				3D26BAF51CFA025A00B61EB2 /* c-base.png */,
+				3D342C8D1D3FF4C800F7BB43 /* Cannon_exp@2x.png */,
+				3D26BAF61CFA025A00B61EB2 /* cannon@2x.png */,
+			);
+			name = Cannon;
+			sourceTree = "<group>";
+		};
 		3DE065D91CDE6DD200891A66 = {
 			isa = PBXGroup;
 			children = (
@@ -63,10 +94,14 @@
 			isa = PBXGroup;
 			children = (
 				3DE065E51CDE6DD600891A66 /* AppDelegate.swift */,
-				3DE065E71CDE6DD600891A66 /* MasterViewController.swift */,
-				3DE065E91CDE6DD600891A66 /* DetailViewController.swift */,
-				3DE065FB1CDE70B400891A66 /* CannonViewController.swift */,
+				3D88C9F01D3FD001009C639F /* ExperimentTableController.swift */,
+				3D88C9F21D3FD11B009C639F /* ExperimentCell.swift */,
+				3D88C9F31D3FD11B009C639F /* ExperimentCell.xib */,
 				3DE065EB1CDE6DD600891A66 /* Main.storyboard */,
+				3D26BAFC1CFA02D600B61EB2 /* Cannon */,
+				3DD6979A1D3BE005000F4F54 /* PPCell.swift */,
+				3DD697981D3BDFDF000F4F54 /* PPCollectionController.swift */,
+				3DE065E71CDE6DD600891A66 /* MasterViewController.swift */,
 				3DE065EE1CDE6DD600891A66 /* Assets.xcassets */,
 				3DE065F01CDE6DD600891A66 /* LaunchScreen.storyboard */,
 				3DE065F31CDE6DD600891A66 /* Info.plist */,
@@ -135,7 +170,12 @@
 			files = (
 				3DE065F21CDE6DD600891A66 /* LaunchScreen.storyboard in Resources */,
 				3DE065EF1CDE6DD600891A66 /* Assets.xcassets in Resources */,
+				3D26BAFA1CFA025A00B61EB2 /* c-base.png in Resources */,
 				3DE065ED1CDE6DD600891A66 /* Main.storyboard in Resources */,
+				3D26BAF91CFA025A00B61EB2 /* CannonPhsyicsController.xib in Resources */,
+				3D88C9F51D3FD11B009C639F /* ExperimentCell.xib in Resources */,
+				3D26BAFB1CFA025A00B61EB2 /* cannon@2x.png in Resources */,
+				3D342C8E1D3FF4C800F7BB43 /* Cannon_exp@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,10 +186,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DE065EA1CDE6DD600891A66 /* DetailViewController.swift in Sources */,
-				3DE065FC1CDE70B400891A66 /* CannonViewController.swift in Sources */,
+				3D88C9F41D3FD11B009C639F /* ExperimentCell.swift in Sources */,
+				3D88C9F11D3FD001009C639F /* ExperimentTableController.swift in Sources */,
+				3D26BAF71CFA025A00B61EB2 /* CannonScene.swift in Sources */,
+				3DD6979B1D3BE005000F4F54 /* PPCell.swift in Sources */,
+				3D26BAF81CFA025A00B61EB2 /* CannonPhsyicsController.swift in Sources */,
 				3DE065E81CDE6DD600891A66 /* MasterViewController.swift in Sources */,
 				3DE065E61CDE6DD600891A66 /* AppDelegate.swift in Sources */,
+				3DD697991D3BDFDF000F4F54 /* PPCollectionController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +261,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -254,6 +299,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 2.3;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -264,9 +310,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Physics Phun/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "omaralejel.Physics-Phun";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -276,9 +324,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Physics Phun/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "omaralejel.Physics-Phun";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -301,6 +351,7 @@
 				3DE065F81CDE6DD600891A66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
