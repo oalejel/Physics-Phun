@@ -8,21 +8,21 @@
 
 import UIKit
 
-class InsetImageView: UIImageView {
-    let inset: CGFloat = 10
-    override func alignmentRectInsets() -> UIEdgeInsets {
-        return UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
-    }
+class NeverClearButton: UIButton {
     
-//    override func alignmentRectForFrame(frame: CGRect) -> CGRect {
-//        return CGRectInset(frame, inset * 2, inset * 2)
-//    }
+    override var backgroundColor: UIColor? {
+        didSet {
+            if CGColorGetAlpha((backgroundColor?.CGColor)!) == 0 {
+                 backgroundColor = oldValue
+            }
+        }
+    }
 }
 
 class ExperimentCell: UITableViewCell {
     
     @IBOutlet var experimentLabel: UILabel!
-    @IBOutlet var experimentImageView: InsetImageView!
+    @IBOutlet var experimentImageButton: NeverClearButton!
     
 //    override func drawRect(rect: CGRect) {
 //        
@@ -32,17 +32,27 @@ class ExperimentCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        experimentImageView.layer.cornerRadius = 10
+        experimentImageButton.layer.cornerRadius = 10
+////        experimentImageButton.imageView = UIImageView()
+//        experimentImageButton.imageView?.contentMode = .ScaleAspectFit
+        experimentImageButton.contentEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+//
+//        
+        preservesSuperviewLayoutMargins = false
+        separatorInset = UIEdgeInsetsZero
+//        layoutMargins = UIEdgeInsetsZero
         
-        experimentImageView.contentMode = .ScaleAspectFit
-        experimentImageView.contentScaleFactor = 0.9
-        experimentImageView.alignmentRectInsets()
+        
+        
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+//    override func setSelected(selected: Bool, animated: Bool) {
 //        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+//        backgroundView?.backgroundColor = UIColor.redColor()
+//        // Configure the view for the selected state
+//        
+//    }
+    
+    
     
 }

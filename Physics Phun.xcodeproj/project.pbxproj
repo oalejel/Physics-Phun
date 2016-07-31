@@ -7,19 +7,54 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D0842511D47BF9800F80155 /* Resistance in a wire_exp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D08424F1D47BF9800F80155 /* Resistance in a wire_exp@2x.png */; };
+		3D0842521D47BF9800F80155 /* Air Box_exp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D0842501D47BF9800F80155 /* Air Box_exp@2x.png */; };
+		3D0842541D47C02100F80155 /* VIRP_exp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D0842531D47C02100F80155 /* VIRP_exp@2x.png */; };
+		3D2030F31D41646800C4C3BC /* The Flying Donut_exp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D2030F21D41646800C4C3BC /* The Flying Donut_exp@2x.png */; };
+		3D2030F61D41B20700C4C3BC /* DonutPhsyicsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2030F51D41B20700C4C3BC /* DonutPhsyicsController.swift */; };
+		3D2030F81D41B20E00C4C3BC /* DonutScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2030F71D41B20E00C4C3BC /* DonutScene.swift */; };
+		3D2030FA1D41B21200C4C3BC /* DonutPhsyicsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D2030F91D41B21200C4C3BC /* DonutPhsyicsController.xib */; };
+		3D2030FC1D41BE3400C4C3BC /* DirectionControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2030FB1D41BE3400C4C3BC /* DirectionControlView.swift */; };
 		3D26BAF71CFA025A00B61EB2 /* CannonScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D26BAF21CFA025A00B61EB2 /* CannonScene.swift */; };
 		3D26BAF81CFA025A00B61EB2 /* CannonPhsyicsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D26BAF31CFA025A00B61EB2 /* CannonPhsyicsController.swift */; };
 		3D26BAF91CFA025A00B61EB2 /* CannonPhsyicsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D26BAF41CFA025A00B61EB2 /* CannonPhsyicsController.xib */; };
-		3D26BAFA1CFA025A00B61EB2 /* c-base.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D26BAF51CFA025A00B61EB2 /* c-base.png */; };
-		3D26BAFB1CFA025A00B61EB2 /* cannon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D26BAF61CFA025A00B61EB2 /* cannon@2x.png */; };
+		3D2D984C1D430D99000AA1AF /* donut@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D2D984B1D430D99000AA1AF /* donut@2x.png */; };
+		3D30E0B11D4D81AE00A50418 /* InfoTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D30E0AF1D4D81AE00A50418 /* InfoTextViewController.swift */; };
+		3D30E0B21D4D81AE00A50418 /* InfoTextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D30E0B01D4D81AE00A50418 /* InfoTextViewController.xib */; };
+		3D31747A1D4C2020006D4991 /* FireParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3D3174781D4C2020006D4991 /* FireParticle.sks */; };
+		3D31747B1D4C2020006D4991 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D3174791D4C2020006D4991 /* spark.png */; };
 		3D342C8E1D3FF4C800F7BB43 /* Cannon_exp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D342C8D1D3FF4C800F7BB43 /* Cannon_exp@2x.png */; };
+		3D3DB89B1D41187A00F52482 /* TapNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3DB89A1D41187A00F52482 /* TapNavigationBar.swift */; };
+		3D4B2FB11D40428F009B59EF /* cannon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D4B2FB01D40428F009B59EF /* cannon@2x.png */; };
+		3D4B2FB31D4042A9009B59EF /* cannon_base@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D4B2FB21D4042A9009B59EF /* cannon_base@2x.png */; };
+		3D4B2FB51D404815009B59EF /* SqueezeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4B2FB41D404815009B59EF /* SqueezeButton.swift */; };
+		3D4B2FB71D4070CF009B59EF /* IQKeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4B2FB61D4070CF009B59EF /* IQKeyboardManager.swift */; };
+		3D4B2FB91D407159009B59EF /* IQKeyboardReturnKeyHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4B2FB81D407159009B59EF /* IQKeyboardReturnKeyHandler.swift */; };
+		3D4B2FBC1D407164009B59EF /* IQKeyboardManagerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4B2FBA1D407164009B59EF /* IQKeyboardManagerConstants.swift */; };
+		3D4B2FBD1D407164009B59EF /* IQKeyboardManagerConstantsInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4B2FBB1D407164009B59EF /* IQKeyboardManagerConstantsInternal.swift */; };
+		3D4B2FBF1D40716D009B59EF /* IQTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4B2FBE1D40716D009B59EF /* IQTextView.swift */; };
+		3D4B2FC51D407179009B59EF /* IQBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4B2FC01D407179009B59EF /* IQBarButtonItem.swift */; };
+		3D4B2FC61D407179009B59EF /* IQPreviousNextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4B2FC11D407179009B59EF /* IQPreviousNextView.swift */; };
+		3D4B2FC71D407179009B59EF /* IQTitleBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4B2FC21D407179009B59EF /* IQTitleBarButtonItem.swift */; };
+		3D4B2FC81D407179009B59EF /* IQToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4B2FC31D407179009B59EF /* IQToolbar.swift */; };
+		3D4B2FC91D407179009B59EF /* IQUIView+IQKeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4B2FC41D407179009B59EF /* IQUIView+IQKeyboardToolbar.swift */; };
+		3D4B2FD01D407185009B59EF /* IQNSArray+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4B2FCA1D407185009B59EF /* IQNSArray+Sort.swift */; };
+		3D4B2FD11D407185009B59EF /* IQUIScrollView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4B2FCB1D407185009B59EF /* IQUIScrollView+Additions.swift */; };
+		3D4B2FD21D407185009B59EF /* IQUITextFieldView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4B2FCC1D407185009B59EF /* IQUITextFieldView+Additions.swift */; };
+		3D4B2FD31D407185009B59EF /* IQUIView+Hierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4B2FCD1D407185009B59EF /* IQUIView+Hierarchy.swift */; };
+		3D4B2FD41D407185009B59EF /* IQUIViewController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4B2FCE1D407185009B59EF /* IQUIViewController+Additions.swift */; };
+		3D4B2FD51D407185009B59EF /* IQUIWindow+Hierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4B2FCF1D407185009B59EF /* IQUIWindow+Hierarchy.swift */; };
 		3D88C9F11D3FD001009C639F /* ExperimentTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D88C9F01D3FD001009C639F /* ExperimentTableController.swift */; };
 		3D88C9F41D3FD11B009C639F /* ExperimentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D88C9F21D3FD11B009C639F /* ExperimentCell.swift */; };
 		3D88C9F51D3FD11B009C639F /* ExperimentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D88C9F31D3FD11B009C639F /* ExperimentCell.xib */; };
+		3DA637401D467DB200B0782F /* Polarized Neutron Reflectometry_exp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DA6373E1D467B3F00B0782F /* Polarized Neutron Reflectometry_exp@2x.png */; };
+		3DA637451D468D6A00B0782F /* NeutronPhsyicsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA637421D468D6A00B0782F /* NeutronPhsyicsController.swift */; };
+		3DA637461D468D6A00B0782F /* NeutronScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA637431D468D6A00B0782F /* NeutronScene.swift */; };
+		3DA637481D46911600B0782F /* NeutronPhsyicsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DA637441D468D6A00B0782F /* NeutronPhsyicsController.xib */; };
+		3DB808C91D4A8C940057FEEA /* graph@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DB808C81D4A8C940057FEEA /* graph@2x.png */; };
 		3DD697991D3BDFDF000F4F54 /* PPCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD697981D3BDFDF000F4F54 /* PPCollectionController.swift */; };
 		3DD6979B1D3BE005000F4F54 /* PPCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD6979A1D3BE005000F4F54 /* PPCell.swift */; };
 		3DE065E61CDE6DD600891A66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE065E51CDE6DD600891A66 /* AppDelegate.swift */; };
-		3DE065E81CDE6DD600891A66 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE065E71CDE6DD600891A66 /* MasterViewController.swift */; };
 		3DE065ED1CDE6DD600891A66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DE065EB1CDE6DD600891A66 /* Main.storyboard */; };
 		3DE065EF1CDE6DD600891A66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DE065EE1CDE6DD600891A66 /* Assets.xcassets */; };
 		3DE065F21CDE6DD600891A66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DE065F01CDE6DD600891A66 /* LaunchScreen.storyboard */; };
@@ -27,20 +62,55 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D08424F1D47BF9800F80155 /* Resistance in a wire_exp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Resistance in a wire_exp@2x.png"; sourceTree = "<group>"; };
+		3D0842501D47BF9800F80155 /* Air Box_exp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Air Box_exp@2x.png"; sourceTree = "<group>"; };
+		3D0842531D47C02100F80155 /* VIRP_exp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VIRP_exp@2x.png"; sourceTree = "<group>"; };
+		3D2030F21D41646800C4C3BC /* The Flying Donut_exp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "The Flying Donut_exp@2x.png"; sourceTree = "<group>"; };
+		3D2030F51D41B20700C4C3BC /* DonutPhsyicsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonutPhsyicsController.swift; sourceTree = "<group>"; };
+		3D2030F71D41B20E00C4C3BC /* DonutScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonutScene.swift; sourceTree = "<group>"; };
+		3D2030F91D41B21200C4C3BC /* DonutPhsyicsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DonutPhsyicsController.xib; sourceTree = "<group>"; };
+		3D2030FB1D41BE3400C4C3BC /* DirectionControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionControlView.swift; sourceTree = "<group>"; };
 		3D26BAF21CFA025A00B61EB2 /* CannonScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CannonScene.swift; sourceTree = "<group>"; };
 		3D26BAF31CFA025A00B61EB2 /* CannonPhsyicsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CannonPhsyicsController.swift; sourceTree = "<group>"; };
 		3D26BAF41CFA025A00B61EB2 /* CannonPhsyicsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CannonPhsyicsController.xib; sourceTree = "<group>"; };
-		3D26BAF51CFA025A00B61EB2 /* c-base.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "c-base.png"; sourceTree = "<group>"; };
-		3D26BAF61CFA025A00B61EB2 /* cannon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cannon@2x.png"; sourceTree = "<group>"; };
+		3D2D984B1D430D99000AA1AF /* donut@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "donut@2x.png"; sourceTree = "<group>"; };
+		3D30E0AF1D4D81AE00A50418 /* InfoTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTextViewController.swift; sourceTree = "<group>"; };
+		3D30E0B01D4D81AE00A50418 /* InfoTextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoTextViewController.xib; sourceTree = "<group>"; };
+		3D3174781D4C2020006D4991 /* FireParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireParticle.sks; sourceTree = "<group>"; };
+		3D3174791D4C2020006D4991 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		3D342C8D1D3FF4C800F7BB43 /* Cannon_exp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cannon_exp@2x.png"; sourceTree = "<group>"; };
+		3D3DB89A1D41187A00F52482 /* TapNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapNavigationBar.swift; sourceTree = "<group>"; };
+		3D4B2FB01D40428F009B59EF /* cannon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cannon@2x.png"; sourceTree = "<group>"; };
+		3D4B2FB21D4042A9009B59EF /* cannon_base@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cannon_base@2x.png"; sourceTree = "<group>"; };
+		3D4B2FB41D404815009B59EF /* SqueezeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SqueezeButton.swift; sourceTree = "<group>"; };
+		3D4B2FB61D4070CF009B59EF /* IQKeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQKeyboardManager.swift; sourceTree = "<group>"; };
+		3D4B2FB81D407159009B59EF /* IQKeyboardReturnKeyHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQKeyboardReturnKeyHandler.swift; sourceTree = "<group>"; };
+		3D4B2FBA1D407164009B59EF /* IQKeyboardManagerConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQKeyboardManagerConstants.swift; sourceTree = "<group>"; };
+		3D4B2FBB1D407164009B59EF /* IQKeyboardManagerConstantsInternal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQKeyboardManagerConstantsInternal.swift; sourceTree = "<group>"; };
+		3D4B2FBE1D40716D009B59EF /* IQTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQTextView.swift; sourceTree = "<group>"; };
+		3D4B2FC01D407179009B59EF /* IQBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQBarButtonItem.swift; sourceTree = "<group>"; };
+		3D4B2FC11D407179009B59EF /* IQPreviousNextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQPreviousNextView.swift; sourceTree = "<group>"; };
+		3D4B2FC21D407179009B59EF /* IQTitleBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQTitleBarButtonItem.swift; sourceTree = "<group>"; };
+		3D4B2FC31D407179009B59EF /* IQToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQToolbar.swift; sourceTree = "<group>"; };
+		3D4B2FC41D407179009B59EF /* IQUIView+IQKeyboardToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUIView+IQKeyboardToolbar.swift"; sourceTree = "<group>"; };
+		3D4B2FCA1D407185009B59EF /* IQNSArray+Sort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQNSArray+Sort.swift"; sourceTree = "<group>"; };
+		3D4B2FCB1D407185009B59EF /* IQUIScrollView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUIScrollView+Additions.swift"; sourceTree = "<group>"; };
+		3D4B2FCC1D407185009B59EF /* IQUITextFieldView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUITextFieldView+Additions.swift"; sourceTree = "<group>"; };
+		3D4B2FCD1D407185009B59EF /* IQUIView+Hierarchy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUIView+Hierarchy.swift"; sourceTree = "<group>"; };
+		3D4B2FCE1D407185009B59EF /* IQUIViewController+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUIViewController+Additions.swift"; sourceTree = "<group>"; };
+		3D4B2FCF1D407185009B59EF /* IQUIWindow+Hierarchy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUIWindow+Hierarchy.swift"; sourceTree = "<group>"; };
 		3D88C9F01D3FD001009C639F /* ExperimentTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperimentTableController.swift; sourceTree = "<group>"; };
 		3D88C9F21D3FD11B009C639F /* ExperimentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperimentCell.swift; sourceTree = "<group>"; };
 		3D88C9F31D3FD11B009C639F /* ExperimentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExperimentCell.xib; sourceTree = "<group>"; };
+		3DA6373E1D467B3F00B0782F /* Polarized Neutron Reflectometry_exp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Polarized Neutron Reflectometry_exp@2x.png"; sourceTree = "<group>"; };
+		3DA637421D468D6A00B0782F /* NeutronPhsyicsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeutronPhsyicsController.swift; sourceTree = "<group>"; };
+		3DA637431D468D6A00B0782F /* NeutronScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeutronScene.swift; sourceTree = "<group>"; };
+		3DA637441D468D6A00B0782F /* NeutronPhsyicsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NeutronPhsyicsController.xib; sourceTree = "<group>"; };
+		3DB808C81D4A8C940057FEEA /* graph@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "graph@2x.png"; sourceTree = "<group>"; };
 		3DD697981D3BDFDF000F4F54 /* PPCollectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPCollectionController.swift; sourceTree = "<group>"; };
 		3DD6979A1D3BE005000F4F54 /* PPCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPCell.swift; sourceTree = "<group>"; };
 		3DE065E21CDE6DD200891A66 /* Physics Phun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Physics Phun.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DE065E51CDE6DD600891A66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3DE065E71CDE6DD600891A66 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		3DE065EC1CDE6DD600891A66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3DE065EE1CDE6DD600891A66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DE065F11CDE6DD600891A66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,17 +130,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D2030F41D41B1CF00C4C3BC /* Donut */ = {
+			isa = PBXGroup;
+			children = (
+				3D3174781D4C2020006D4991 /* FireParticle.sks */,
+				3D3174791D4C2020006D4991 /* spark.png */,
+				3D2030F71D41B20E00C4C3BC /* DonutScene.swift */,
+				3D2030F51D41B20700C4C3BC /* DonutPhsyicsController.swift */,
+				3D2D984B1D430D99000AA1AF /* donut@2x.png */,
+				3D2030FB1D41BE3400C4C3BC /* DirectionControlView.swift */,
+				3D2030F91D41B21200C4C3BC /* DonutPhsyicsController.xib */,
+				3DE065E51CDE6DD600891A66 /* AppDelegate.swift */,
+			);
+			name = Donut;
+			sourceTree = "<group>";
+		};
 		3D26BAFC1CFA02D600B61EB2 /* Cannon */ = {
 			isa = PBXGroup;
 			children = (
-				3D26BAF31CFA025A00B61EB2 /* CannonPhsyicsController.swift */,
 				3D26BAF21CFA025A00B61EB2 /* CannonScene.swift */,
+				3D26BAF31CFA025A00B61EB2 /* CannonPhsyicsController.swift */,
 				3D26BAF41CFA025A00B61EB2 /* CannonPhsyicsController.xib */,
-				3D26BAF51CFA025A00B61EB2 /* c-base.png */,
+				3D4B2FB01D40428F009B59EF /* cannon@2x.png */,
+				3D4B2FB21D4042A9009B59EF /* cannon_base@2x.png */,
 				3D342C8D1D3FF4C800F7BB43 /* Cannon_exp@2x.png */,
-				3D26BAF61CFA025A00B61EB2 /* cannon@2x.png */,
 			);
 			name = Cannon;
+			sourceTree = "<group>";
+		};
+		3D4B2FD61D40730F009B59EF /* IQ */ = {
+			isa = PBXGroup;
+			children = (
+				3D4B2FB61D4070CF009B59EF /* IQKeyboardManager.swift */,
+				3D4B2FCA1D407185009B59EF /* IQNSArray+Sort.swift */,
+				3D4B2FCB1D407185009B59EF /* IQUIScrollView+Additions.swift */,
+				3D4B2FCC1D407185009B59EF /* IQUITextFieldView+Additions.swift */,
+				3D4B2FCD1D407185009B59EF /* IQUIView+Hierarchy.swift */,
+				3D4B2FCE1D407185009B59EF /* IQUIViewController+Additions.swift */,
+				3D4B2FCF1D407185009B59EF /* IQUIWindow+Hierarchy.swift */,
+				3D4B2FC01D407179009B59EF /* IQBarButtonItem.swift */,
+				3D4B2FC11D407179009B59EF /* IQPreviousNextView.swift */,
+				3D4B2FC21D407179009B59EF /* IQTitleBarButtonItem.swift */,
+				3D4B2FC31D407179009B59EF /* IQToolbar.swift */,
+				3D4B2FC41D407179009B59EF /* IQUIView+IQKeyboardToolbar.swift */,
+				3D4B2FBE1D40716D009B59EF /* IQTextView.swift */,
+				3D4B2FBA1D407164009B59EF /* IQKeyboardManagerConstants.swift */,
+				3D4B2FBB1D407164009B59EF /* IQKeyboardManagerConstantsInternal.swift */,
+				3D4B2FB81D407159009B59EF /* IQKeyboardReturnKeyHandler.swift */,
+			);
+			name = IQ;
+			sourceTree = "<group>";
+		};
+		3DA637411D46827400B0782F /* Neutron */ = {
+			isa = PBXGroup;
+			children = (
+				3DA637431D468D6A00B0782F /* NeutronScene.swift */,
+				3DB808C81D4A8C940057FEEA /* graph@2x.png */,
+				3DA637421D468D6A00B0782F /* NeutronPhsyicsController.swift */,
+				3DA637441D468D6A00B0782F /* NeutronPhsyicsController.xib */,
+			);
+			name = Neutron;
 			sourceTree = "<group>";
 		};
 		3DE065D91CDE6DD200891A66 = {
@@ -93,15 +212,25 @@
 		3DE065E41CDE6DD500891A66 /* Physics Phun */ = {
 			isa = PBXGroup;
 			children = (
-				3DE065E51CDE6DD600891A66 /* AppDelegate.swift */,
-				3D88C9F01D3FD001009C639F /* ExperimentTableController.swift */,
+				3D30E0AF1D4D81AE00A50418 /* InfoTextViewController.swift */,
+				3D30E0B01D4D81AE00A50418 /* InfoTextViewController.xib */,
+				3D4B2FD61D40730F009B59EF /* IQ */,
+				3D2030F41D41B1CF00C4C3BC /* Donut */,
+				3DA637411D46827400B0782F /* Neutron */,
+				3D08424F1D47BF9800F80155 /* Resistance in a wire_exp@2x.png */,
+				3D0842501D47BF9800F80155 /* Air Box_exp@2x.png */,
+				3D0842531D47C02100F80155 /* VIRP_exp@2x.png */,
+				3D26BAFC1CFA02D600B61EB2 /* Cannon */,
+				3DA6373E1D467B3F00B0782F /* Polarized Neutron Reflectometry_exp@2x.png */,
 				3D88C9F21D3FD11B009C639F /* ExperimentCell.swift */,
 				3D88C9F31D3FD11B009C639F /* ExperimentCell.xib */,
+				3D88C9F01D3FD001009C639F /* ExperimentTableController.swift */,
 				3DE065EB1CDE6DD600891A66 /* Main.storyboard */,
-				3D26BAFC1CFA02D600B61EB2 /* Cannon */,
+				3D2030F21D41646800C4C3BC /* The Flying Donut_exp@2x.png */,
+				3D3DB89A1D41187A00F52482 /* TapNavigationBar.swift */,
+				3D4B2FB41D404815009B59EF /* SqueezeButton.swift */,
 				3DD6979A1D3BE005000F4F54 /* PPCell.swift */,
 				3DD697981D3BDFDF000F4F54 /* PPCollectionController.swift */,
-				3DE065E71CDE6DD600891A66 /* MasterViewController.swift */,
 				3DE065EE1CDE6DD600891A66 /* Assets.xcassets */,
 				3DE065F01CDE6DD600891A66 /* LaunchScreen.storyboard */,
 				3DE065F31CDE6DD600891A66 /* Info.plist */,
@@ -168,14 +297,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D2030F31D41646800C4C3BC /* The Flying Donut_exp@2x.png in Resources */,
+				3DA637401D467DB200B0782F /* Polarized Neutron Reflectometry_exp@2x.png in Resources */,
+				3D2D984C1D430D99000AA1AF /* donut@2x.png in Resources */,
 				3DE065F21CDE6DD600891A66 /* LaunchScreen.storyboard in Resources */,
+				3DB808C91D4A8C940057FEEA /* graph@2x.png in Resources */,
+				3D31747A1D4C2020006D4991 /* FireParticle.sks in Resources */,
+				3D31747B1D4C2020006D4991 /* spark.png in Resources */,
 				3DE065EF1CDE6DD600891A66 /* Assets.xcassets in Resources */,
-				3D26BAFA1CFA025A00B61EB2 /* c-base.png in Resources */,
 				3DE065ED1CDE6DD600891A66 /* Main.storyboard in Resources */,
+				3D4B2FB31D4042A9009B59EF /* cannon_base@2x.png in Resources */,
 				3D26BAF91CFA025A00B61EB2 /* CannonPhsyicsController.xib in Resources */,
+				3D2030FA1D41B21200C4C3BC /* DonutPhsyicsController.xib in Resources */,
+				3D0842541D47C02100F80155 /* VIRP_exp@2x.png in Resources */,
 				3D88C9F51D3FD11B009C639F /* ExperimentCell.xib in Resources */,
-				3D26BAFB1CFA025A00B61EB2 /* cannon@2x.png in Resources */,
+				3D0842521D47BF9800F80155 /* Air Box_exp@2x.png in Resources */,
+				3D30E0B21D4D81AE00A50418 /* InfoTextViewController.xib in Resources */,
 				3D342C8E1D3FF4C800F7BB43 /* Cannon_exp@2x.png in Resources */,
+				3D4B2FB11D40428F009B59EF /* cannon@2x.png in Resources */,
+				3D0842511D47BF9800F80155 /* Resistance in a wire_exp@2x.png in Resources */,
+				3DA637481D46911600B0782F /* NeutronPhsyicsController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,12 +329,35 @@
 			files = (
 				3D88C9F41D3FD11B009C639F /* ExperimentCell.swift in Sources */,
 				3D88C9F11D3FD001009C639F /* ExperimentTableController.swift in Sources */,
+				3D4B2FB91D407159009B59EF /* IQKeyboardReturnKeyHandler.swift in Sources */,
+				3DA637451D468D6A00B0782F /* NeutronPhsyicsController.swift in Sources */,
+				3D4B2FB51D404815009B59EF /* SqueezeButton.swift in Sources */,
+				3D4B2FC61D407179009B59EF /* IQPreviousNextView.swift in Sources */,
+				3D4B2FD11D407185009B59EF /* IQUIScrollView+Additions.swift in Sources */,
+				3D30E0B11D4D81AE00A50418 /* InfoTextViewController.swift in Sources */,
+				3D4B2FD41D407185009B59EF /* IQUIViewController+Additions.swift in Sources */,
+				3D2030F81D41B20E00C4C3BC /* DonutScene.swift in Sources */,
+				3D4B2FBC1D407164009B59EF /* IQKeyboardManagerConstants.swift in Sources */,
+				3D4B2FD31D407185009B59EF /* IQUIView+Hierarchy.swift in Sources */,
 				3D26BAF71CFA025A00B61EB2 /* CannonScene.swift in Sources */,
 				3DD6979B1D3BE005000F4F54 /* PPCell.swift in Sources */,
+				3D4B2FC91D407179009B59EF /* IQUIView+IQKeyboardToolbar.swift in Sources */,
 				3D26BAF81CFA025A00B61EB2 /* CannonPhsyicsController.swift in Sources */,
-				3DE065E81CDE6DD600891A66 /* MasterViewController.swift in Sources */,
+				3D4B2FB71D4070CF009B59EF /* IQKeyboardManager.swift in Sources */,
+				3D4B2FC51D407179009B59EF /* IQBarButtonItem.swift in Sources */,
+				3D4B2FD51D407185009B59EF /* IQUIWindow+Hierarchy.swift in Sources */,
+				3D2030F61D41B20700C4C3BC /* DonutPhsyicsController.swift in Sources */,
+				3DA637461D468D6A00B0782F /* NeutronScene.swift in Sources */,
 				3DE065E61CDE6DD600891A66 /* AppDelegate.swift in Sources */,
+				3D4B2FBD1D407164009B59EF /* IQKeyboardManagerConstantsInternal.swift in Sources */,
+				3D2030FC1D41BE3400C4C3BC /* DirectionControlView.swift in Sources */,
+				3D4B2FD21D407185009B59EF /* IQUITextFieldView+Additions.swift in Sources */,
+				3D4B2FC71D407179009B59EF /* IQTitleBarButtonItem.swift in Sources */,
+				3D4B2FD01D407185009B59EF /* IQNSArray+Sort.swift in Sources */,
 				3DD697991D3BDFDF000F4F54 /* PPCollectionController.swift in Sources */,
+				3D3DB89B1D41187A00F52482 /* TapNavigationBar.swift in Sources */,
+				3D4B2FBF1D40716D009B59EF /* IQTextView.swift in Sources */,
+				3D4B2FC81D407179009B59EF /* IQToolbar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
