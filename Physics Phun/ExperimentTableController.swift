@@ -8,18 +8,19 @@
 
 import UIKit
 
-class ExperimentTableController: UITableViewController {
+class ExperimentTableController: UITableViewController, UINavigationControllerDelegate {
     
     private let cellID = "cell"
     let bounds = UIScreen.mainScreen().bounds
     
     var experiments: [[(demoName: String, demoClass: AnyClass)]] = [
-        [("Cannon", CannonPhsyicsController.self), ("Car Crash", CannonPhsyicsController.self)],
+        [("Cannon", CannonPhsyicsController.self), ("The Flying Donut", DonutPhsyicsController.self)],
         [("Air Box", CannonPhsyicsController.self)],
-        [("VIRP", CannonPhsyicsController.self), ("Resistance in a wire", CannonPhsyicsController.self), ]
+        [("VIRP", CannonPhsyicsController.self), ("Resistance in a wire", CannonPhsyicsController.self)],
+        [("Polarized Neutron Reflectometry", NeutronPhsyicsController.self)]
     ]
     
-    var experimentSectionTitles = ["Motion 🚀", "Gases 🌫", "Electricity & Circuits ⚡️"]
+    var experimentSectionTitles = ["Motion and Forces 🚀", "Gases 🌫", "Electricity & Circuits ⚡️", "Solid State Physics ⚛"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +29,11 @@ class ExperimentTableController: UITableViewController {
         
         tableView.registerNib(UINib(nibName: "ExperimentCell", bundle: nil), forCellReuseIdentifier: cellID)
         tableView.rowHeight = bounds.size.width * 0.6
-        tableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
+        navigationController?.delegate = self
         
+//        tableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+//        tableView.layoutMargins = UIEdgeInsetsZero
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,7 +52,6 @@ class ExperimentTableController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return experiments[section].count
     }
-    
     
     
     //HEADERS
@@ -73,16 +75,26 @@ class ExperimentTableController: UITableViewController {
         return header
     }
     
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30
+    }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCellWithIdentifier(cellID, forIndexPath: indexPath) as? ExperimentCell else {
             return UITableViewCell()
         }
         
+        cell.selectionStyle = .Gray
+        cell.experimentImageButton.imageView?.contentMode = .ScaleAspectFit
+        
+        let v = UIView()
+        v.backgroundColor = UIColor(white: 0.95, alpha: 1)
+        cell.selectedBackgroundView = v
+        
         let experimentName = experiments[indexPath.section][indexPath.row].demoName
         cell.experimentLabel.text = experimentName
         if let image = UIImage(named: "\(experimentName)_exp.png") {
-            cell.experimentImageView.image = image
+            cell.experimentImageButton.setImage(image.imageWithRenderingMode(.AlwaysOriginal), forState: .Normal)
         }
         
         return cell
@@ -97,6 +109,8 @@ class ExperimentTableController: UITableViewController {
         navigationController?.pushViewController(viewController, animated: true)
     }
 
+
+    
 
 
     /*
