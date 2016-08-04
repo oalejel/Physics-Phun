@@ -186,5 +186,11 @@ class CannonScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    override func willMoveFromView(view: SKView) {
+        super.willMoveFromView(view)
+        removeAllChildren()
+        removeAllActions()
+    }
+    
     
 }
