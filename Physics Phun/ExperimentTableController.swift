@@ -15,8 +15,8 @@ class ExperimentTableController: UITableViewController, UINavigationControllerDe
     
     var experiments: [[(demoName: String, demoClass: AnyClass)]] = [
         [("Cannon", CannonPhsyicsController.self), ("The Flying Donut", DonutPhsyicsController.self)],
-        [("Air Box", CannonPhsyicsController.self)],
-        [("VIRP", CannonPhsyicsController.self), ("Resistance in a wire", CannonPhsyicsController.self)],
+        [("Air Box", AirBoxPhsyicsController.self)],
+        [("VIRP", CannonPhsyicsController.self), ("Resistance in a Wire", ResistivityPhsyicsController.self)],
         [("Polarized Neutron Reflectometry", NeutronPhsyicsController.self)]
     ]
     
@@ -108,7 +108,6 @@ class ExperimentTableController: UITableViewController, UINavigationControllerDe
         
         navigationController?.pushViewController(viewController, animated: true)
     }
-
 
     
 

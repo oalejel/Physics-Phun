@@ -784,10 +784,8 @@ public extension UIView {
             var imageRightArrow = UIImage(named: "IQButtonBarArrowRight", inBundle: bundle, compatibleWithTraitCollection: nil)
             
             //Support for RTL languages like Arabic, Persia etc... (Bug ID: #448)
-            if #available(iOS 9.0, *) {
-                imageLeftArrow = imageLeftArrow?.imageFlippedForRightToLeftLayoutDirection()
-                imageRightArrow = imageRightArrow?.imageFlippedForRightToLeftLayoutDirection()
-            }
+            imageLeftArrow = imageLeftArrow?.imageFlippedForRightToLeftLayoutDirection()
+            imageRightArrow = imageRightArrow?.imageFlippedForRightToLeftLayoutDirection()
 
             prev = IQBarButtonItem(image: imageLeftArrow, style: UIBarButtonItemStyle.Plain, target: target, action: previousAction)
             prev.accessibilityLabel = "Toolbar Previous Button"
@@ -907,10 +905,8 @@ public extension UIView {
             var imageRightArrow = UIImage(named: "IQButtonBarArrowRight", inBundle: bundle, compatibleWithTraitCollection: nil)
             
             //Support for RTL languages like Arabic, Persia etc... (Bug ID: #448)
-            if #available(iOS 9.0, *) {
-                imageLeftArrow = imageLeftArrow?.imageFlippedForRightToLeftLayoutDirection()
-                imageRightArrow = imageRightArrow?.imageFlippedForRightToLeftLayoutDirection()
-            }
+            imageLeftArrow = imageLeftArrow?.imageFlippedForRightToLeftLayoutDirection()
+            imageRightArrow = imageRightArrow?.imageFlippedForRightToLeftLayoutDirection()
             
             prev = IQBarButtonItem(image: imageLeftArrow, style: UIBarButtonItemStyle.Plain, target: target, action: previousAction)
             prev.accessibilityLabel = "Toolbar Previous Button"
@@ -1042,12 +1038,10 @@ public extension UIView {
             var imageLeftArrow = UIImage(named: "IQButtonBarArrowLeft", inBundle: bundle, compatibleWithTraitCollection: nil)
             var imageRightArrow = UIImage(named: "IQButtonBarArrowRight", inBundle: bundle, compatibleWithTraitCollection: nil)
             
-            //Support for RTL languages like Arabic, Persia etc... (Bug ID: #448)
-            if #available(iOS 9.0, *) {
-                imageLeftArrow = imageLeftArrow?.imageFlippedForRightToLeftLayoutDirection()
-                imageRightArrow = imageRightArrow?.imageFlippedForRightToLeftLayoutDirection()
-            }
-            
+        //Support for RTL languages like Arabic, Persia etc... (Bug ID: #448)
+            imageLeftArrow = imageLeftArrow?.imageFlippedForRightToLeftLayoutDirection()
+            imageRightArrow = imageRightArrow?.imageFlippedForRightToLeftLayoutDirection()
+
             prev = IQBarButtonItem(image: imageLeftArrow, style: UIBarButtonItemStyle.Plain, target: target, action: previousAction)
             prev.accessibilityLabel = "Toolbar Previous Button"
             

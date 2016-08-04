@@ -24,7 +24,10 @@ class DonutPhsyicsController: UIViewController, UITextFieldDelegate, DirectionCo
     var drew = false
     var viewLoaded = false
     
-    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        spriteView.presentScene(nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,10 +36,6 @@ class DonutPhsyicsController: UIViewController, UITextFieldDelegate, DirectionCo
         let btn = UIButton(type: UIButtonType.InfoLight)
         btn.addTarget(self, action: #selector(CannonPhsyicsController.infoPressed), forControlEvents: .TouchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: btn)
-//        navigationItem.rightBarButtonItem?.target = self
-//        navigationItem.rightBarButtonItem?.action = #selector(CannonPhsyicsController.infoPressed)
-        
-        // Do any additional setup after loading the view.
         
         controlView.layer.cornerRadius = 10
         controlView.clipsToBounds = true

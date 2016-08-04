@@ -21,7 +21,6 @@ class DonutScene: SKScene, SKPhysicsContactDelegate {
 //    let degreesToRadians = Float(M_PI / 180)
     
     func pushDonut(p: CGPoint) {
-        if #available(iOS 9.0, *) {
             donutNode.removeActionForKey("push")
             let applyForce = SKAction.applyForce(CGVector(dx: 20 * p.x, dy: 20 * p.y), duration: 200)
             donutNode.runAction(applyForce, withKey: "push")
@@ -43,10 +42,7 @@ class DonutScene: SKScene, SKPhysicsContactDelegate {
             emitter.emissionAngle = theta
 //            emitter.particlePositionRange = CGVectorMake(0, power)
 //            emitter
-            
-        } else {
-            // Fallback on earlier versions
-        }
+           
     }
     
     override func didMoveToView(view: SKView) {
@@ -93,7 +89,11 @@ class DonutScene: SKScene, SKPhysicsContactDelegate {
    
     
 
-    
+    override func willMoveFromView(view: SKView) {
+        super.willMoveFromView(view)
+        removeAllChildren()
+        removeAllActions()
+    }
 
     
     override func didSimulatePhysics() {
@@ -103,6 +103,9 @@ class DonutScene: SKScene, SKPhysicsContactDelegate {
     
     func didBeginContact(contact: SKPhysicsContact) {
     }
+    
+    
+    
     
     
 }

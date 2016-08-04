@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3D0842511D47BF9800F80155 /* Resistance in a wire_exp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D08424F1D47BF9800F80155 /* Resistance in a wire_exp@2x.png */; };
+		3D03554A1D4E6CF000DD20AE /* Resistance in a Wire_exp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D08424F1D47BF9800F80155 /* Resistance in a Wire_exp@2x.png */; };
 		3D0842521D47BF9800F80155 /* Air Box_exp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D0842501D47BF9800F80155 /* Air Box_exp@2x.png */; };
 		3D0842541D47C02100F80155 /* VIRP_exp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D0842531D47C02100F80155 /* VIRP_exp@2x.png */; };
 		3D2030F31D41646800C4C3BC /* The Flying Donut_exp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D2030F21D41646800C4C3BC /* The Flying Donut_exp@2x.png */; };
@@ -24,7 +24,6 @@
 		3D31747A1D4C2020006D4991 /* FireParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3D3174781D4C2020006D4991 /* FireParticle.sks */; };
 		3D31747B1D4C2020006D4991 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D3174791D4C2020006D4991 /* spark.png */; };
 		3D342C8E1D3FF4C800F7BB43 /* Cannon_exp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D342C8D1D3FF4C800F7BB43 /* Cannon_exp@2x.png */; };
-		3D3DB89B1D41187A00F52482 /* TapNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3DB89A1D41187A00F52482 /* TapNavigationBar.swift */; };
 		3D4B2FB11D40428F009B59EF /* cannon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D4B2FB01D40428F009B59EF /* cannon@2x.png */; };
 		3D4B2FB31D4042A9009B59EF /* cannon_base@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D4B2FB21D4042A9009B59EF /* cannon_base@2x.png */; };
 		3D4B2FB51D404815009B59EF /* SqueezeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4B2FB41D404815009B59EF /* SqueezeButton.swift */; };
@@ -52,17 +51,22 @@
 		3DA637461D468D6A00B0782F /* NeutronScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA637431D468D6A00B0782F /* NeutronScene.swift */; };
 		3DA637481D46911600B0782F /* NeutronPhsyicsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DA637441D468D6A00B0782F /* NeutronPhsyicsController.xib */; };
 		3DB808C91D4A8C940057FEEA /* graph@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DB808C81D4A8C940057FEEA /* graph@2x.png */; };
-		3DD697991D3BDFDF000F4F54 /* PPCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD697981D3BDFDF000F4F54 /* PPCollectionController.swift */; };
-		3DD6979B1D3BE005000F4F54 /* PPCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD6979A1D3BE005000F4F54 /* PPCell.swift */; };
+		3DC47F251D4E51D000F981EC /* AirBoxPhsyicsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC47F221D4E51D000F981EC /* AirBoxPhsyicsController.swift */; };
+		3DC47F261D4E51D000F981EC /* AirBoxPhsyicsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DC47F231D4E51D000F981EC /* AirBoxPhsyicsController.xib */; };
+		3DC47F271D4E51D000F981EC /* AirBoxScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC47F241D4E51D000F981EC /* AirBoxScene.swift */; };
 		3DE065E61CDE6DD600891A66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE065E51CDE6DD600891A66 /* AppDelegate.swift */; };
 		3DE065ED1CDE6DD600891A66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DE065EB1CDE6DD600891A66 /* Main.storyboard */; };
 		3DE065EF1CDE6DD600891A66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DE065EE1CDE6DD600891A66 /* Assets.xcassets */; };
 		3DE065F21CDE6DD600891A66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DE065F01CDE6DD600891A66 /* LaunchScreen.storyboard */; };
 		3DE065FA1CDE705100891A66 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DE065F91CDE705100891A66 /* SpriteKit.framework */; };
+		3DFE44971D4D93A700C958A0 /* ResistivityScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFE44961D4D93A700C958A0 /* ResistivityScene.swift */; };
+		3DFE44991D4D93AD00C958A0 /* ResistivityPhsyicsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFE44981D4D93AD00C958A0 /* ResistivityPhsyicsController.swift */; };
+		3DFE449B1D4D93B200C958A0 /* ResistivityPhsyicsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DFE449A1D4D93B200C958A0 /* ResistivityPhsyicsController.xib */; };
+		3DFE449D1D4D973B00C958A0 /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFE449C1D4D973B00C958A0 /* SceneKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3D08424F1D47BF9800F80155 /* Resistance in a wire_exp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Resistance in a wire_exp@2x.png"; sourceTree = "<group>"; };
+		3D08424F1D47BF9800F80155 /* Resistance in a Wire_exp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Resistance in a Wire_exp@2x.png"; sourceTree = "<group>"; };
 		3D0842501D47BF9800F80155 /* Air Box_exp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Air Box_exp@2x.png"; sourceTree = "<group>"; };
 		3D0842531D47C02100F80155 /* VIRP_exp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VIRP_exp@2x.png"; sourceTree = "<group>"; };
 		3D2030F21D41646800C4C3BC /* The Flying Donut_exp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "The Flying Donut_exp@2x.png"; sourceTree = "<group>"; };
@@ -79,7 +83,6 @@
 		3D3174781D4C2020006D4991 /* FireParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireParticle.sks; sourceTree = "<group>"; };
 		3D3174791D4C2020006D4991 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		3D342C8D1D3FF4C800F7BB43 /* Cannon_exp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cannon_exp@2x.png"; sourceTree = "<group>"; };
-		3D3DB89A1D41187A00F52482 /* TapNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapNavigationBar.swift; sourceTree = "<group>"; };
 		3D4B2FB01D40428F009B59EF /* cannon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cannon@2x.png"; sourceTree = "<group>"; };
 		3D4B2FB21D4042A9009B59EF /* cannon_base@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cannon_base@2x.png"; sourceTree = "<group>"; };
 		3D4B2FB41D404815009B59EF /* SqueezeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SqueezeButton.swift; sourceTree = "<group>"; };
@@ -107,8 +110,9 @@
 		3DA637431D468D6A00B0782F /* NeutronScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeutronScene.swift; sourceTree = "<group>"; };
 		3DA637441D468D6A00B0782F /* NeutronPhsyicsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NeutronPhsyicsController.xib; sourceTree = "<group>"; };
 		3DB808C81D4A8C940057FEEA /* graph@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "graph@2x.png"; sourceTree = "<group>"; };
-		3DD697981D3BDFDF000F4F54 /* PPCollectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPCollectionController.swift; sourceTree = "<group>"; };
-		3DD6979A1D3BE005000F4F54 /* PPCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPCell.swift; sourceTree = "<group>"; };
+		3DC47F221D4E51D000F981EC /* AirBoxPhsyicsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirBoxPhsyicsController.swift; sourceTree = "<group>"; };
+		3DC47F231D4E51D000F981EC /* AirBoxPhsyicsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AirBoxPhsyicsController.xib; sourceTree = "<group>"; };
+		3DC47F241D4E51D000F981EC /* AirBoxScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirBoxScene.swift; sourceTree = "<group>"; };
 		3DE065E21CDE6DD200891A66 /* Physics Phun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Physics Phun.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DE065E51CDE6DD600891A66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DE065EC1CDE6DD600891A66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -116,6 +120,10 @@
 		3DE065F11CDE6DD600891A66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3DE065F31CDE6DD600891A66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DE065F91CDE705100891A66 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		3DFE44961D4D93A700C958A0 /* ResistivityScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResistivityScene.swift; sourceTree = "<group>"; };
+		3DFE44981D4D93AD00C958A0 /* ResistivityPhsyicsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResistivityPhsyicsController.swift; sourceTree = "<group>"; };
+		3DFE449A1D4D93B200C958A0 /* ResistivityPhsyicsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResistivityPhsyicsController.xib; sourceTree = "<group>"; };
+		3DFE449C1D4D973B00C958A0 /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DFE449D1D4D973B00C958A0 /* SceneKit.framework in Frameworks */,
 				3DE065FA1CDE705100891A66 /* SpriteKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,12 +144,11 @@
 			children = (
 				3D3174781D4C2020006D4991 /* FireParticle.sks */,
 				3D3174791D4C2020006D4991 /* spark.png */,
-				3D2030F71D41B20E00C4C3BC /* DonutScene.swift */,
-				3D2030F51D41B20700C4C3BC /* DonutPhsyicsController.swift */,
 				3D2D984B1D430D99000AA1AF /* donut@2x.png */,
 				3D2030FB1D41BE3400C4C3BC /* DirectionControlView.swift */,
+				3D2030F71D41B20E00C4C3BC /* DonutScene.swift */,
+				3D2030F51D41B20700C4C3BC /* DonutPhsyicsController.swift */,
 				3D2030F91D41B21200C4C3BC /* DonutPhsyicsController.xib */,
-				3DE065E51CDE6DD600891A66 /* AppDelegate.swift */,
 			);
 			name = Donut;
 			sourceTree = "<group>";
@@ -192,9 +200,27 @@
 			name = Neutron;
 			sourceTree = "<group>";
 		};
+		3DC47F201D4E50BE00F981EC /* VIRP */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = VIRP;
+			sourceTree = "<group>";
+		};
+		3DC47F211D4E50DB00F981EC /* Air Box */ = {
+			isa = PBXGroup;
+			children = (
+				3DC47F241D4E51D000F981EC /* AirBoxScene.swift */,
+				3DC47F221D4E51D000F981EC /* AirBoxPhsyicsController.swift */,
+				3DC47F231D4E51D000F981EC /* AirBoxPhsyicsController.xib */,
+			);
+			name = "Air Box";
+			sourceTree = "<group>";
+		};
 		3DE065D91CDE6DD200891A66 = {
 			isa = PBXGroup;
 			children = (
+				3DFE449C1D4D973B00C958A0 /* SceneKit.framework */,
 				3DE065F91CDE705100891A66 /* SpriteKit.framework */,
 				3DE065E41CDE6DD500891A66 /* Physics Phun */,
 				3DE065E31CDE6DD200891A66 /* Products */,
@@ -212,30 +238,41 @@
 		3DE065E41CDE6DD500891A66 /* Physics Phun */ = {
 			isa = PBXGroup;
 			children = (
+				3D4B2FD61D40730F009B59EF /* IQ */,
+				3DE065E51CDE6DD600891A66 /* AppDelegate.swift */,
+				3D4B2FB41D404815009B59EF /* SqueezeButton.swift */,
 				3D30E0AF1D4D81AE00A50418 /* InfoTextViewController.swift */,
 				3D30E0B01D4D81AE00A50418 /* InfoTextViewController.xib */,
-				3D4B2FD61D40730F009B59EF /* IQ */,
-				3D2030F41D41B1CF00C4C3BC /* Donut */,
-				3DA637411D46827400B0782F /* Neutron */,
-				3D08424F1D47BF9800F80155 /* Resistance in a wire_exp@2x.png */,
-				3D0842501D47BF9800F80155 /* Air Box_exp@2x.png */,
-				3D0842531D47C02100F80155 /* VIRP_exp@2x.png */,
-				3D26BAFC1CFA02D600B61EB2 /* Cannon */,
-				3DA6373E1D467B3F00B0782F /* Polarized Neutron Reflectometry_exp@2x.png */,
 				3D88C9F21D3FD11B009C639F /* ExperimentCell.swift */,
 				3D88C9F31D3FD11B009C639F /* ExperimentCell.xib */,
 				3D88C9F01D3FD001009C639F /* ExperimentTableController.swift */,
 				3DE065EB1CDE6DD600891A66 /* Main.storyboard */,
+				3DFE44951D4D91E900C958A0 /* Resistivity */,
+				3D2030F41D41B1CF00C4C3BC /* Donut */,
+				3DA637411D46827400B0782F /* Neutron */,
+				3D26BAFC1CFA02D600B61EB2 /* Cannon */,
+				3DC47F201D4E50BE00F981EC /* VIRP */,
+				3DC47F211D4E50DB00F981EC /* Air Box */,
+				3DA6373E1D467B3F00B0782F /* Polarized Neutron Reflectometry_exp@2x.png */,
 				3D2030F21D41646800C4C3BC /* The Flying Donut_exp@2x.png */,
-				3D3DB89A1D41187A00F52482 /* TapNavigationBar.swift */,
-				3D4B2FB41D404815009B59EF /* SqueezeButton.swift */,
-				3DD6979A1D3BE005000F4F54 /* PPCell.swift */,
-				3DD697981D3BDFDF000F4F54 /* PPCollectionController.swift */,
+				3D08424F1D47BF9800F80155 /* Resistance in a Wire_exp@2x.png */,
+				3D0842501D47BF9800F80155 /* Air Box_exp@2x.png */,
+				3D0842531D47C02100F80155 /* VIRP_exp@2x.png */,
 				3DE065EE1CDE6DD600891A66 /* Assets.xcassets */,
 				3DE065F01CDE6DD600891A66 /* LaunchScreen.storyboard */,
 				3DE065F31CDE6DD600891A66 /* Info.plist */,
 			);
 			path = "Physics Phun";
+			sourceTree = "<group>";
+		};
+		3DFE44951D4D91E900C958A0 /* Resistivity */ = {
+			isa = PBXGroup;
+			children = (
+				3DFE44961D4D93A700C958A0 /* ResistivityScene.swift */,
+				3DFE44981D4D93AD00C958A0 /* ResistivityPhsyicsController.swift */,
+				3DFE449A1D4D93B200C958A0 /* ResistivityPhsyicsController.xib */,
+			);
+			name = Resistivity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,6 +340,7 @@
 				3DE065F21CDE6DD600891A66 /* LaunchScreen.storyboard in Resources */,
 				3DB808C91D4A8C940057FEEA /* graph@2x.png in Resources */,
 				3D31747A1D4C2020006D4991 /* FireParticle.sks in Resources */,
+				3DC47F261D4E51D000F981EC /* AirBoxPhsyicsController.xib in Resources */,
 				3D31747B1D4C2020006D4991 /* spark.png in Resources */,
 				3DE065EF1CDE6DD600891A66 /* Assets.xcassets in Resources */,
 				3DE065ED1CDE6DD600891A66 /* Main.storyboard in Resources */,
@@ -311,11 +349,12 @@
 				3D2030FA1D41B21200C4C3BC /* DonutPhsyicsController.xib in Resources */,
 				3D0842541D47C02100F80155 /* VIRP_exp@2x.png in Resources */,
 				3D88C9F51D3FD11B009C639F /* ExperimentCell.xib in Resources */,
+				3DFE449B1D4D93B200C958A0 /* ResistivityPhsyicsController.xib in Resources */,
 				3D0842521D47BF9800F80155 /* Air Box_exp@2x.png in Resources */,
 				3D30E0B21D4D81AE00A50418 /* InfoTextViewController.xib in Resources */,
 				3D342C8E1D3FF4C800F7BB43 /* Cannon_exp@2x.png in Resources */,
 				3D4B2FB11D40428F009B59EF /* cannon@2x.png in Resources */,
-				3D0842511D47BF9800F80155 /* Resistance in a wire_exp@2x.png in Resources */,
+				3D03554A1D4E6CF000DD20AE /* Resistance in a Wire_exp@2x.png in Resources */,
 				3DA637481D46911600B0782F /* NeutronPhsyicsController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,14 +376,16 @@
 				3D30E0B11D4D81AE00A50418 /* InfoTextViewController.swift in Sources */,
 				3D4B2FD41D407185009B59EF /* IQUIViewController+Additions.swift in Sources */,
 				3D2030F81D41B20E00C4C3BC /* DonutScene.swift in Sources */,
+				3DC47F251D4E51D000F981EC /* AirBoxPhsyicsController.swift in Sources */,
 				3D4B2FBC1D407164009B59EF /* IQKeyboardManagerConstants.swift in Sources */,
 				3D4B2FD31D407185009B59EF /* IQUIView+Hierarchy.swift in Sources */,
 				3D26BAF71CFA025A00B61EB2 /* CannonScene.swift in Sources */,
-				3DD6979B1D3BE005000F4F54 /* PPCell.swift in Sources */,
+				3DFE44971D4D93A700C958A0 /* ResistivityScene.swift in Sources */,
 				3D4B2FC91D407179009B59EF /* IQUIView+IQKeyboardToolbar.swift in Sources */,
 				3D26BAF81CFA025A00B61EB2 /* CannonPhsyicsController.swift in Sources */,
 				3D4B2FB71D4070CF009B59EF /* IQKeyboardManager.swift in Sources */,
 				3D4B2FC51D407179009B59EF /* IQBarButtonItem.swift in Sources */,
+				3DFE44991D4D93AD00C958A0 /* ResistivityPhsyicsController.swift in Sources */,
 				3D4B2FD51D407185009B59EF /* IQUIWindow+Hierarchy.swift in Sources */,
 				3D2030F61D41B20700C4C3BC /* DonutPhsyicsController.swift in Sources */,
 				3DA637461D468D6A00B0782F /* NeutronScene.swift in Sources */,
@@ -354,10 +395,9 @@
 				3D4B2FD21D407185009B59EF /* IQUITextFieldView+Additions.swift in Sources */,
 				3D4B2FC71D407179009B59EF /* IQTitleBarButtonItem.swift in Sources */,
 				3D4B2FD01D407185009B59EF /* IQNSArray+Sort.swift in Sources */,
-				3DD697991D3BDFDF000F4F54 /* PPCollectionController.swift in Sources */,
-				3D3DB89B1D41187A00F52482 /* TapNavigationBar.swift in Sources */,
 				3D4B2FBF1D40716D009B59EF /* IQTextView.swift in Sources */,
 				3D4B2FC81D407179009B59EF /* IQToolbar.swift in Sources */,
+				3DC47F271D4E51D000F981EC /* AirBoxScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,7 +514,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Physics Phun/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "omaralejel.Physics-Phun";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -488,7 +528,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Physics Phun/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "omaralejel.Physics-Phun";
 				PRODUCT_NAME = "$(TARGET_NAME)";
