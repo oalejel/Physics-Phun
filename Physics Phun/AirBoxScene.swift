@@ -14,9 +14,9 @@ class Particle: SCNNode {
     var motionPaused = false
     
     func pauseMotion() {
-        //if physicsBody!.velocity.x + physicsBody!.velocity.y + physicsBody!.velocity.z != 0 {
+        if physicsBody!.velocity.x + physicsBody!.velocity.y + physicsBody!.velocity.z != 0 {
             storedVelocity = physicsBody!.velocity
-        //}
+        }
         physicsBody!.velocity = SCNVector3Make(0, 0, 0)
         motionPaused = true
     }
@@ -58,6 +58,12 @@ class AirBoxScene: SCNScene, SCNPhysicsContactDelegate {
         physicsWorld.gravity = SCNVector3Make(0, 0, 0)
         
         let edgeVector = SCNVector3Make(10, 0.5, 0.5)
+
+        let camNode = SCNNode()
+        camNode.camera = SCNCamera()
+        
+        camNode.position = SCNVector3Make(0,0,15)
+        rootNode.addChildNode(camNode)
         
         func edge(vector: SCNVector3) -> SCNNode {
             let edgeGeo = SCNBox(width: CGFloat(vector.x), height: CGFloat(vector.y), length: CGFloat(vector.z), chamferRadius: 0.2)
@@ -90,20 +96,20 @@ class AirBoxScene: SCNScene, SCNPhysicsContactDelegate {
             sumNode.addChildNode(edge3)
             sumNode.addChildNode(edge4)
             
-            let plane2Geometry = SCNBox(width: CGFloat(vector.x), height: CGFloat(vector.x), length: 0.2, chamferRadius: 0)
-            let plane2Node = SCNNode(geometry: plane2Geometry)
-            plane2Node.opacity = 0.5
-            plane2Node.physicsBody = SCNPhysicsBody(type: SCNPhysicsBodyType.Kinematic, shape: SCNPhysicsShape(geometry: plane2Geometry, options: nil))
-            plane2Node.position = SCNVector3Make(vector.x / -2, 0, -0.1)
+            let planeGeometry = SCNBox(width: CGFloat(vector.x), height: CGFloat(vector.x), length: 0.2, chamferRadius: 0)
+            let planeNode = SCNNode(geometry: planeGeometry)
+            planeNode.opacity = 0.3
+            planeNode.physicsBody = SCNPhysicsBody(type: SCNPhysicsBodyType.Kinematic, shape: SCNPhysicsShape(geometry: planeGeometry, options: nil))
+            planeNode.position = SCNVector3Make(vector.x / -2, 0, -0.1)
             
-            plane2Node.physicsBody?.collisionBitMask = sphereBitMask
-            plane2Node.physicsBody?.categoryBitMask = boxBitMask
-            plane2Node.physicsBody?.contactTestBitMask = sphereBitMask
-            plane2Node.physicsBody?.friction = 0
-            plane2Node.physicsBody?.restitution =  1
-            plane2Node.physicsBody?.damping = 0
+            planeNode.physicsBody?.collisionBitMask = sphereBitMask
+            planeNode.physicsBody?.categoryBitMask = boxBitMask
+            planeNode.physicsBody?.contactTestBitMask = sphereBitMask
+            planeNode.physicsBody?.friction = 0
+            planeNode.physicsBody?.restitution =  1
+            planeNode.physicsBody?.damping = 0
             
-            sumNode.addChildNode(plane2Node)
+            sumNode.addChildNode(planeNode)
             
 //            let planeGeometry = SCNBox(width: CGFloat(vector.x), height: CGFloat(vector.x), length: 0.2, chamferRadius: 0)
 //            let planeNode = SCNNode(geometry: planeGeometry)
@@ -166,9 +172,10 @@ class AirBoxScene: SCNScene, SCNPhysicsContactDelegate {
 //        rootNode.camera = camera
     }
     
-    func generateParticles(count: Int) {
+    func generateParticles(count: Int, redRatio: CGFloat) {
         for _ in 0..<count {
             let sphereGeo = SCNSphere(radius: 0.25)
+            sphereGeo.firstMaterial?.diffuse.contents = UIColor(red: redRatio, green: 0.18, blue: 0.54, alpha: 1)
             let sphereNode = Particle()
             sphereNode.geometry = sphereGeo
             sphereNode.position = SCNVector3Make(0, 0, 0)
@@ -203,6 +210,17 @@ class AirBoxScene: SCNScene, SCNPhysicsContactDelegate {
             }
         }
     }
+    
+    func updateSpherePressure(redRatio: CGFloat) {
+        for s in spheres {
+            s.geometry!.firstMaterial?.diffuse.contents = UIColor(red: redRatio, green: 0.18, blue: 0.54, alpha: 1)
+        }
+    }
+    
+    func updateSphereTemperature(speed: CGFloat) {
+        physicsWorld.speed = speed
+    }
+    
     
     func physicsWorld(world: SCNPhysicsWorld, didBeginContact contact: SCNPhysicsContact) {
         guard reflectionAllowed else {return}
@@ -250,6 +268,8 @@ class AirBoxScene: SCNScene, SCNPhysicsContactDelegate {
         
         return SCNVector3Make(x, y, z)
     }
+    
+    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

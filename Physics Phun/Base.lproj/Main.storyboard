@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hSa-5v-H5O">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hSa-5v-H5O">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
@@ -30,7 +29,7 @@
             </objects>
             <point key="canvasLocation" x="-453" y="211"/>
         </scene>
-        <!--Φ-->
+        <!--Simulations-->
         <scene sceneID="nlG-Tj-w1D">
             <objects>
                 <tableViewController id="jRB-nR-3yi" customClass="ExperimentTableController" customModule="Physics_Phun" customModuleProvider="target" sceneMemberID="viewController">
@@ -44,7 +43,7 @@
                             <outlet property="delegate" destination="jRB-nR-3yi" id="ApL-eF-EvX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Φ" id="uzt-Tl-0cU"/>
+                    <navigationItem key="navigationItem" title="Simulations" id="uzt-Tl-0cU"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GSO-Pt-VKK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

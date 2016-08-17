@@ -11,16 +11,17 @@ import UIKit
 class ExperimentTableController: UITableViewController, UINavigationControllerDelegate {
     
     private let cellID = "cell"
+    private let infoCellID = "infoCell"
     let bounds = UIScreen.mainScreen().bounds
     
     var experiments: [[(demoName: String, demoClass: AnyClass)]] = [
         [("Cannon", CannonPhsyicsController.self), ("The Flying Donut", DonutPhsyicsController.self)],
         [("Air Box", AirBoxPhsyicsController.self)],
-        [("VIRP", CannonPhsyicsController.self), ("Resistance in a Wire", ResistivityPhsyicsController.self)],
-        [("Polarized Neutron Reflectometry", NeutronPhsyicsController.self)]
+        [("Circuit VIRP", VIRPPhsyicsController.self), ("Resistance in a Wire", ResistivityPhsyicsController.self)],
+        //[("Polarized Neutron Reflectometry", NeutronPhsyicsController.self)]
     ]
     
-    var experimentSectionTitles = ["Motion and Forces 🚀", "Gases 🌫", "Electricity & Circuits ⚡️", "Solid State Physics ⚛"]
+    var experimentSectionTitles = ["Motion and Forces 🚀", "Gases 🌫", "Electricity & Circuits ⚡️"]//, "Solid State Physics ⚛"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +29,8 @@ class ExperimentTableController: UITableViewController, UINavigationControllerDe
         navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         
         tableView.registerNib(UINib(nibName: "ExperimentCell", bundle: nil), forCellReuseIdentifier: cellID)
-        tableView.rowHeight = bounds.size.width * 0.6
+        
+        tableView.registerNib(UINib(nibName: "InfoCell", bundle: nil), forCellReuseIdentifier: infoCellID)
         
         navigationController?.delegate = self
         
@@ -45,11 +47,15 @@ class ExperimentTableController: UITableViewController, UINavigationControllerDe
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return experiments.count
+        return experiments.count + 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if section >= experiments.count {
+            print("never mind")
+            return 1
+        }
         return experiments[section].count
     }
     
@@ -70,20 +76,39 @@ class ExperimentTableController: UITableViewController, UINavigationControllerDe
         
         let header = UITableViewHeaderFooterView(reuseIdentifier: "header")
         header.contentView.backgroundColor = UIColor(white: 0.9, alpha: 1)
-        header.textLabel?.text = "  \(experimentSectionTitles[section])"
+        header.textLabel?.text = "\(experimentSectionTitles[section])"
         header.textLabel?.textColor = UIColor.lightGrayColor()
         return header
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section >= experiments.count {
+            return 0
+        }
         return 30
     }
     
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.section < experiments.count {
+            return bounds.size.width * 0.6
+        }
+        
+        return bounds.size.width * 0.3
+    }
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        if indexPath.section >= experiments.count {
+            if let c = tableView.dequeueReusableCellWithIdentifier(infoCellID) as? InfoCell {
+                return c
+            }
+        }
+        
         guard let cell = tableView.dequeueReusableCellWithIdentifier(cellID, forIndexPath: indexPath) as? ExperimentCell else {
             return UITableViewCell()
         }
         
+
         cell.selectionStyle = .Gray
         cell.experimentImageButton.imageView?.contentMode = .ScaleAspectFit
         
@@ -102,11 +127,12 @@ class ExperimentTableController: UITableViewController, UINavigationControllerDe
  
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
-        let experimentClass = experiments[indexPath.section][indexPath.row].demoClass as! UIViewController.Type
-        let viewController = experimentClass.init()
-        
-        navigationController?.pushViewController(viewController, animated: true)
+        if indexPath.section < experiments.count {
+            let experimentClass = experiments[indexPath.section][indexPath.row].demoClass as! UIViewController.Type
+            let viewController = experimentClass.init()
+            
+            navigationController?.pushViewController(viewController, animated: true)
+        }
     }
 
     
