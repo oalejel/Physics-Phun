@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VIRPPhsyicsController" customModule="Physics_Phun" customModuleProvider="target">
+            <connections>
+                <outlet property="currentField" destination="MMz-cP-pJT" id="URb-Z7-teo"/>
+                <outlet property="currentSlider" destination="0Rw-D3-EVe" id="Eyn-Os-OwQ"/>
+                <outlet property="powerLabel" destination="Piw-8l-eqz" id="2U9-SS-h1S"/>
+                <outlet property="resistanceField" destination="mcD-Z9-vYq" id="sVW-US-Gac"/>
+                <outlet property="resistanceSlider" destination="OVH-eC-0zm" id="vtN-qn-nOU"/>
+                <outlet property="spriteView" destination="mpz-D2-yz6" id="VSQ-LX-a83"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="diZ-E7-eVc"/>
+                <outlet property="voltageField" destination="kVP-ko-Omk" id="kQX-zi-lXo"/>
+                <outlet property="voltageSlider" destination="HoP-il-BLt" id="8qk-LL-96f"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mpz-D2-yz6" customClass="SKView">
+                    <rect key="frame" x="0.0" y="64" width="600" height="242"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P = 1 W" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Piw-8l-eqz">
+                    <rect key="frame" x="19" y="330" width="58" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P = IV = I^2 x V = V^2 / R" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Irk-M6-dlE">
+                    <rect key="frame" x="404" y="340" width="188" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="V = IR" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YkN-jq-kGg">
+                    <rect key="frame" x="404" y="314" width="46" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="jfV-R0-hV8">
+                    <rect key="frame" x="8" y="369" width="584" height="223"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="gfH-9Q-aqC">
+                            <rect key="frame" x="0.0" y="0.0" width="584" height="74"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cUY-m6-V7T">
+                                    <rect key="frame" x="0.0" y="0.0" width="584" height="30"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="V: Voltage [V]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHm-fU-qza">
+                                            <rect key="frame" x="0.0" y="0.0" width="105" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="25" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kVP-ko-Omk">
+                                            <rect key="frame" x="113" y="0.0" width="471" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                                            <connections>
+                                                <action selector="voltageFieldEdited:" destination="-1" eventType="editingDidEnd" id="FyP-OM-eKp"/>
+                                            </connections>
+                                        </textField>
+                                    </subviews>
+                                </stackView>
+                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="25" minValue="1" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="HoP-il-BLt">
+                                    <rect key="frame" x="-2" y="30" width="588" height="45"/>
+                                    <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <connections>
+                                        <action selector="voltageSliderChanged:" destination="-1" eventType="valueChanged" id="QU3-pp-vt9"/>
+                                    </connections>
+                                </slider>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="HoP-il-BLt" secondAttribute="trailing" id="SbU-mx-NuE"/>
+                                <constraint firstAttribute="trailing" secondItem="kVP-ko-Omk" secondAttribute="trailing" id="z48-LS-j3S"/>
+                            </constraints>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="A0y-qK-2Fm">
+                            <rect key="frame" x="0.0" y="74" width="584" height="75"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="OAe-E4-GXK">
+                                    <rect key="frame" x="0.0" y="0.0" width="584" height="30"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I: Current [A]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LjW-th-cvl">
+                                            <rect key="frame" x="0.0" y="0.0" width="99" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="5" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MMz-cP-pJT">
+                                            <rect key="frame" x="107" y="0.0" width="477" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                                            <connections>
+                                                <action selector="currentFieldChanged:" destination="-1" eventType="editingDidEnd" id="YGH-Gh-nol"/>
+                                            </connections>
+                                        </textField>
+                                    </subviews>
+                                </stackView>
+                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="0Rw-D3-EVe">
+                                    <rect key="frame" x="-2" y="30" width="588" height="46"/>
+                                    <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <connections>
+                                        <action selector="currentSliderChanged:" destination="-1" eventType="valueChanged" id="kMJ-fx-5ey"/>
+                                    </connections>
+                                </slider>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="0Rw-D3-EVe" secondAttribute="trailing" id="JxG-FT-9AL"/>
+                                <constraint firstAttribute="trailing" secondItem="MMz-cP-pJT" secondAttribute="trailing" id="rDj-31-Fbs"/>
+                            </constraints>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="oFU-r5-gkz">
+                            <rect key="frame" x="0.0" y="149" width="584" height="74"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5G8-kr-7WN">
+                                    <rect key="frame" x="0.0" y="0.0" width="584" height="30"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R: Resistance [Ω]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1U2-6e-HWv">
+                                            <rect key="frame" x="0.0" y="0.0" width="133" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="5" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mcD-Z9-vYq">
+                                            <rect key="frame" x="141" y="0.0" width="443" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                                            <connections>
+                                                <action selector="resistanceFieldChanged:" destination="-1" eventType="editingDidEnd" id="WWW-Ex-9D9"/>
+                                            </connections>
+                                        </textField>
+                                    </subviews>
+                                </stackView>
+                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="OVH-eC-0zm">
+                                    <rect key="frame" x="-2" y="30" width="588" height="45"/>
+                                    <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <connections>
+                                        <action selector="resistanceSliderChanged:" destination="-1" eventType="valueChanged" id="RR8-Ac-UPU"/>
+                                    </connections>
+                                </slider>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="OVH-eC-0zm" secondAttribute="trailing" id="TZc-jb-PJk"/>
+                                <constraint firstAttribute="trailing" secondItem="mcD-Z9-vYq" secondAttribute="trailing" id="sr1-Ak-ge3"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="gfH-9Q-aqC" secondAttribute="trailing" id="2j1-W7-oMO"/>
+                        <constraint firstAttribute="trailing" secondItem="A0y-qK-2Fm" secondAttribute="trailing" id="Jpt-sq-MCA"/>
+                        <constraint firstAttribute="trailing" secondItem="oFU-r5-gkz" secondAttribute="trailing" id="v2n-Vs-5GN"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="0.13725490200000001" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="Piw-8l-eqz" firstAttribute="top" secondItem="mpz-D2-yz6" secondAttribute="bottom" constant="24" id="1Di-PA-OSh"/>
+                <constraint firstItem="Irk-M6-dlE" firstAttribute="leading" secondItem="YkN-jq-kGg" secondAttribute="leading" id="6TS-IT-XeA"/>
+                <constraint firstItem="mpz-D2-yz6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="7JR-PJ-1eq"/>
+                <constraint firstItem="YkN-jq-kGg" firstAttribute="top" secondItem="mpz-D2-yz6" secondAttribute="bottom" constant="8" id="Blq-ID-Le2"/>
+                <constraint firstAttribute="bottom" secondItem="jfV-R0-hV8" secondAttribute="bottom" constant="8" id="HQz-Lb-idA"/>
+                <constraint firstItem="jfV-R0-hV8" firstAttribute="top" secondItem="Irk-M6-dlE" secondAttribute="bottom" constant="8" id="U0F-9c-he8"/>
+                <constraint firstItem="mpz-D2-yz6" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.45" constant="-28" id="b2r-y4-DMt"/>
+                <constraint firstAttribute="trailing" secondItem="mpz-D2-yz6" secondAttribute="trailing" id="diB-f0-0xq"/>
+                <constraint firstItem="jfV-R0-hV8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="dt6-Zn-ueC"/>
+                <constraint firstItem="Irk-M6-dlE" firstAttribute="top" secondItem="YkN-jq-kGg" secondAttribute="bottom" constant="5" id="mvk-TY-gtP"/>
+                <constraint firstAttribute="trailing" secondItem="Irk-M6-dlE" secondAttribute="trailing" constant="8" id="qjP-3h-enJ"/>
+                <constraint firstItem="Piw-8l-eqz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="19" id="vuO-qq-dxU"/>
+                <constraint firstAttribute="trailing" secondItem="jfV-R0-hV8" secondAttribute="trailing" constant="8" id="zQf-sb-GAE"/>
+                <constraint firstItem="mpz-D2-yz6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="zZM-mD-Kb2"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+        </view>
+    </objects>
+</document>

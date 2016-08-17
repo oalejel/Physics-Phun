@@ -37,12 +37,14 @@ class NeutronPhsyicsController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         navigationItem.title = "PNR 🔴"
+        /*
         let btn = UIButton(type: UIButtonType.InfoLight)
         btn.addTarget(self, action: #selector(CannonPhsyicsController.infoPressed), forControlEvents: .TouchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: btn)
+ */
         
-        spriteView.showsFPS = true
-        spriteView.showsNodeCount = true
+        spriteView.showsFPS = false
+        spriteView.showsNodeCount = false
         viewLoaded = true
     }
     

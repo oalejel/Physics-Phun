@@ -24,6 +24,9 @@ class DonutPhsyicsController: UIViewController, UITextFieldDelegate, DirectionCo
     var drew = false
     var viewLoaded = false
     
+    var accelerationChart: LineChart!
+    var velocityChart: LineChart!
+    
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         spriteView.presentScene(nil)
@@ -33,18 +36,18 @@ class DonutPhsyicsController: UIViewController, UITextFieldDelegate, DirectionCo
         super.viewDidLoad()
 
         navigationItem.title = "The Flying Donut 🍩"
+/*
         let btn = UIButton(type: UIButtonType.InfoLight)
         btn.addTarget(self, action: #selector(CannonPhsyicsController.infoPressed), forControlEvents: .TouchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: btn)
+ */
         
         controlView.layer.cornerRadius = 10
         controlView.clipsToBounds = true
         
-        spriteView.showsFPS = true
-        spriteView.showsNodeCount = true
+        spriteView.showsFPS = false
+        spriteView.showsNodeCount = false
         viewLoaded = true
-        
-        controlView.directionDelegate = self
     }
     
     func infoPressed() {
@@ -110,9 +113,49 @@ class DonutPhsyicsController: UIViewController, UITextFieldDelegate, DirectionCo
                 spriteScene.backgroundColor = UIColor.whiteColor()
                 spriteScene.scaleMode = .AspectFit
                 spriteView.presentScene(spriteScene)
+                spriteScene.donutController = self
                 drew = true
+                
+                controlView.directionDelegate = self
+                
+                
+                accelerationChart = LineChart(frame: CGRectMake(0, spriteView.frame.origin.y, 100, 100))
+                accelerationChart.addLine([0])
+                
+                accelerationChart.animation.enabled = false
+                accelerationChart.lineWidth = 1
+                accelerationChart.dots.innerRadiusHighlighted = 0
+                view.addSubview(accelerationChart)
+                
+                let accelerationLabel = UILabel()
+                accelerationLabel.text = "Acceleration"
+                
+                accelerationLabel.textColor = UIColor.blueColor()
+                accelerationLabel.font = UIFont(name: "Helvetica", size: 10)
+                view.addSubview(accelerationLabel)
+                accelerationLabel.sizeToFit()
+                accelerationLabel.center = accelerationChart.center
+                
+                
+                velocityChart = LineChart(frame: CGRectMake(spriteView.frame.size.width - 100, spriteView.frame.origin.y, 100, 100))
+                velocityChart.addLine([0])
+                
+                velocityChart.animation.enabled = false
+                velocityChart.lineWidth = 1
+                velocityChart.dots.innerRadiusHighlighted = 0
+                velocityChart.colors = [UIColor.redColor()]
+                
+                view.addSubview(velocityChart)
+                
+                let velocityLabel = UILabel()
+                velocityLabel.text = "Speed"
+                
+                velocityLabel.textColor = UIColor.redColor()
+                velocityLabel.font = UIFont(name: "Helvetica", size: 10)
+                view.addSubview(velocityLabel)
+                velocityLabel.sizeToFit()
+                velocityLabel.center = velocityChart.center
             }
-            
         } else {
             spriteScene.size = spriteView.frame.size
         }

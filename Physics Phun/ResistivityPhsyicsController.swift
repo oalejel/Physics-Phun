@@ -39,9 +39,11 @@ class ResistivityPhsyicsController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         navigationItem.title = "Resistance 🚰"
+        /*
         let btn = UIButton(type: UIButtonType.InfoLight)
         btn.addTarget(self, action: #selector(CannonPhsyicsController.infoPressed), forControlEvents: .TouchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: btn)
+ */
 //        navigationItem.rightBarButtonItem?.target = self
 //        navigationItem.rightBarButtonItem?.action = #selector(CannonPhsyicsController.infoPressed)
         

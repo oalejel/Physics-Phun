@@ -35,9 +35,11 @@ class CannonPhsyicsController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         navigationItem.title = "Cannon 🚀"
+        /*
         let btn = UIButton(type: UIButtonType.InfoLight)
         btn.addTarget(self, action: #selector(CannonPhsyicsController.infoPressed), forControlEvents: .TouchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: btn)
+ */
 //        navigationItem.rightBarButtonItem?.target = self
 //        navigationItem.rightBarButtonItem?.action = #selector(CannonPhsyicsController.infoPressed)
         
@@ -45,8 +47,8 @@ class CannonPhsyicsController: UIViewController, UITextFieldDelegate {
         
         angleField.delegate = self
         
-        spriteView.showsFPS = true
-        spriteView.showsNodeCount = true
+        spriteView.showsFPS = false
+        spriteView.showsNodeCount = false
         viewLoaded = true
         
     }

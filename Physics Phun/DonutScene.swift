@@ -16,6 +16,28 @@ class DonutScene: SKScene, SKPhysicsContactDelegate {
     
     var didDraw = false
     
+    weak var donutController: DonutPhsyicsController!
+    
+    var pastAccelerations: [CGFloat] = [0.0] {
+        didSet {
+            if pastAccelerations.count > 60 {
+                pastAccelerations.removeFirst()
+            }
+            donutController.accelerationChart.clear()
+            donutController.accelerationChart.addLine(pastAccelerations)
+        }
+    }
+    
+    var pastVelocities: [CGFloat] = [0.0] {
+        didSet {
+            if pastVelocities.count > 60 {
+                pastVelocities.removeFirst()
+            }
+            donutController.velocityChart.clear()
+            donutController.velocityChart.addLine(pastVelocities)
+        }
+    }
+    
 //    var framesAfterLaunch = 0
     
 //    let degreesToRadians = Float(M_PI / 180)
@@ -23,6 +45,7 @@ class DonutScene: SKScene, SKPhysicsContactDelegate {
     func pushDonut(p: CGPoint) {
             donutNode.removeActionForKey("push")
             let applyForce = SKAction.applyForce(CGVector(dx: 20 * p.x, dy: 20 * p.y), duration: 200)
+            pastAccelerations.append(sqrt(pow(p.x, 2) + pow(p.y, 2)))
             donutNode.runAction(applyForce, withKey: "push")
             
             let power = sqrt(pow(p.x, 2) + pow(p.y, 2))
@@ -35,9 +58,7 @@ class DonutScene: SKScene, SKPhysicsContactDelegate {
                 theta = theta + CGFloat(M_PI)
             }
             
-            print(theta
-            
-            )
+            print(theta)
             
             emitter.emissionAngle = theta
 //            emitter.particlePositionRange = CGVectorMake(0, power)
@@ -83,7 +104,6 @@ class DonutScene: SKScene, SKPhysicsContactDelegate {
             emitter.particleBirthRate = 0.0001
             donutNode.addChild(emitter)
         }
-                
     }
     
    
@@ -97,8 +117,11 @@ class DonutScene: SKScene, SKPhysicsContactDelegate {
 
     
     override func didSimulatePhysics() {
-        print(donutNode.physicsBody?.velocity)
+        let v = donutNode.physicsBody!.velocity
+        let speed = sqrt(pow(v.dx, 2) + pow(v.dy, 2))
+        pastVelocities.append(speed)
         
+        pastAccelerations.append(pastAccelerations.last!)
     }
     
     func didBeginContact(contact: SKPhysicsContact) {

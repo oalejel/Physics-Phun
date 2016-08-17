@@ -11,11 +11,13 @@ import UIKit
 class InfoTextViewController: UIViewController {
     
     @IBOutlet var textView: UITextView!
+    var textViewString = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        textView.text = textViewString
     }
 
     override func didReceiveMemoryWarning() {
