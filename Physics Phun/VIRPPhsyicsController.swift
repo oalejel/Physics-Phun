@@ -55,7 +55,7 @@ class VIRPPhsyicsController: UIViewController, UITextFieldDelegate {
 //        navigationItem.rightBarButtonItem?.target = self
 //        navigationItem.rightBarButtonItem?.action = #selector(CannonPhsyicsController.infoPressed)
         
-        // Do any additional setup after loading the view.
+        // Do any nadditional setup after loading the view.
         
         
         spriteView.showsFPS = false
