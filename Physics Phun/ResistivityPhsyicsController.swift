@@ -11,7 +11,7 @@ import SceneKit
 
 class ResistivityPhsyicsController: UIViewController, UITextFieldDelegate {
 
-    let bounds = UIScreen.mainScreen().bounds
+    let bounds = UIScreen.main.bounds
     
     var visibleRect: CGRect!
     
@@ -102,18 +102,18 @@ class ResistivityPhsyicsController: UIViewController, UITextFieldDelegate {
     
     
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
-    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for v in view.subviews {
             v.resignFirstResponder()
         }
@@ -121,11 +121,11 @@ class ResistivityPhsyicsController: UIViewController, UITextFieldDelegate {
     
     
     
-    override func canBecomeFirstResponder() -> Bool {
+    override var canBecomeFirstResponder : Bool {
         return true
     }
     
-    override func canResignFirstResponder() -> Bool {
+    override var canResignFirstResponder : Bool {
         return true
     }
     
@@ -135,30 +135,30 @@ class ResistivityPhsyicsController: UIViewController, UITextFieldDelegate {
  
     
 
-    @IBAction func resistivitySliderMoved(sender: UISlider) {
+    @IBAction func resistivitySliderMoved(_ sender: UISlider) {
         rohValue = sender.value
-        experimentScene.rohTextNode.runAction(SCNAction.scaleTo(CGFloat(rohValue), duration: 0.1))
+        experimentScene.rohTextNode.runAction(SCNAction.scale(to: CGFloat(rohValue), duration: 0.1))
         resistivityLabel.text = "ρ: Resistivity [Ωm] = \(Float(round(sender.value * 100)) / 100) Ωm"
         updateResistanceAndWire()
     }
     
-    @IBAction func lengthSliderMoved(sender: UISlider) {
+    @IBAction func lengthSliderMoved(_ sender: UISlider) {
         lengthValue = sender.value
-        experimentScene.lengthTextNode.runAction(SCNAction.scaleTo(CGFloat(lengthValue), duration: 0.1))
+        experimentScene.lengthTextNode.runAction(SCNAction.scale(to: CGFloat(lengthValue), duration: 0.1))
         lengthLabel.text = "L: Length [m] = \(Float(round(sender.value * 100)) / 100) m"
         updateResistanceAndWire()
     }
 
-    @IBAction func areaSliderMoved(sender: UISlider) {
+    @IBAction func areaSliderMoved(_ sender: UISlider) {
         areaValue = sender.value
-        experimentScene.areaTextNode.runAction(SCNAction.scaleTo(CGFloat(areaValue), duration: 0.1))
+        experimentScene.areaTextNode.runAction(SCNAction.scale(to: CGFloat(areaValue), duration: 0.1))
         areaLabel.text = "A: Area [m^2] = \(Float(round(sender.value * 100)) / 100) m^2"
         updateResistanceAndWire()
     }
     
     func updateResistanceAndWire() {
         let rScale = (rohValue * lengthValue) / areaValue
-        experimentScene.rTextNode.runAction(SCNAction.scaleTo(CGFloat(rScale), duration: 0.1))
+        experimentScene.rTextNode.runAction(SCNAction.scale(to: CGFloat(rScale), duration: 0.1))
         
         experimentScene.wireNode.scale = SCNVector3Make(areaValue, lengthValue, areaValue)
         experimentScene.wireNode.opacity = CGFloat(rohValue / 3)

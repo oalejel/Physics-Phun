@@ -11,7 +11,7 @@ import SpriteKit
 
 class VIRPPhsyicsController: UIViewController, UITextFieldDelegate {
 
-    let bounds = UIScreen.mainScreen().bounds
+    let bounds = UIScreen.main.bounds
     
     var spriteScene: VIRPScene!
     
@@ -20,7 +20,6 @@ class VIRPPhsyicsController: UIViewController, UITextFieldDelegate {
     var visibleRect: CGRect!
     
     var drew = false
-    var viewLoaded = false
     
     var voltageValue: Float = 10
     var currentValue: Float = 1
@@ -60,7 +59,7 @@ class VIRPPhsyicsController: UIViewController, UITextFieldDelegate {
         
         spriteView.showsFPS = false
         spriteView.showsNodeCount = false
-        viewLoaded = true
+//        isViewLoaded = true
     }
     
     func infoPressed() {
@@ -69,21 +68,21 @@ class VIRPPhsyicsController: UIViewController, UITextFieldDelegate {
     
     
     //sliders change
-    @IBAction func voltageSliderChanged(sender: UISlider) {
+    @IBAction func voltageSliderChanged(_ sender: UISlider) {
         updateVariables(sender)
     }
     
-    @IBAction func currentSliderChanged(sender: UISlider) {
+    @IBAction func currentSliderChanged(_ sender: UISlider) {
         updateVariables(sender)
     }
     
-    @IBAction func resistanceSliderChanged(sender: UISlider) {
+    @IBAction func resistanceSliderChanged(_ sender: UISlider) {
         //update other variables!
         updateVariables(sender)
     }
     
     //fields change
-    @IBAction func voltageFieldEdited(sender: UITextField) {
+    @IBAction func voltageFieldEdited(_ sender: UITextField) {
         guard var number = Float(sender.text!) else {
             let defaultValue: Float = 5
             sender.text = "\(defaultValue)"
@@ -106,7 +105,7 @@ class VIRPPhsyicsController: UIViewController, UITextFieldDelegate {
         updateVariables(voltageSlider)
     }
     
-    @IBAction func currentFieldChanged(sender: UITextField) {
+    @IBAction func currentFieldChanged(_ sender: UITextField) {
         guard var number = Float(sender.text!) else {
             let defaultValue: Float = 5
             sender.text = "\(defaultValue)"
@@ -129,7 +128,7 @@ class VIRPPhsyicsController: UIViewController, UITextFieldDelegate {
         updateVariables(currentSlider)
     }
     
-    @IBAction func resistanceFieldChanged(sender: UITextField) {
+    @IBAction func resistanceFieldChanged(_ sender: UITextField) {
         guard var number = Float(sender.text!) else {
             let defaultValue: Float = 5
             sender.text = "\(defaultValue)"
@@ -152,7 +151,7 @@ class VIRPPhsyicsController: UIViewController, UITextFieldDelegate {
         updateVariables(resistanceSlider)
     }
     
-    func updateVariables(slider: UISlider) {
+    func updateVariables(_ slider: UISlider) {
         //one of these will change after a computation
         voltageValue = voltageSlider.value
         currentValue = currentSlider.value
@@ -198,27 +197,27 @@ class VIRPPhsyicsController: UIViewController, UITextFieldDelegate {
   
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
-    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for v in view.subviews {
             v.resignFirstResponder()
         }
     }
     
-    override func canBecomeFirstResponder() -> Bool {
+    override var canBecomeFirstResponder : Bool {
         return true
     }
     
-    override func canResignFirstResponder() -> Bool {
+    override var canResignFirstResponder : Bool {
         return true
     }
     
@@ -258,10 +257,10 @@ class VIRPPhsyicsController: UIViewController, UITextFieldDelegate {
         super.viewDidLayoutSubviews()
         
         if !drew {
-            if viewLoaded {
+            if isViewLoaded {
                 spriteScene = VIRPScene(size: spriteView.frame.size)
-                spriteScene.backgroundColor = UIColor.whiteColor()
-                spriteScene.scaleMode = .AspectFit
+                spriteScene.backgroundColor = UIColor.white
+                spriteScene.scaleMode = .aspectFit
                 spriteView.presentScene(spriteScene)
                 drew = true
             }
