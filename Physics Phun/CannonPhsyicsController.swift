@@ -11,7 +11,7 @@ import SpriteKit
 
 class CannonPhsyicsController: UIViewController, UITextFieldDelegate {
 
-    let bounds = UIScreen.main.bounds
+    let bounds = UIScreen.mainScreen().bounds
     
     var spriteScene: CannonScene!
     
@@ -63,27 +63,27 @@ class CannonPhsyicsController: UIViewController, UITextFieldDelegate {
         spriteScene.clear()
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         for v in view.subviews {
             v.resignFirstResponder()
         }
     }
     
-    override var canBecomeFirstResponder : Bool {
+    override func canBecomeFirstResponder() -> Bool {
         return true
     }
     
-    override var canResignFirstResponder : Bool {
+    override func canResignFirstResponder() -> Bool {
         return true
     }
     
@@ -99,7 +99,7 @@ class CannonPhsyicsController: UIViewController, UITextFieldDelegate {
     
     
     
-    @IBAction func angleFieldChanged(_ sender: UITextField) {
+    @IBAction func angleFieldChanged(sender: UITextField) {
         guard var number = Float(sender.text!) else {
             sender.text = "0"
             angleSlider.value = 0
@@ -120,7 +120,7 @@ class CannonPhsyicsController: UIViewController, UITextFieldDelegate {
         updateCannonAngle()
     }
     
-    @IBAction func speedFieldChanged(_ sender: UITextField) {
+    @IBAction func speedFieldChanged(sender: UITextField) {
         guard var number = Float(sender.text!) else {
             sender.text = "0"
             speedSlider.value = 0
@@ -140,7 +140,7 @@ class CannonPhsyicsController: UIViewController, UITextFieldDelegate {
     }
     
     
-    @IBAction func fieldFieldChanged(_ sender: UITextField) {
+    @IBAction func fieldFieldChanged(sender: UITextField) {
         guard var number = Float(sender.text!) else {
             sender.text = "0"
             fieldSlider.value = 0
@@ -161,25 +161,25 @@ class CannonPhsyicsController: UIViewController, UITextFieldDelegate {
     
     
     
-    @IBAction func angleSliderChanged(_ sender: UISlider) {
+    @IBAction func angleSliderChanged(sender: UISlider) {
         angleField.text = "\(angleSlider.value)"
         updateCannonAngle()
     }
     
-    @IBAction func speedSliderChanged(_ sender: UISlider) {
+    @IBAction func speedSliderChanged(sender: UISlider) {
         speedField.text = "\(speedSlider.value)"
     }
     
-    @IBAction func fieldSliderChanged(_ sender: UISlider) {
+    @IBAction func fieldSliderChanged(sender: UISlider) {
         fieldField.text = "\(fieldSlider.value)"
     }
     
-    @IBAction func launchPressed(_ sender: UIButton) {
+    @IBAction func launchPressed(sender: UIButton) {
         spriteScene.launch(angleSlider.value, speed: speedSlider.value, fieldStrength: fieldSlider.value)
     }
 
     
-    @IBAction func clearPressed(_ sender: AnyObject) {
+    @IBAction func clearPressed(sender: AnyObject) {
         spriteScene.clear()
     }
     
@@ -192,8 +192,8 @@ class CannonPhsyicsController: UIViewController, UITextFieldDelegate {
         if !drew {
             if viewLoaded {
                 spriteScene = CannonScene(size: spriteView.frame.size)
-                spriteScene.backgroundColor = UIColor.white
-                spriteScene.scaleMode = .aspectFit
+                spriteScene.backgroundColor = UIColor.whiteColor()
+                spriteScene.scaleMode = .AspectFit
                 spriteView.presentScene(spriteScene)
                 drew = true
             }

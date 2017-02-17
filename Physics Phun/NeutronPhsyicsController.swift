@@ -11,7 +11,7 @@ import SpriteKit
 
 class NeutronPhsyicsController: UIViewController, UITextFieldDelegate {
 
-    let bounds = UIScreen.main.bounds
+    let bounds = UIScreen.mainScreen().bounds
     
     var spriteScene: NeutronScene!
     
@@ -48,7 +48,7 @@ class NeutronPhsyicsController: UIViewController, UITextFieldDelegate {
         viewLoaded = true
     }
     
-    @IBAction func startButtonPressed(_ sender: AnyObject) {
+    @IBAction func startButtonPressed(sender: AnyObject) {
         spriteScene.startNeutronBeam(5)
     }
     
@@ -58,21 +58,21 @@ class NeutronPhsyicsController: UIViewController, UITextFieldDelegate {
     
     
 
-    @IBAction func angleSliderChanged(_ sender: UISlider) {
+    @IBAction func angleSliderChanged(sender: UISlider) {
         spriteScene.updateAngle(sender.value)
     }
     
-    @IBAction func polarizationSegmentChanged(_ sender: AnyObject) {
+    @IBAction func polarizationSegmentChanged(sender: AnyObject) {
         spriteScene.spinDownMode = (sender.selectedSegmentIndex == 0) ? false : true
     }
 
-    @IBAction func magnetSegmentChanged(_ sender: UISegmentedControl) {
+    @IBAction func magnetSegmentChanged(sender: UISegmentedControl) {
         spriteScene.netFieldExists = (sender.selectedSegmentIndex == 0) ? false : true
     }
     
-    @IBAction func thicknessSliderChanged(_ sender: UISlider) {
-        let moveDown = SKAction.moveTo(y: spriteScene.layer2Y + CGFloat(sender.value), duration: 0.2)
-        spriteScene.layer2.run(moveDown)
+    @IBAction func thicknessSliderChanged(sender: UISlider) {
+        let moveDown = SKAction.moveToY(spriteScene.layer2Y + CGFloat(sender.value), duration: 0.2)
+        spriteScene.layer2.runAction(moveDown)
     }
     
 
@@ -82,18 +82,18 @@ class NeutronPhsyicsController: UIViewController, UITextFieldDelegate {
     }
     
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         for v in view.subviews {
             v.resignFirstResponder()
         }
@@ -101,11 +101,11 @@ class NeutronPhsyicsController: UIViewController, UITextFieldDelegate {
     
     
     
-    override var canBecomeFirstResponder : Bool {
+    override func canBecomeFirstResponder() -> Bool {
         return true
     }
     
-    override var canResignFirstResponder : Bool {
+    override func canResignFirstResponder() -> Bool {
         return true
     }
     
@@ -123,8 +123,8 @@ class NeutronPhsyicsController: UIViewController, UITextFieldDelegate {
         if !drew {
             if viewLoaded {
                 spriteScene = NeutronScene(size: spriteView.frame.size)
-                spriteScene.backgroundColor = UIColor.white
-                spriteScene.scaleMode = .aspectFit
+                spriteScene.backgroundColor = UIColor.whiteColor()
+                spriteScene.scaleMode = .AspectFit
                 spriteView.presentScene(spriteScene)
                 drew = true
             }

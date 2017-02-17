@@ -25,31 +25,31 @@
 import UIKit
 
 /** @abstract UITextView with placeholder support   */
-open class IQTextView : UITextView {
+public class IQTextView : UITextView {
 
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshPlaceholder), name: NSNotification.Name.UITextViewTextDidChange, object: self)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.refreshPlaceholder), name: UITextViewTextDidChangeNotification, object: self)
     }
 
     override init(frame: CGRect, textContainer: NSTextContainer?) {
         super.init(frame: frame, textContainer: textContainer)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshPlaceholder), name: NSNotification.Name.UITextViewTextDidChange, object: self)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.refreshPlaceholder), name: UITextViewTextDidChangeNotification, object: self)
     }
     
-    override open func awakeFromNib() {
+    override public func awakeFromNib() {
          super.awakeFromNib()
-        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshPlaceholder), name: NSNotification.Name.UITextViewTextDidChange, object: self)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.refreshPlaceholder), name: UITextViewTextDidChangeNotification, object: self)
     }
     
     deinit {
-        NotificationCenter.default.removeObserver(self)
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
-    fileprivate var placeholderLabel: UILabel?
+    private var placeholderLabel: UILabel?
     
     /** @abstract To set textView's placeholder text. Default is ni.    */
-    @IBInspectable open var placeholder : String? {
+    @IBInspectable public var placeholder : String? {
 
         get {
             return placeholderLabel?.text
@@ -63,11 +63,11 @@ open class IQTextView : UITextView {
                 
                 if let unwrappedPlaceholderLabel = placeholderLabel {
                     
-                    unwrappedPlaceholderLabel.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-                    unwrappedPlaceholderLabel.lineBreakMode = .byWordWrapping
+                    unwrappedPlaceholderLabel.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+                    unwrappedPlaceholderLabel.lineBreakMode = .ByWordWrapping
                     unwrappedPlaceholderLabel.numberOfLines = 0
                     unwrappedPlaceholderLabel.font = self.font
-                    unwrappedPlaceholderLabel.backgroundColor = UIColor.clear
+                    unwrappedPlaceholderLabel.backgroundColor = UIColor.clearColor()
                     unwrappedPlaceholderLabel.textColor = UIColor(white: 0.7, alpha: 1.0)
                     unwrappedPlaceholderLabel.alpha = 0
                     addSubview(unwrappedPlaceholderLabel)
@@ -79,16 +79,16 @@ open class IQTextView : UITextView {
         }
     }
     
-    open override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
         
         if let unwrappedPlaceholderLabel = placeholderLabel {
             unwrappedPlaceholderLabel.sizeToFit()
-            unwrappedPlaceholderLabel.frame = CGRect(x: 8, y: 8, width: self.frame.width-16, height: unwrappedPlaceholderLabel.frame.height)
+            unwrappedPlaceholderLabel.frame = CGRectMake(8, 8, CGRectGetWidth(self.frame)-16, CGRectGetHeight(unwrappedPlaceholderLabel.frame))
         }
     }
 
-    open func refreshPlaceholder() {
+    public func refreshPlaceholder() {
         
         if text.characters.count != 0 {
             placeholderLabel?.alpha = 0
@@ -97,7 +97,7 @@ open class IQTextView : UITextView {
         }
     }
     
-    override open var text: String! {
+    override public var text: String! {
         
         didSet {
             
@@ -106,19 +106,19 @@ open class IQTextView : UITextView {
         }
     }
     
-    override open var font : UIFont? {
+    override public var font : UIFont? {
        
         didSet {
             
             if let unwrappedFont = font {
                 placeholderLabel?.font = unwrappedFont
             } else {
-                placeholderLabel?.font = UIFont.systemFont(ofSize: 12)
+                placeholderLabel?.font = UIFont.systemFontOfSize(12)
             }
         }
     }
     
-    override open var delegate : UITextViewDelegate? {
+    override public var delegate : UITextViewDelegate? {
         
         get {
             refreshPlaceholder()
