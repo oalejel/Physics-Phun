@@ -39,7 +39,7 @@ If provided IQLayoutGuideConstraint is associated with with viewController topLa
 If provided IQLayoutGuideConstraint is associated with with viewController bottomLayoutGuide
 */
 enum IQLayoutGuidePosition : Int {
-    case none
-    case top
-    case bottom
+    case None
+    case Top
+    case Bottom
 }

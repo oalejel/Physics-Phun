@@ -11,7 +11,7 @@ import SpriteKit
 
 class DonutPhsyicsController: UIViewController, UITextFieldDelegate, DirectionControlDelegate {
 
-    let bounds = UIScreen.main.bounds
+    let bounds = UIScreen.mainScreen().bounds
     
     var spriteScene: DonutScene!
     
@@ -27,7 +27,7 @@ class DonutPhsyicsController: UIViewController, UITextFieldDelegate, DirectionCo
     var accelerationChart: LineChart!
     var velocityChart: LineChart!
     
-    override func viewDidDisappear(_ animated: Bool) {
+    override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         spriteView.presentScene(nil)
     }
@@ -63,24 +63,24 @@ class DonutPhsyicsController: UIViewController, UITextFieldDelegate, DirectionCo
     }
     
     
-    func newPoint(_ p: CGPoint) {
+    func newPoint(p: CGPoint) {
         spriteScene.pushDonut(p)
     }
     
     
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         for v in view.subviews {
             v.resignFirstResponder()
         }
@@ -88,11 +88,11 @@ class DonutPhsyicsController: UIViewController, UITextFieldDelegate, DirectionCo
     
     
     
-    override var canBecomeFirstResponder : Bool {
+    override func canBecomeFirstResponder() -> Bool {
         return true
     }
     
-    override var canResignFirstResponder : Bool {
+    override func canResignFirstResponder() -> Bool {
         return true
     }
     
@@ -110,8 +110,8 @@ class DonutPhsyicsController: UIViewController, UITextFieldDelegate, DirectionCo
         if !drew {
             if viewLoaded {
                 spriteScene = DonutScene(size: spriteView.frame.size)
-                spriteScene.backgroundColor = UIColor.white
-                spriteScene.scaleMode = .aspectFit
+                spriteScene.backgroundColor = UIColor.whiteColor()
+                spriteScene.scaleMode = .AspectFit
                 spriteView.presentScene(spriteScene)
                 spriteScene.donutController = self
                 drew = true
@@ -119,7 +119,7 @@ class DonutPhsyicsController: UIViewController, UITextFieldDelegate, DirectionCo
                 controlView.directionDelegate = self
                 
                 
-                accelerationChart = LineChart(frame: CGRect(x: 0, y: spriteView.frame.origin.y, width: 100, height: 100))
+                accelerationChart = LineChart(frame: CGRectMake(0, spriteView.frame.origin.y, 100, 100))
                 accelerationChart.addLine([0])
                 
                 accelerationChart.animation.enabled = false
@@ -130,27 +130,27 @@ class DonutPhsyicsController: UIViewController, UITextFieldDelegate, DirectionCo
                 let accelerationLabel = UILabel()
                 accelerationLabel.text = "Acceleration"
                 
-                accelerationLabel.textColor = UIColor.blue
+                accelerationLabel.textColor = UIColor.blueColor()
                 accelerationLabel.font = UIFont(name: "Helvetica", size: 10)
                 view.addSubview(accelerationLabel)
                 accelerationLabel.sizeToFit()
                 accelerationLabel.center = accelerationChart.center
                 
                 
-                velocityChart = LineChart(frame: CGRect(x: spriteView.frame.size.width - 100, y: spriteView.frame.origin.y, width: 100, height: 100))
+                velocityChart = LineChart(frame: CGRectMake(spriteView.frame.size.width - 100, spriteView.frame.origin.y, 100, 100))
                 velocityChart.addLine([0])
                 
                 velocityChart.animation.enabled = false
                 velocityChart.lineWidth = 1
                 velocityChart.dots.innerRadiusHighlighted = 0
-                velocityChart.colors = [UIColor.red]
+                velocityChart.colors = [UIColor.redColor()]
                 
                 view.addSubview(velocityChart)
                 
                 let velocityLabel = UILabel()
                 velocityLabel.text = "Speed"
                 
-                velocityLabel.textColor = UIColor.red
+                velocityLabel.textColor = UIColor.redColor()
                 velocityLabel.font = UIFont(name: "Helvetica", size: 10)
                 view.addSubview(velocityLabel)
                 velocityLabel.sizeToFit()

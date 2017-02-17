@@ -11,7 +11,7 @@ import SceneKit
 
 class AirBoxPhsyicsController: UIViewController, UITextFieldDelegate {
 
-    let bounds = UIScreen.main.bounds
+    let bounds = UIScreen.mainScreen().bounds
     
     var visibleRect: CGRect!
     
@@ -122,43 +122,43 @@ class AirBoxPhsyicsController: UIViewController, UITextFieldDelegate {
     }
 
     
-    @IBAction func lockSegmentChanged(_ sender: UISegmentedControl) {
-        pressureStepper.isEnabled = true
-        pressureTextField.isEnabled = true
+    @IBAction func lockSegmentChanged(sender: UISegmentedControl) {
+        pressureStepper.enabled = true
+        pressureTextField.enabled = true
         pressureStepper.alpha = 1
         pressureTextField.alpha = 1
         
-        volumeStepper.isEnabled = true
-        volumeTextField.isEnabled = true
+        volumeStepper.enabled = true
+        volumeTextField.enabled = true
         volumeStepper.alpha = 1
         volumeTextField.alpha = 1
         
-        temperatureStepper.isEnabled = true
-        temperatureTextField.isEnabled = true
+        temperatureStepper.enabled = true
+        temperatureTextField.enabled = true
         temperatureStepper.alpha = 1
         temperatureTextField.alpha = 1
         
-        molesStepper.isEnabled = true
-        molesTextField.isEnabled = true
+        molesStepper.enabled = true
+        molesTextField.enabled = true
         molesStepper.alpha = 1
         molesTextField.alpha = 1
         
         switch sender.selectedSegmentIndex {
         case 0:
-            pressureStepper.isEnabled = false
-            pressureTextField.isEnabled = false
+            pressureStepper.enabled = false
+            pressureTextField.enabled = false
             pressureStepper.alpha = 0.6
             pressureTextField.alpha = 0.6
             break
         case 1:
-            volumeStepper.isEnabled = false
-            volumeTextField.isEnabled = false
+            volumeStepper.enabled = false
+            volumeTextField.enabled = false
             volumeStepper.alpha = 0.6
             volumeTextField.alpha = 0.6
             break
         case 2:
-            temperatureStepper.isEnabled = false
-            temperatureTextField.isEnabled = false
+            temperatureStepper.enabled = false
+            temperatureTextField.enabled = false
             temperatureStepper.alpha = 0.6
             temperatureTextField.alpha = 0.6
             break
@@ -167,7 +167,7 @@ class AirBoxPhsyicsController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    @IBAction func pressureFieldEndedEditing(_ sender: UITextField) {
+    @IBAction func pressureFieldEndedEditing(sender: UITextField) {
         guard var number = Float(sender.text!) else {
             let defaultValue = (pressureStepper.maximumValue + pressureStepper.minimumValue) / 2
             sender.text = "\(defaultValue)"
@@ -190,7 +190,7 @@ class AirBoxPhsyicsController: UIViewController, UITextFieldDelegate {
         updateVariables(pressureStepper)
     }
     
-    @IBAction func volumeFieldEndedEditing(_ sender: UITextField) {
+    @IBAction func volumeFieldEndedEditing(sender: UITextField) {
         guard var number = Float(sender.text!) else {
             let defaultValue = (volumeStepper.maximumValue + volumeStepper.minimumValue) / 2
             sender.text = "\(defaultValue)"
@@ -213,7 +213,7 @@ class AirBoxPhsyicsController: UIViewController, UITextFieldDelegate {
         updateVariables(volumeStepper)
     }
     
-    @IBAction func molesFieldEndedEditing(_ sender: UITextField) {
+    @IBAction func molesFieldEndedEditing(sender: UITextField) {
         guard var number = Float(sender.text!) else {
             let defaultValue = (molesStepper.maximumValue + molesStepper.minimumValue) / 2
             sender.text = "\(defaultValue)"
@@ -236,7 +236,7 @@ class AirBoxPhsyicsController: UIViewController, UITextFieldDelegate {
         updateVariables(molesStepper)
     }
     
-    @IBAction func temperatureFieldEndedEditing(_ sender: UITextField) {
+    @IBAction func temperatureFieldEndedEditing(sender: UITextField) {
         guard var number = Float(sender.text!) else {
             let defaultValue = (temperatureStepper.maximumValue + temperatureStepper.minimumValue) / 2
             sender.text = "\(defaultValue)"
@@ -261,23 +261,23 @@ class AirBoxPhsyicsController: UIViewController, UITextFieldDelegate {
     
     
     //take the value (which should be in the limit) and send it
-    @IBAction func pressureStepperChanged(_ sender: UIStepper) {
+    @IBAction func pressureStepperChanged(sender: UIStepper) {
         updateVariables(sender)
     }
     
-    @IBAction func volumeStepperChanged(_ sender: UIStepper) {
+    @IBAction func volumeStepperChanged(sender: UIStepper) {
         updateVariables(sender)
     }
     
-    @IBAction func molesStepperChanged(_ sender: UIStepper) {
+    @IBAction func molesStepperChanged(sender: UIStepper) {
         updateVariables(sender)
     }
     
-    @IBAction func temperatureStepperChanged(_ sender: UIStepper) {
+    @IBAction func temperatureStepperChanged(sender: UIStepper) {
         updateVariables(sender)
     }
     
-    func updateVariables(_ stepper: UIStepper) {
+    func updateVariables(stepper: UIStepper) {
         pressureValue = pressureStepper.value
         volumeValue = volumeStepper.value
         molesValue = molesStepper.value
@@ -395,14 +395,14 @@ class AirBoxPhsyicsController: UIViewController, UITextFieldDelegate {
 //    }
     
     
-    func setSceneVolume(_ scale: CGFloat) {
+    func setSceneVolume(scale: CGFloat) {
         experimentScene.reflectionAllowed = false
         for sphere in experimentScene.spheres {
             sphere.pauseMotion()
         }
         
-        let scaleAction = SCNAction.scale(to: scale, duration: 1.2)
-        let resumeMotionAction = SCNAction.run { (node) in
+        let scaleAction = SCNAction.scaleTo(scale, duration: 1.2)
+        let resumeMotionAction = SCNAction.runBlock { (node) in
             self.experimentScene.reflectionAllowed = true
             for sphere in self.experimentScene.spheres {
                 sphere.resumeMotion()
@@ -467,21 +467,21 @@ class AirBoxPhsyicsController: UIViewController, UITextFieldDelegate {
 
     
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
-    override var canBecomeFirstResponder : Bool {
+    override func canBecomeFirstResponder() -> Bool {
         return true
     }
     
-    override var canResignFirstResponder : Bool {
+    override func canResignFirstResponder() -> Bool {
         return true
     }
     

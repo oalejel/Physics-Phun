@@ -9,7 +9,7 @@
 import UIKit
 
 protocol DirectionControlDelegate {
-    func newPoint(_ p: CGPoint)
+    func newPoint(p: CGPoint)
 }
 
 class DirectionControlView: UIView {
@@ -19,31 +19,31 @@ class DirectionControlView: UIView {
 
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
+    override func drawRect(rect: CGRect) {
         let context = UIGraphicsGetCurrentContext()
         
         let lineOffset: CGFloat = 20
-        context!.setStrokeColor(UIColor.gray.cgColor)
-        context!.setLineWidth(2)
+        CGContextSetStrokeColorWithColor(context!, UIColor.grayColor().CGColor)
+        CGContextSetLineWidth(context!, 2)
         
         let path = UIBezierPath()
-        path.move(to: CGPoint(x: frame.size.width / 2, y: lineOffset))
-        path.addLine(to: CGPoint(x: frame.size.width / 2, y: frame.size.height - lineOffset))
+        path.moveToPoint(CGPointMake(frame.size.width / 2, lineOffset))
+        path.addLineToPoint(CGPointMake(frame.size.width / 2, frame.size.height - lineOffset))
         path.stroke()
         
         let path2 = UIBezierPath()
-        path2.move(to: CGPoint(x: lineOffset, y: frame.size.height / 2))
-        path2.addLine(to: CGPoint(x: frame.size.width - lineOffset, y: frame.size.height / 2))
+        path2.moveToPoint(CGPointMake(lineOffset, frame.size.height / 2))
+        path2.addLineToPoint(CGPointMake(frame.size.width - lineOffset, frame.size.height / 2))
         path2.stroke()
     
         if let arrowHeadPoint = arrowHeadPoint {
-            context!.setStrokeColor(UIColor.green.cgColor)
-            context!.setFillColor(UIColor.green.cgColor)
-            context!.setLineWidth(10)
+            CGContextSetStrokeColorWithColor(context!, UIColor.greenColor().CGColor)
+            CGContextSetFillColorWithColor(context!, UIColor.greenColor().CGColor)
+            CGContextSetLineWidth(context!, 10)
             
             let arrowPath = UIBezierPath()
-            arrowPath.move(to: CGPoint(x: frame.size.width / 2, y: frame.size.height / 2))
-            arrowPath.addLine(to: arrowHeadPoint)
+            arrowPath.moveToPoint(CGPointMake(frame.size.width / 2, frame.size.height / 2))
+            arrowPath.addLineToPoint(arrowHeadPoint)
             arrowPath.stroke()
             
             
@@ -69,37 +69,37 @@ class DirectionControlView: UIView {
             
             
             let triangleHeadPath = UIBezierPath()
-            triangleHeadPath.move(to: CGPoint(x: lineOffset / 2, y: lineOffset))
-            triangleHeadPath.addLine(to: CGPoint(x: lineOffset, y: 0))
-            triangleHeadPath.addLine(to: CGPoint(x: 0, y: 0))
-            triangleHeadPath.close()
+            triangleHeadPath.moveToPoint(CGPointMake(lineOffset / 2, lineOffset))
+            triangleHeadPath.addLineToPoint(CGPointMake(lineOffset, 0))
+            triangleHeadPath.addLineToPoint(CGPointMake(0, 0))
+            triangleHeadPath.closePath()
             
             
             
-            let box = triangleHeadPath.cgPath.boundingBox
-            let center = CGPoint(x:box.midX, y:box.midY)
+            let box = CGPathGetBoundingBox(triangleHeadPath.CGPath)
+            let center = CGPoint(x:CGRectGetMidX(box), y:CGRectGetMidY(box))
             
-            let toOrigin = CGAffineTransform(translationX: -center.x, y: -center.y)
-            triangleHeadPath.apply(toOrigin)
+            let toOrigin = CGAffineTransformMakeTranslation(-center.x, -center.y)
+            triangleHeadPath.applyTransform(toOrigin)
             
-            let rotate = CGAffineTransform(rotationAngle: -theta - CGFloat(M_PI / 2))
-            triangleHeadPath.apply(rotate)
+            let rotate = CGAffineTransformMakeRotation(-theta - CGFloat(M_PI / 2))
+            triangleHeadPath.applyTransform(rotate)
             
-            let fromOrigin = CGAffineTransform(translationX: center.x, y: center.y)
-            triangleHeadPath.apply(fromOrigin)
+            let fromOrigin = CGAffineTransformMakeTranslation(center.x, center.y)
+            triangleHeadPath.applyTransform(fromOrigin)
             
-            let translate = CGAffineTransform(translationX: arrowHeadPoint.x - (lineOffset / 2), y: arrowHeadPoint.y - (lineOffset / 2))
-            triangleHeadPath.apply(translate)
+            let translate = CGAffineTransformMakeTranslation(arrowHeadPoint.x - (lineOffset / 2), arrowHeadPoint.y - (lineOffset / 2))
+            triangleHeadPath.applyTransform(translate)
 
             triangleHeadPath.fill()
 
             
-            context!.setStrokeColor(UIColor.blue.cgColor)
-            context!.setFillColor(UIColor.blue.cgColor)
+            CGContextSetStrokeColorWithColor(context!, UIColor.blueColor().CGColor)
+            CGContextSetFillColorWithColor(context!, UIColor.blueColor().CGColor)
             
             let yArrowPath = UIBezierPath()
-            yArrowPath.move(to: CGPoint(x: frame.size.width / 2, y: frame.size.height / 2))
-            yArrowPath.addLine(to: CGPoint(x: frame.size.width / 2, y: arrowHeadPoint.y))
+            yArrowPath.moveToPoint(CGPointMake(frame.size.width / 2, frame.size.height / 2))
+            yArrowPath.addLineToPoint(CGPointMake(frame.size.width / 2, arrowHeadPoint.y))
             yArrowPath.stroke()
             
             
@@ -107,66 +107,66 @@ class DirectionControlView: UIView {
             let negativeY = (arrowHeadPoint.y < (frame.size.height / 2)) ? true : false
             
             let yTriangleHeadPath = UIBezierPath()
-            yTriangleHeadPath.move(to: CGPoint(x: lineOffset / 2, y: lineOffset))
-            yTriangleHeadPath.addLine(to: CGPoint(x: lineOffset, y: 0))
-            yTriangleHeadPath.addLine(to: CGPoint(x: 0, y: 0))
-            yTriangleHeadPath.close()
+            yTriangleHeadPath.moveToPoint(CGPointMake(lineOffset / 2, lineOffset))
+            yTriangleHeadPath.addLineToPoint(CGPointMake(lineOffset, 0))
+            yTriangleHeadPath.addLineToPoint(CGPointMake(0, 0))
+            yTriangleHeadPath.closePath()
             
             
             //transformations for th X arrow like we did with the vector arrow
-            let yBox = yTriangleHeadPath.cgPath.boundingBox
-            let yCenter = CGPoint(x:yBox.midX, y:yBox.midY)
+            let yBox = CGPathGetBoundingBox(yTriangleHeadPath.CGPath)
+            let yCenter = CGPoint(x:CGRectGetMidX(yBox), y:CGRectGetMidY(yBox))
             
-            let yToOrigin = CGAffineTransform(translationX: -yCenter.x, y: -yCenter.y)
-            yTriangleHeadPath.apply(yToOrigin)
+            let yToOrigin = CGAffineTransformMakeTranslation(-yCenter.x, -yCenter.y)
+            yTriangleHeadPath.applyTransform(yToOrigin)
             
-            let yRotate = CGAffineTransform(rotationAngle: negativeY ? CGFloat(M_PI) : 0)
-            yTriangleHeadPath.apply(yRotate)
+            let yRotate = CGAffineTransformMakeRotation(negativeY ? CGFloat(M_PI) : 0)
+            yTriangleHeadPath.applyTransform(yRotate)
             
-            let yFromOrigin = CGAffineTransform(translationX: yCenter.x, y: yCenter.y)
-            yTriangleHeadPath.apply(yFromOrigin)
+            let yFromOrigin = CGAffineTransformMakeTranslation(yCenter.x, yCenter.y)
+            yTriangleHeadPath.applyTransform(yFromOrigin)
             
             let xxShift = (frame.size.width / 2) - (lineOffset / 2)
             let xyShift = arrowHeadPoint.y + (-0.5 * lineOffset)
-            let yTranslate = CGAffineTransform(translationX: xxShift, y: xyShift)
-            yTriangleHeadPath.apply(yTranslate)
+            let yTranslate = CGAffineTransformMakeTranslation(xxShift, xyShift)
+            yTriangleHeadPath.applyTransform(yTranslate)
             
             yTriangleHeadPath.fill()
             
             
-            context!.setStrokeColor(UIColor.red.cgColor)
-            context!.setFillColor(UIColor.red.cgColor)
+            CGContextSetStrokeColorWithColor(context!, UIColor.redColor().CGColor)
+            CGContextSetFillColorWithColor(context!, UIColor.redColor().CGColor)
             
             let xArrowPath = UIBezierPath()
-            xArrowPath.move(to: CGPoint(x: frame.size.width / 2, y: frame.size.height / 2))
-            xArrowPath.addLine(to: CGPoint(x: arrowHeadPoint.x, y: frame.size.height / 2))
+            xArrowPath.moveToPoint(CGPointMake(frame.size.width / 2, frame.size.height / 2))
+            xArrowPath.addLineToPoint(CGPointMake(arrowHeadPoint.x, frame.size.height / 2))
             xArrowPath.stroke()
             
             let xTriangleHeadPath = UIBezierPath()
-            xTriangleHeadPath.move(to: CGPoint(x: lineOffset / 2, y: lineOffset))
-            xTriangleHeadPath.addLine(to: CGPoint(x: lineOffset, y: 0))
-            xTriangleHeadPath.addLine(to: CGPoint(x: 0, y: 0))
-            xTriangleHeadPath.close()
+            xTriangleHeadPath.moveToPoint(CGPointMake(lineOffset / 2, lineOffset))
+            xTriangleHeadPath.addLineToPoint(CGPointMake(lineOffset, 0))
+            xTriangleHeadPath.addLineToPoint(CGPointMake(0, 0))
+            xTriangleHeadPath.closePath()
             
             let negativeX = (arrowHeadPoint.x < (frame.size.width / 2)) ? true : false
             
             //transformations for th X arrow like we did with the vector arrow
-            let xBox = xTriangleHeadPath.cgPath.boundingBox
-            let xCenter = CGPoint(x:xBox.midX, y:xBox.midY)
+            let xBox = CGPathGetBoundingBox(xTriangleHeadPath.CGPath)
+            let xCenter = CGPoint(x:CGRectGetMidX(xBox), y:CGRectGetMidY(xBox))
             
-            let xToOrigin = CGAffineTransform(translationX: -xCenter.x, y: -xCenter.y)
-            xTriangleHeadPath.apply(xToOrigin)
+            let xToOrigin = CGAffineTransformMakeTranslation(-xCenter.x, -xCenter.y)
+            xTriangleHeadPath.applyTransform(xToOrigin)
             
-            let xRotate = CGAffineTransform(rotationAngle: negativeX ? CGFloat(M_PI / 2) : CGFloat(M_PI / -2))
-            xTriangleHeadPath.apply(xRotate)
+            let xRotate = CGAffineTransformMakeRotation(negativeX ? CGFloat(M_PI / 2) : CGFloat(M_PI / -2))
+            xTriangleHeadPath.applyTransform(xRotate)
             
-            let xFromOrigin = CGAffineTransform(translationX: xCenter.x, y: xCenter.y)
-            xTriangleHeadPath.apply(xFromOrigin)
+            let xFromOrigin = CGAffineTransformMakeTranslation(xCenter.x, xCenter.y)
+            xTriangleHeadPath.applyTransform(xFromOrigin)
             
             let xShift = arrowHeadPoint.x + (-0.5 * lineOffset)
             let yShift = (frame.size.height / 2) - (lineOffset / 2)
-            let xTranslate = CGAffineTransform(translationX: xShift, y: yShift)
-            xTriangleHeadPath.apply(xTranslate)
+            let xTranslate = CGAffineTransformMakeTranslation(xShift, yShift)
+            xTriangleHeadPath.applyTransform(xTranslate)
             
             xTriangleHeadPath.fill()
         }
@@ -176,9 +176,9 @@ class DirectionControlView: UIView {
     }
     
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         let t = touches.first
-        let point = t?.location(in: self)
+        let point = t?.locationInView(self)
         arrowHeadPoint = point
         
         notifyDelegate()
@@ -186,9 +186,9 @@ class DirectionControlView: UIView {
         setNeedsDisplay()
     }
     
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         let t = touches.first
-        let point = t?.location(in: self)
+        let point = t?.locationInView(self)
         arrowHeadPoint = point
         
         notifyDelegate()
@@ -201,7 +201,7 @@ class DirectionControlView: UIView {
             if let arrowHeadPoint = arrowHeadPoint {
                 let x = arrowHeadPoint.x - (frame.size.width / 2)
                 let y = (frame.size.height / 2) - arrowHeadPoint.y
-                donutController.newPoint(CGPoint(x: x, y: y))
+                donutController.newPoint(CGPointMake(x, y))
             }
         }
     }

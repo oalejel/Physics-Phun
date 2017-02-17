@@ -12,7 +12,7 @@ class NeverClearButton: UIButton {
     
     override var backgroundColor: UIColor? {
         didSet {
-            if (backgroundColor?.cgColor)!.alpha == 0 {
+            if CGColorGetAlpha((backgroundColor?.CGColor)!) == 0 {
                  backgroundColor = oldValue
             }
         }
@@ -39,7 +39,7 @@ class ExperimentCell: UITableViewCell {
 //
 //        
         preservesSuperviewLayoutMargins = false
-        separatorInset = UIEdgeInsets.zero
+        separatorInset = UIEdgeInsetsZero
 //        layoutMargins = UIEdgeInsetsZero
         
         
