@@ -38,21 +38,21 @@ class SqueezeButton: UIButton {
     }
     
     ///Animates in when touches begin
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesBegan(touches, withEvent: event)
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
         press()
     }
 
     ///animates out when touch ends
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesEnded(touches, withEvent: event)
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
         rescaleButton()
     }
     
     func press() {
-        UIView.animateKeyframesWithDuration(shrinkTime, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeCubic, animations: { () -> Void in
+        UIView.animateKeyframes(withDuration: shrinkTime, delay: 0.0, options: UIViewKeyframeAnimationOptions.calculationModeCubic, animations: { () -> Void in
             self.completedSqueeze = false
-            self.transform = CGAffineTransformScale(self.transform, 0.9, 0.9)
+            self.transform = self.transform.scaledBy(x: 0.9, y: 0.9)
             }) { (done) -> Void in
                 self.completedSqueeze = true
                 if self.pendingOut {
@@ -64,8 +64,8 @@ class SqueezeButton: UIButton {
     
     func rescaleButton() {
         if completedSqueeze {
-            UIView.animateKeyframesWithDuration(expandTime, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeCubic, animations: { () -> Void in
-                self.transform = CGAffineTransformScale(self.transform, 1/0.9, 1/0.9)
+            UIView.animateKeyframes(withDuration: expandTime, delay: 0.0, options: UIViewKeyframeAnimationOptions.calculationModeCubic, animations: { () -> Void in
+                self.transform = self.transform.scaledBy(x: 1/0.9, y: 1/0.9)
                 }) { (done) -> Void in
                     ///completion work once it rescales
             }
