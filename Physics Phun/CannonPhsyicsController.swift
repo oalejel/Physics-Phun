@@ -11,7 +11,7 @@ import SpriteKit
 
 class CannonPhsyicsController: UIViewController, UITextFieldDelegate {
 
-    let bounds = UIScreen.mainScreen().bounds
+    let bounds = UIScreen.main.bounds
     
     var spriteScene: CannonScene!
     
@@ -20,7 +20,7 @@ class CannonPhsyicsController: UIViewController, UITextFieldDelegate {
     var visibleRect: CGRect!
     
     var drew = false
-    var viewLoaded = false
+    var viewHasLoaded = false
 
     @IBOutlet var angleField: UITextField!
     @IBOutlet var angleSlider: UISlider!
@@ -49,7 +49,7 @@ class CannonPhsyicsController: UIViewController, UITextFieldDelegate {
         
         spriteView.showsFPS = false
         spriteView.showsNodeCount = false
-        viewLoaded = true
+        viewHasLoaded = true
         
     }
     
@@ -63,27 +63,27 @@ class CannonPhsyicsController: UIViewController, UITextFieldDelegate {
         spriteScene.clear()
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
-    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for v in view.subviews {
             v.resignFirstResponder()
         }
     }
     
-    override func canBecomeFirstResponder() -> Bool {
+    override var canBecomeFirstResponder : Bool {
         return true
     }
     
-    override func canResignFirstResponder() -> Bool {
+    override var canResignFirstResponder : Bool {
         return true
     }
     
@@ -99,7 +99,7 @@ class CannonPhsyicsController: UIViewController, UITextFieldDelegate {
     
     
     
-    @IBAction func angleFieldChanged(sender: UITextField) {
+    @IBAction func angleFieldChanged(_ sender: UITextField) {
         guard var number = Float(sender.text!) else {
             sender.text = "0"
             angleSlider.value = 0
@@ -120,7 +120,7 @@ class CannonPhsyicsController: UIViewController, UITextFieldDelegate {
         updateCannonAngle()
     }
     
-    @IBAction func speedFieldChanged(sender: UITextField) {
+    @IBAction func speedFieldChanged(_ sender: UITextField) {
         guard var number = Float(sender.text!) else {
             sender.text = "0"
             speedSlider.value = 0
@@ -140,7 +140,7 @@ class CannonPhsyicsController: UIViewController, UITextFieldDelegate {
     }
     
     
-    @IBAction func fieldFieldChanged(sender: UITextField) {
+    @IBAction func fieldFieldChanged(_ sender: UITextField) {
         guard var number = Float(sender.text!) else {
             sender.text = "0"
             fieldSlider.value = 0
@@ -161,25 +161,25 @@ class CannonPhsyicsController: UIViewController, UITextFieldDelegate {
     
     
     
-    @IBAction func angleSliderChanged(sender: UISlider) {
+    @IBAction func angleSliderChanged(_ sender: UISlider) {
         angleField.text = "\(angleSlider.value)"
         updateCannonAngle()
     }
     
-    @IBAction func speedSliderChanged(sender: UISlider) {
+    @IBAction func speedSliderChanged(_ sender: UISlider) {
         speedField.text = "\(speedSlider.value)"
     }
     
-    @IBAction func fieldSliderChanged(sender: UISlider) {
+    @IBAction func fieldSliderChanged(_ sender: UISlider) {
         fieldField.text = "\(fieldSlider.value)"
     }
     
-    @IBAction func launchPressed(sender: UIButton) {
+    @IBAction func launchPressed(_ sender: UIButton) {
         spriteScene.launch(angleSlider.value, speed: speedSlider.value, fieldStrength: fieldSlider.value)
     }
 
     
-    @IBAction func clearPressed(sender: AnyObject) {
+    @IBAction func clearPressed(_ sender: AnyObject) {
         spriteScene.clear()
     }
     
@@ -190,10 +190,10 @@ class CannonPhsyicsController: UIViewController, UITextFieldDelegate {
         super.viewDidLayoutSubviews()
         
         if !drew {
-            if viewLoaded {
+            if viewHasLoaded {
                 spriteScene = CannonScene(size: spriteView.frame.size)
-                spriteScene.backgroundColor = UIColor.whiteColor()
-                spriteScene.scaleMode = .AspectFit
+                spriteScene.backgroundColor = UIColor.white
+                spriteScene.scaleMode = .aspectFit
                 spriteView.presentScene(spriteScene)
                 drew = true
             }

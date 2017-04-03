@@ -40,22 +40,22 @@ class DonutScene: SKScene, SKPhysicsContactDelegate {
     
 //    var framesAfterLaunch = 0
     
-//    let degreesToRadians = Float(M_PI / 180)
+//    let degreesToRadians = Float(Double.pi / 180)
     
-    func pushDonut(p: CGPoint) {
-            donutNode.removeActionForKey("push")
+    func pushDonut(_ p: CGPoint) {
+            donutNode.removeAction(forKey: "push")
             let applyForce = SKAction.applyForce(CGVector(dx: 20 * p.x, dy: 20 * p.y), duration: 200)
             pastAccelerations.append(sqrt(pow(p.x, 2) + pow(p.y, 2)))
-            donutNode.runAction(applyForce, withKey: "push")
+            donutNode.run(applyForce, withKey: "push")
             
             let power = sqrt(pow(p.x, 2) + pow(p.y, 2))
             emitter.particleBirthRate = power
             
-            var theta = atan(p.y / p.x) + CGFloat(M_PI)
+            var theta = atan(p.y / p.x) + CGFloat(Double.pi)
             if p.y < 0 && p.x < 0 {
-                theta = theta + CGFloat(M_PI)
+                theta = theta + CGFloat(Double.pi)
             } else if p.x < 0 && p.y > 0 {
-                theta = theta + CGFloat(M_PI)
+                theta = theta + CGFloat(Double.pi)
             }
             
             print(theta)
@@ -66,8 +66,8 @@ class DonutScene: SKScene, SKPhysicsContactDelegate {
            
     }
     
-    override func didMoveToView(view: SKView) {
-        super.didMoveToView(view)
+    override func didMove(to view: SKView) {
+        super.didMove(to: view)
         
         if !didDraw {
             didDraw = true
@@ -75,9 +75,9 @@ class DonutScene: SKScene, SKPhysicsContactDelegate {
             backgroundColor = UIColor(red: 1, green: 230/255, blue: 179/255, alpha: 1)
             
             physicsWorld.contactDelegate = self
-            physicsWorld.gravity = CGVectorMake(0, 0)
+            physicsWorld.gravity = CGVector(dx: 0, dy: 0)
             
-            physicsBody = SKPhysicsBody(edgeLoopFromRect: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+            physicsBody = SKPhysicsBody(edgeLoopFrom: CGRect(x: 0, y: 0, width: size.width, height: size.height))
             physicsBody?.restitution = 0
             physicsBody?.contactTestBitMask = 0x00F0
             
@@ -86,12 +86,12 @@ class DonutScene: SKScene, SKPhysicsContactDelegate {
             let texture = SKTexture(imageNamed: "donut")
             donutNode = SKSpriteNode(texture: texture)//imageNamed: "donut")
             
-            donutNode.anchorPoint = CGPointMake(0.5, 0.5)
+            donutNode.anchorPoint = CGPoint(x: 0.5, y: 0.5)
             donutNode.position = view.center
             
             donutNode.physicsBody = SKPhysicsBody(texture: texture, size: texture.size())
             donutNode.physicsBody?.contactTestBitMask = 0x000F
-            donutNode.physicsBody?.dynamic = true
+            donutNode.physicsBody?.isDynamic = true
             donutNode.physicsBody?.affectedByGravity = false
             donutNode.physicsBody?.mass = 10
             donutNode.physicsBody?.usesPreciseCollisionDetection = true
@@ -99,7 +99,7 @@ class DonutScene: SKScene, SKPhysicsContactDelegate {
             addChild(donutNode)
             
             emitter = SKEmitterNode(fileNamed: "FireParticle")
-            //        emitter.emissionAngleRange = CGFloat(M_PI / 4)
+            //        emitter.emissionAngleRange = CGFloat(Double.pi / 4)
             emitter.zPosition = -1
             emitter.particleBirthRate = 0.0001
             donutNode.addChild(emitter)
@@ -109,8 +109,8 @@ class DonutScene: SKScene, SKPhysicsContactDelegate {
    
     
 
-    override func willMoveFromView(view: SKView) {
-        super.willMoveFromView(view)
+    override func willMove(from view: SKView) {
+        super.willMove(from: view)
         removeAllChildren()
         removeAllActions()
     }
@@ -124,7 +124,7 @@ class DonutScene: SKScene, SKPhysicsContactDelegate {
         pastAccelerations.append(pastAccelerations.last!)
     }
     
-    func didBeginContact(contact: SKPhysicsContact) {
+    func didBegin(_ contact: SKPhysicsContact) {
     }
     
     
