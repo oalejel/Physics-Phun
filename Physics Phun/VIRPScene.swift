@@ -15,93 +15,97 @@ class VIRPScene: SKScene {
     var resistorNode: SKShapeNode!
     var circuitBorderNode: SKShapeNode!
     
-    override func didMoveToView(view: SKView) {
-        super.didMoveToView(view)
+    override func didMove(to view: SKView) {
+        super.didMove(to: view)
         
         backgroundColor = UIColor(red: 1, green: 230/255, blue: 179/255, alpha: 1)
 
         let strokeWidth: CGFloat = 7
-        let circuitSize = CGSizeMake(size.width / 1.3, size.height / 1.5)
-        circuitBorderNode = borderBoxNode(circuitSize, strokeWidth: strokeWidth, fillColor: SKColor.clearColor())
-        circuitBorderNode.position = CGPointMake(size.width / 2, size.height / 2)
+        let circuitSize = CGSize(width: size.width / 1.3, height: size.height / 1.5)
+        circuitBorderNode = borderBoxNode(circuitSize, strokeWidth: strokeWidth, fillColor: SKColor.clear)
+        circuitBorderNode.position = CGPoint(x: size.width / 2, y: size.height / 2)
         addChild(circuitBorderNode)
         
-        let resistorSize = CGSizeMake(circuitSize.width / 2.5, circuitSize.width / 6)
+        let resistorSize = CGSize(width: circuitSize.width / 2.5, height: circuitSize.width / 6)
         resistorNode =  borderBoxNode(resistorSize, strokeWidth: 4, fillColor: backgroundColor)
-        resistorNode.position = CGPointMake(size.width / 2, circuitBorderNode.position.y - (circuitSize.height / 2))
+        resistorNode.position = CGPoint(x: size.width / 2, y: circuitBorderNode.position.y - (circuitSize.height / 2))
         self.resistorNode.zPosition = 10
         addChild(resistorNode)
         
         resistanceLabel = SKLabelNode(text: "Ω")
-        resistanceLabel.fontColor = SKColor.blackColor()
+        resistanceLabel.fontColor = SKColor.black
         resistanceLabel.fontName = "Helvetica-Bold"
         resistanceLabel.fontSize = 15
-        resistanceLabel.position = CGPointMake(size.width / 2, resistorNode.position.y - (resistanceLabel.frame.size.height / 2))
+        resistanceLabel.position = CGPoint(x: size.width / 2, y: resistorNode.position.y - (resistanceLabel.frame.size.height / 2))
         self.resistanceLabel.zPosition = 10
         addChild(resistanceLabel)
         
         
         
-        let addElectron = SKAction.runBlock { 
+        let addElectron = SKAction.run { 
             let electron = SKShapeNode(circleOfRadius: 2)
-            electron.fillColor = SKColor.yellowColor()
+            electron.fillColor = SKColor.yellow
             electron.zPosition = self.circuitBorderNode.zPosition + 1
             
             //        electron.anchorPoint = CGPointMake(0.5, 0.5)
-            electron.position = CGPointMake((strokeWidth / 2) + (self.size.width / 2) - (self.circuitBorderNode.frame.size.width / 2), (strokeWidth / 2) + (self.size.height / 2) - (self.circuitBorderNode.frame.size.height / 2))
+            electron.position = CGPoint(x: (strokeWidth / 2) + (self.size.width / 2) - (self.circuitBorderNode.frame.size.width / 2), y: (strokeWidth / 2) + (self.size.height / 2) - (self.circuitBorderNode.frame.size.height / 2))
             self.addChild(electron)
-            var innerFrame = CGRectInset(self.circuitBorderNode.frame, strokeWidth / 2, strokeWidth / 2)
+            var innerFrame = self.circuitBorderNode.frame.insetBy(dx: strokeWidth / 2, dy: strokeWidth / 2)
             innerFrame.origin.x = 0
             innerFrame.origin.y = 0
             let path = UIBezierPath(rect: innerFrame)
-            electron.runAction(SKAction.repeatActionForever(SKAction.followPath(path.CGPath, speed: 200)))
+            electron.run(SKAction.sequence([SKAction.follow(path.cgPath, speed: 200), SKAction.run({ 
+                electron.removeAllActions()
+                electron.removeFromParent()
+            })]))
         }
-        let wait = SKAction.waitForDuration(0.1)
-        let addAndAndWait = SKAction.sequence([addElectron, wait])
+        let wait = SKAction.wait(forDuration: 0.1)
+        let addAndWait = SKAction.sequence([addElectron, wait])
         
 //        let speedUp = SKAction.runBlock {
 //            self.speed = 4
 //        }
-        let slowDown = SKAction.runBlock({ 
+        let slowDown = SKAction.run({ 
             self.speed = 1
-            }, queue: dispatch_get_main_queue())
+            }, queue: DispatchQueue.main)
         speed = 3
-        let repeatAddElectron = SKAction.repeatAction(addAndAndWait, count: 45)
-        let sequence = SKAction.sequence([repeatAddElectron, slowDown])
+        let repeatAddElectron45 = SKAction.repeat(addAndWait, count: 45)
+        let repeatForeverAddElectron = SKAction.repeatForever(addAndWait)
+        let sequence = SKAction.sequence([repeatAddElectron45, slowDown, repeatForeverAddElectron])
 //        let fullSequence = SKAction.sequence([speedUp, repeatAddElectron, slowDown])
-        runAction(sequence)
+        run(sequence)
         
-        let cellNode = SKSpriteNode(color: backgroundColor, size: CGSizeMake(circuitSize.width / 14, circuitSize.width / 5.5))
-        cellNode.anchorPoint = CGPointMake(0.5, 0.5)
-        cellNode.position = CGPointMake(size.width  / 2, circuitBorderNode.position.y + (circuitBorderNode.frame.size.height / 2) - (strokeWidth / 2))
+        let cellNode = SKSpriteNode(color: backgroundColor, size: CGSize(width: circuitSize.width / 14, height: circuitSize.width / 5.5))
+        cellNode.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        cellNode.position = CGPoint(x: size.width  / 2, y: circuitBorderNode.position.y + (circuitBorderNode.frame.size.height / 2) - (strokeWidth / 2))
         cellNode.zPosition = 10
         addChild(cellNode)
         
-        let anode = SKShapeNode(rectOfSize: CGSizeMake(cellNode.size.width / 3, cellNode.size.height / 2))
-        anode.fillColor = SKColor.blackColor()
-        anode.strokeColor = SKColor.clearColor()
-        anode.position = CGPointMake((cellNode.size.width / -2) + (anode.frame.size.width / 2), 0)
+        let anode = SKShapeNode(rectOf: CGSize(width: cellNode.size.width / 3, height: cellNode.size.height / 2))
+        anode.fillColor = SKColor.black
+        anode.strokeColor = SKColor.clear
+        anode.position = CGPoint(x: (cellNode.size.width / -2) + (anode.frame.size.width / 2), y: 0)
         cellNode.addChild(anode)
         
-        let cathode = SKShapeNode(rectOfSize: CGSizeMake(cellNode.size.width / 3, cellNode.size.height))
-        cathode.fillColor = SKColor.blackColor()
-        cathode.strokeColor = SKColor.clearColor()
-        cathode.position = CGPointMake((cellNode.size.width / 2) - (cathode.frame.size.width / 2), 0)
+        let cathode = SKShapeNode(rectOf: CGSize(width: cellNode.size.width / 3, height: cellNode.size.height))
+        cathode.fillColor = SKColor.black
+        cathode.strokeColor = SKColor.clear
+        cathode.position = CGPoint(x: (cellNode.size.width / 2) - (cathode.frame.size.width / 2), y: 0)
         cellNode.addChild(cathode)
         
         let anodeLabel = SKLabelNode(text: "–")
         anodeLabel.fontSize = 15
-        anodeLabel.fontColor = SKColor.blackColor()
+        anodeLabel.fontColor = SKColor.black
         anodeLabel.fontName = "Helvetica-Bold"
-        anodeLabel.position = CGPointMake(cellNode.position.x - (cellNode.size.width + 4), cellNode.position.y + (cellNode.size.height / 4))
+        anodeLabel.position = CGPoint(x: cellNode.position.x - (cellNode.size.width + 4), y: cellNode.position.y + (cellNode.size.height / 4))
         addChild(anodeLabel)
         
         
         let cathodeLabel = SKLabelNode(text: "+")
         cathodeLabel.fontSize = 15
-       cathodeLabel.fontColor = SKColor.blackColor()
+       cathodeLabel.fontColor = SKColor.black
         cathodeLabel.fontName = "Helvetica-Bold"
-        cathodeLabel.position = CGPointMake(cellNode.position.x + (cellNode.size.width + 4), cellNode.position.y + (cellNode.size.height / 4))
+        cathodeLabel.position = CGPoint(x: cellNode.position.x + (cellNode.size.width + 4), y: cellNode.position.y + (cellNode.size.height / 4))
         addChild(cathodeLabel)
         
         
@@ -115,27 +119,27 @@ class VIRPScene: SKScene {
     
 
     
-    func borderBoxNode(boxSize: CGSize, strokeWidth: CGFloat, fillColor: SKColor) -> SKShapeNode {
-        let boxNode = SKShapeNode(rectOfSize: boxSize)
+    func borderBoxNode(_ boxSize: CGSize, strokeWidth: CGFloat, fillColor: SKColor) -> SKShapeNode {
+        let boxNode = SKShapeNode(rectOf: boxSize)
         boxNode.lineWidth = strokeWidth
-        boxNode.strokeColor = UIColor.blackColor()
+        boxNode.strokeColor = UIColor.black
         boxNode.fillColor = fillColor
         return boxNode
     }
 
-    override func willMoveFromView(view: SKView) {
-        super.willMoveFromView(view)
+    override func willMove(from view: SKView) {
+        super.willMove(from: view)
         removeAllChildren()
         removeAllActions()
     }
     
-    func updateResistorNode(xScaleFactor: CGFloat) {
+    func updateResistorNode(_ xScaleFactor: CGFloat) {
 //        let scale = SKAction.scaleXTo(xScaleFactor, duration: 0.5)
 //        resistorNode.runAction(scale)
         resistorNode.xScale = xScaleFactor
     }
     
-    func updateCurrent(ratio: CGFloat) {
+    func updateCurrent(_ ratio: CGFloat) {
         speed = ratio
     }
     

@@ -65,14 +65,14 @@ class AirBoxScene: SCNScene, SCNPhysicsContactDelegate {
         camNode.position = SCNVector3Make(0,0,15)
         rootNode.addChildNode(camNode)
         
-        func edge(vector: SCNVector3) -> SCNNode {
+        func edge(_ vector: SCNVector3) -> SCNNode {
             let edgeGeo = SCNBox(width: CGFloat(vector.x), height: CGFloat(vector.y), length: CGFloat(vector.z), chamferRadius: 0.2)
-            edgeGeo.firstMaterial?.diffuse.contents = UIColor.blackColor()
+            edgeGeo.firstMaterial?.diffuse.contents = UIColor.black
             let edgeNode = SCNNode(geometry: edgeGeo)
             return edgeNode
         }
         
-        func face(vector: SCNVector3) -> SCNNode {
+        func face(_ vector: SCNVector3) -> SCNNode {
             var lengthenedEdge = edgeVector
             lengthenedEdge.x += edgeVector.y
             let edge1 = edge(edgeVector)
@@ -84,10 +84,10 @@ class AirBoxScene: SCNScene, SCNPhysicsContactDelegate {
             edge1.position = SCNVector3Make(vector.x / -2, vector.x / -2, 0)
             edge2.position = SCNVector3Make(vector.x / -2, vector.x / 2, 0)
             
-            edge3.rotation = SCNVector4Make(0, 0, 1, Float(M_PI / 2))
+            edge3.rotation = SCNVector4Make(0, 0, 1, Float(Double.pi / 2))
 //            edge3.position = SCNVector3Make(0, 0, 0)
             
-            edge4.rotation = SCNVector4Make(0, 0, 1, Float(M_PI / 2))
+            edge4.rotation = SCNVector4Make(0, 0, 1, Float(Double.pi / 2))
             edge4.position = SCNVector3Make((-vector.x), 0, 0)
             
             let sumNode = SCNNode()
@@ -99,7 +99,7 @@ class AirBoxScene: SCNScene, SCNPhysicsContactDelegate {
             let planeGeometry = SCNBox(width: CGFloat(vector.x), height: CGFloat(vector.x), length: 0.2, chamferRadius: 0)
             let planeNode = SCNNode(geometry: planeGeometry)
             planeNode.opacity = 0.3
-            planeNode.physicsBody = SCNPhysicsBody(type: SCNPhysicsBodyType.Kinematic, shape: SCNPhysicsShape(geometry: planeGeometry, options: nil))
+            planeNode.physicsBody = SCNPhysicsBody(type: SCNPhysicsBodyType.kinematic, shape: SCNPhysicsShape(geometry: planeGeometry, options: nil))
             planeNode.position = SCNVector3Make(vector.x / -2, 0, -0.1)
             
             planeNode.physicsBody?.collisionBitMask = sphereBitMask
@@ -136,19 +136,19 @@ class AirBoxScene: SCNScene, SCNPhysicsContactDelegate {
         face2Node.position = SCNVector3Make(0, 0, edgeVector.x / 2)
         
         let face3Node = face(edgeVector)
-        face3Node.rotation = SCNVector4Make(0, 1, 0, Float(M_PI / 2))
+        face3Node.rotation = SCNVector4Make(0, 1, 0, Float(Double.pi / 2))
         face3Node.position = SCNVector3Make(0, 0, edgeVector.x / -2)
         
         let face4Node = face(edgeVector)
-        face4Node.rotation = SCNVector4Make(0, 1, 0, Float(M_PI / 2))
+        face4Node.rotation = SCNVector4Make(0, 1, 0, Float(Double.pi / 2))
         face4Node.position = SCNVector3Make(edgeVector.x / -1, 0, edgeVector.x / -2)
         
         let face5Node = face(edgeVector)
-        face5Node.rotation = SCNVector4Make(1, 0, 0, Float(M_PI / 2))
+        face5Node.rotation = SCNVector4Make(1, 0, 0, Float(Double.pi / 2))
         face5Node.position = SCNVector3Make(0, edgeVector.x / -2, 0)
         
         let face6Node = face(edgeVector)
-        face6Node.rotation = SCNVector4Make(1, 0, 0, Float(M_PI / 2))
+        face6Node.rotation = SCNVector4Make(1, 0, 0, Float(Double.pi / 2))
         face6Node.position = SCNVector3Make(0, edgeVector.x / 2, 0)
         
         //have a node that contains the box so that we scale it when needed
@@ -160,7 +160,7 @@ class AirBoxScene: SCNScene, SCNPhysicsContactDelegate {
         boxNode.addChildNode(face4Node)
         boxNode.addChildNode(face5Node)
         boxNode.addChildNode(face6Node)
-        faceNodes.appendContentsOf([face1Node, face2Node, face3Node, face4Node, face5Node, face6Node])
+        faceNodes.append(contentsOf: [face1Node, face2Node, face3Node, face4Node, face5Node, face6Node])
         
         let inset = Float(edgeVector.x / -2)
         boxNode.pivot = SCNMatrix4MakeTranslation(inset, 0, inset)
@@ -172,7 +172,7 @@ class AirBoxScene: SCNScene, SCNPhysicsContactDelegate {
 //        rootNode.camera = camera
     }
     
-    func generateParticles(count: Int, redRatio: CGFloat) {
+    func generateParticles(_ count: Int, redRatio: CGFloat) {
         for _ in 0..<count {
             let sphereGeo = SCNSphere(radius: 0.25)
             sphereGeo.firstMaterial?.diffuse.contents = UIColor(red: redRatio, green: 0.18, blue: 0.54, alpha: 1)
@@ -180,7 +180,7 @@ class AirBoxScene: SCNScene, SCNPhysicsContactDelegate {
             sphereNode.geometry = sphereGeo
             sphereNode.position = SCNVector3Make(0, 0, 0)
             
-            sphereNode.physicsBody = SCNPhysicsBody(type: SCNPhysicsBodyType.Dynamic, shape: SCNPhysicsShape(geometry: sphereGeo, options: nil))
+            sphereNode.physicsBody = SCNPhysicsBody(type: SCNPhysicsBodyType.dynamic, shape: SCNPhysicsShape(geometry: sphereGeo, options: nil))
             sphereNode.physicsBody?.collisionBitMask = boxBitMask
             sphereNode.physicsBody?.categoryBitMask = sphereBitMask
             sphereNode.physicsBody?.contactTestBitMask = boxBitMask
@@ -199,7 +199,7 @@ class AirBoxScene: SCNScene, SCNPhysicsContactDelegate {
         }
     }
     
-    func removeParticles(count: Int) {
+    func removeParticles(_ count: Int) {
         for _ in 0..<count {
             if let sphere = self.spheres.popLast() {
                 sphere.removeAllActions()
@@ -211,18 +211,18 @@ class AirBoxScene: SCNScene, SCNPhysicsContactDelegate {
         }
     }
     
-    func updateSpherePressure(redRatio: CGFloat) {
+    func updateSpherePressure(_ redRatio: CGFloat) {
         for s in spheres {
             s.geometry!.firstMaterial?.diffuse.contents = UIColor(red: redRatio, green: 0.18, blue: 0.54, alpha: 1)
         }
     }
     
-    func updateSphereTemperature(speed: CGFloat) {
+    func updateSphereTemperature(_ speed: CGFloat) {
         physicsWorld.speed = speed
     }
     
     
-    func physicsWorld(world: SCNPhysicsWorld, didBeginContact contact: SCNPhysicsContact) {
+    func physicsWorld(_ world: SCNPhysicsWorld, didBegin contact: SCNPhysicsContact) {
         guard reflectionAllowed else {return}
         let contactNodes = [contact.nodeA, contact.nodeB]
         for node in contactNodes {
@@ -254,7 +254,7 @@ class AirBoxScene: SCNScene, SCNPhysicsContactDelegate {
 //        }
     }
     
-    func randomVector(magnitude: Float) -> SCNVector3 {
+    func randomVector(_ magnitude: Float) -> SCNVector3 {
         var x = Float(arc4random() % UInt32(magnitude))
         let yzSquaredSums = pow(magnitude, 2) - pow(x, 2)
         var y = Float(arc4random() % UInt32(sqrt(yzSquaredSums)))

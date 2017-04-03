@@ -17,34 +17,34 @@ class InfoCell: UITableViewCell, MFMailComposeViewControllerDelegate {
         
     }
 
-    @IBAction func contactDeveloper(sender: AnyObject) {
+    @IBAction func contactDeveloper(_ sender: AnyObject) {
         let mailController = MFMailComposeViewController()
         mailController.mailComposeDelegate = self
         mailController.title = "Send Feeback!"
         mailController.setSubject("Feeback for Physics Phun")
         mailController.setToRecipients(["omalsecondary@gmail.com"])
         
-        let rootVC = UIApplication.sharedApplication().windows.first?.rootViewController!
+        let rootVC = UIApplication.shared.windows.first?.rootViewController!
         if rootVC is UINavigationController {
             if MFMailComposeViewController.canSendMail() {
-                (rootVC as! UINavigationController).topViewController!.presentViewController(mailController, animated: true, completion: nil)
+                (rootVC as! UINavigationController).topViewController!.present(mailController, animated: true, completion: nil)
             }
         }
         
     }
     
-    @IBAction func rateOnAppStore(sender: AnyObject) {
-        UIApplication.sharedApplication().openURL(NSURL(string: "itms-apps://itunes.apple.com/app/id1143664786")!)
+    @IBAction func rateOnAppStore(_ sender: AnyObject) {
+        UIApplication.shared.openURL(URL(string: "itms-apps://itunes.apple.com/app/id1143664786")!)
     }
     //1143664786
-    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
-        controller.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
 //        super.setSelected(selected, animated: animated)
-        highlighted = false
+        isHighlighted = false
         // Configure the view for the selected state
     }
     

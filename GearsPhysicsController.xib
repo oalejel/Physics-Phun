@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GearsPhysicsController" customModule="Physics_Phun" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="7j5-Yp-Zzr" id="Fix-Zs-rOr"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="7j5-Yp-Zzr">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vNK-1v-Nwv">
+                    <rect key="frame" x="0.0" y="64" width="375" height="195"/>
+                </sceneKitView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="49F-e3-Cnr">
+                    <rect key="frame" x="12" y="271" width="351" height="384"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v1U-Cm-J1P">
+                            <rect key="frame" x="0.0" y="0.0" width="351" height="122.5"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4cD-OF-Q9V" customClass="RoundedView" customModule="Physics_Phun" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="351" height="122.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gear 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLJ-d5-WwU">
+                                            <rect key="frame" x="8" y="8" width="49" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mhW-sd-aWP">
+                                            <rect key="frame" x="0.0" y="29.5" width="351" height="85"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="iJF-jq-Ty3">
+                                                    <rect key="frame" x="0.0" y="0.0" width="111.5" height="85"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hWQ-Dw-NRX">
+                                                            <rect key="frame" x="24.5" y="0.0" width="63" height="63"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="hWQ-Dw-NRX" secondAttribute="height" multiplier="1:1" id="2Au-gd-4t6"/>
+                                                            </constraints>
+                                                            <state key="normal" title="Button" image="big_gear_highlighted.png"/>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Big Gear" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZ9-Q4-ab8">
+                                                            <rect key="frame" x="23" y="65" width="66" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20" id="ulr-Ip-VIR"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="1iM-Or-lx2">
+                                                    <rect key="frame" x="119.5" y="0.0" width="112" height="85"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XqU-zc-9pE">
+                                                            <rect key="frame" x="24.5" y="0.0" width="63" height="63"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="XqU-zc-9pE" secondAttribute="height" multiplier="1:1" id="l0R-aI-Gnu"/>
+                                                            </constraints>
+                                                            <state key="normal" title="Button" image="medium_gear.png"/>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medium Gear" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f74-TC-IGF">
+                                                            <rect key="frame" x="4.5" y="65" width="103" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20" id="gNG-gb-jO9"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="f74-TC-IGF" secondAttribute="bottom" id="r4S-o6-BAQ"/>
+                                                    </constraints>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="03L-wN-YyT">
+                                                    <rect key="frame" x="239.5" y="0.0" width="111.5" height="85"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTz-Fh-7Jo">
+                                                            <rect key="frame" x="24.5" y="0.0" width="62.5" height="63"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="PTz-Fh-7Jo" secondAttribute="height" multiplier="1:1" id="JVP-hO-aA2"/>
+                                                            </constraints>
+                                                            <state key="normal" title="Button" image="small_gear.tiff"/>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Small Gear" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BcU-gE-G58">
+                                                            <rect key="frame" x="14" y="65" width="83" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20" id="B6o-LR-Pb8"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="BcU-gE-G58" secondAttribute="bottom" id="WSM-b3-YBc"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="iJF-jq-Ty3" firstAttribute="leading" secondItem="mhW-sd-aWP" secondAttribute="leading" id="jIi-q8-Wqu"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="mhW-sd-aWP" firstAttribute="leading" secondItem="4cD-OF-Q9V" secondAttribute="leading" id="5yi-Ie-EAq"/>
+                                        <constraint firstItem="aLJ-d5-WwU" firstAttribute="top" secondItem="4cD-OF-Q9V" secondAttribute="top" constant="8" id="Mcj-Zk-hlm"/>
+                                        <constraint firstItem="aLJ-d5-WwU" firstAttribute="leading" secondItem="4cD-OF-Q9V" secondAttribute="leading" constant="8" id="MfQ-2Z-eyS"/>
+                                        <constraint firstItem="mhW-sd-aWP" firstAttribute="top" secondItem="4cD-OF-Q9V" secondAttribute="top" constant="29.5" id="RAN-Eh-h9h"/>
+                                        <constraint firstItem="mhW-sd-aWP" firstAttribute="top" secondItem="aLJ-d5-WwU" secondAttribute="bottom" constant="1" id="Ume-oM-q7m"/>
+                                        <constraint firstAttribute="trailing" secondItem="mhW-sd-aWP" secondAttribute="trailing" id="pvg-FQ-zuV"/>
+                                        <constraint firstAttribute="bottom" secondItem="mhW-sd-aWP" secondAttribute="bottom" constant="8" id="wDT-oT-wEM"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cR7-pM-5WU">
+                            <rect key="frame" x="0.0" y="130.5" width="351" height="123"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nhe-hd-Ruh" customClass="RoundedView" customModule="Physics_Phun" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="351" height="123"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gear 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6a-33-7bX">
+                                            <rect key="frame" x="8" y="8" width="51" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7mW-Aj-uYI">
+                                            <rect key="frame" x="0.0" y="29.5" width="351" height="85.5"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="iuz-my-Zyb">
+                                                    <rect key="frame" x="0.0" y="0.0" width="111.5" height="85.5"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CvY-WK-O7V">
+                                                            <rect key="frame" x="24.5" y="0.0" width="63" height="63.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="CvY-WK-O7V" secondAttribute="height" multiplier="1:1" id="knk-eI-r93"/>
+                                                            </constraints>
+                                                            <state key="normal" title="Button" image="big_gear.png"/>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Big Gear" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBp-Oc-dPd">
+                                                            <rect key="frame" x="23" y="65.5" width="66" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20" id="L2F-7k-VYO"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Lcd-1W-z39">
+                                                    <rect key="frame" x="119.5" y="0.0" width="112" height="85.5"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adU-TE-5Wj">
+                                                            <rect key="frame" x="24" y="0.0" width="64" height="63.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="adU-TE-5Wj" secondAttribute="height" multiplier="1:1" id="obl-h6-D7C"/>
+                                                            </constraints>
+                                                            <state key="normal" title="Button" image="medium_gear_highlighted.tiff"/>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medium Gear" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvf-tj-gu1">
+                                                            <rect key="frame" x="4.5" y="65.5" width="103" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20" id="vKz-os-d5U"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="bvf-tj-gu1" secondAttribute="bottom" id="eRF-H5-mAf"/>
+                                                    </constraints>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="6Pi-BA-dG2">
+                                                    <rect key="frame" x="239.5" y="0.0" width="111.5" height="85.5"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zch-nU-Dsn">
+                                                            <rect key="frame" x="24" y="0.0" width="63.5" height="63.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="Zch-nU-Dsn" secondAttribute="height" multiplier="1:1" id="7IA-Xq-6op"/>
+                                                            </constraints>
+                                                            <state key="normal" title="Button" image="small_gear.tiff"/>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Small Gear" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6G-gT-o7z">
+                                                            <rect key="frame" x="14" y="65.5" width="83" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20" id="cSW-Bk-aZT"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="s6G-gT-o7z" secondAttribute="bottom" id="oSW-iy-iPf"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="iuz-my-Zyb" firstAttribute="leading" secondItem="7mW-Aj-uYI" secondAttribute="leading" id="rt9-Nt-thZ"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.20000000000000001" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="7mW-Aj-uYI" firstAttribute="top" secondItem="b6a-33-7bX" secondAttribute="bottom" constant="1" id="7XC-Y1-6D5"/>
+                                        <constraint firstItem="7mW-Aj-uYI" firstAttribute="top" secondItem="Nhe-hd-Ruh" secondAttribute="top" constant="29.5" id="88s-4n-FEC"/>
+                                        <constraint firstAttribute="trailing" secondItem="7mW-Aj-uYI" secondAttribute="trailing" id="BW4-xy-ZG7"/>
+                                        <constraint firstItem="b6a-33-7bX" firstAttribute="top" secondItem="Nhe-hd-Ruh" secondAttribute="top" constant="8" id="Bc7-oI-hrh"/>
+                                        <constraint firstItem="b6a-33-7bX" firstAttribute="leading" secondItem="Nhe-hd-Ruh" secondAttribute="leading" constant="8" id="dAP-zd-JxK"/>
+                                        <constraint firstItem="7mW-Aj-uYI" firstAttribute="leading" secondItem="Nhe-hd-Ruh" secondAttribute="leading" id="vdb-Zb-4Ab"/>
+                                        <constraint firstAttribute="bottom" secondItem="7mW-Aj-uYI" secondAttribute="bottom" constant="8" id="wzd-6h-OXa"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="e5l-3Y-ugu">
+                            <rect key="frame" x="0.0" y="261.5" width="351" height="122.5"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qMn-Pc-l7h" customClass="RoundedView" customModule="Physics_Phun" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="171.5" height="122.5"/>
+                                    <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S1H-ap-nbm" customClass="RoundedView" customModule="Physics_Phun" customModuleProvider="target">
+                                    <rect key="frame" x="179.5" y="0.0" width="171.5" height="122.5"/>
+                                    <color key="backgroundColor" white="0.20000000000000001" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="4cD-OF-Q9V" secondAttribute="trailing" id="GEU-EW-J6C"/>
+                        <constraint firstAttribute="trailing" secondItem="cR7-pM-5WU" secondAttribute="trailing" id="M95-4X-bRp"/>
+                        <constraint firstAttribute="trailing" secondItem="e5l-3Y-ugu" secondAttribute="trailing" id="Tf3-wE-aPc"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="0.13725490200000001" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vNK-1v-Nwv" firstAttribute="leading" secondItem="7j5-Yp-Zzr" secondAttribute="leading" id="3Em-41-ATH"/>
+                <constraint firstAttribute="bottom" secondItem="vNK-1v-Nwv" secondAttribute="bottom" constant="408" id="AoT-9q-b91"/>
+                <constraint firstAttribute="trailing" secondItem="vNK-1v-Nwv" secondAttribute="trailing" id="dGx-DW-phr"/>
+                <constraint firstAttribute="trailing" secondItem="49F-e3-Cnr" secondAttribute="trailing" constant="12" id="hnM-jf-mEe"/>
+                <constraint firstItem="49F-e3-Cnr" firstAttribute="leading" secondItem="7j5-Yp-Zzr" secondAttribute="leading" constant="12" id="hua-nq-2RI"/>
+                <constraint firstItem="vNK-1v-Nwv" firstAttribute="top" secondItem="7j5-Yp-Zzr" secondAttribute="top" constant="64" id="lwy-wV-Bnl"/>
+                <constraint firstAttribute="bottom" secondItem="49F-e3-Cnr" secondAttribute="bottom" constant="12" id="nL1-ru-yRZ"/>
+                <constraint firstItem="49F-e3-Cnr" firstAttribute="top" secondItem="vNK-1v-Nwv" secondAttribute="bottom" constant="12" id="nR7-Qg-y27"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <point key="canvasLocation" x="35.5" y="54.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="big_gear.png" width="1000" height="997"/>
+        <image name="big_gear_highlighted.png" width="416" height="415"/>
+        <image name="medium_gear.png" width="211" height="218"/>
+        <image name="medium_gear_highlighted.tiff" width="219" height="224"/>
+        <image name="small_gear.tiff" width="203" height="202"/>
+    </resources>
+</document>

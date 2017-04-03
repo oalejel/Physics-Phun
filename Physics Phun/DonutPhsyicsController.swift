@@ -11,7 +11,7 @@ import SpriteKit
 
 class DonutPhsyicsController: UIViewController, UITextFieldDelegate, DirectionControlDelegate {
 
-    let bounds = UIScreen.mainScreen().bounds
+    let bounds = UIScreen.main.bounds
     
     var spriteScene: DonutScene!
     
@@ -22,12 +22,12 @@ class DonutPhsyicsController: UIViewController, UITextFieldDelegate, DirectionCo
     var visibleRect: CGRect!
     
     var drew = false
-    var viewLoaded = false
+    var viewHasLoaded = false
     
     var accelerationChart: LineChart!
     var velocityChart: LineChart!
     
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         spriteView.presentScene(nil)
     }
@@ -47,7 +47,7 @@ class DonutPhsyicsController: UIViewController, UITextFieldDelegate, DirectionCo
         
         spriteView.showsFPS = false
         spriteView.showsNodeCount = false
-        viewLoaded = true
+        viewHasLoaded = true
     }
     
     func infoPressed() {
@@ -63,24 +63,24 @@ class DonutPhsyicsController: UIViewController, UITextFieldDelegate, DirectionCo
     }
     
     
-    func newPoint(p: CGPoint) {
+    func newPoint(_ p: CGPoint) {
         spriteScene.pushDonut(p)
     }
     
     
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
-    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for v in view.subviews {
             v.resignFirstResponder()
         }
@@ -88,11 +88,11 @@ class DonutPhsyicsController: UIViewController, UITextFieldDelegate, DirectionCo
     
     
     
-    override func canBecomeFirstResponder() -> Bool {
+    override var canBecomeFirstResponder : Bool {
         return true
     }
     
-    override func canResignFirstResponder() -> Bool {
+    override var canResignFirstResponder : Bool {
         return true
     }
     
@@ -108,10 +108,10 @@ class DonutPhsyicsController: UIViewController, UITextFieldDelegate, DirectionCo
         super.viewDidLayoutSubviews()
         
         if !drew {
-            if viewLoaded {
+            if viewHasLoaded {
                 spriteScene = DonutScene(size: spriteView.frame.size)
-                spriteScene.backgroundColor = UIColor.whiteColor()
-                spriteScene.scaleMode = .AspectFit
+                spriteScene.backgroundColor = UIColor.white
+                spriteScene.scaleMode = .aspectFit
                 spriteView.presentScene(spriteScene)
                 spriteScene.donutController = self
                 drew = true
@@ -119,7 +119,7 @@ class DonutPhsyicsController: UIViewController, UITextFieldDelegate, DirectionCo
                 controlView.directionDelegate = self
                 
                 
-                accelerationChart = LineChart(frame: CGRectMake(0, spriteView.frame.origin.y, 100, 100))
+                accelerationChart = LineChart(frame: CGRect(x: 0, y: spriteView.frame.origin.y, width: 100, height: 100))
                 accelerationChart.addLine([0])
                 
                 accelerationChart.animation.enabled = false
@@ -130,27 +130,27 @@ class DonutPhsyicsController: UIViewController, UITextFieldDelegate, DirectionCo
                 let accelerationLabel = UILabel()
                 accelerationLabel.text = "Acceleration"
                 
-                accelerationLabel.textColor = UIColor.blueColor()
+                accelerationLabel.textColor = UIColor.blue
                 accelerationLabel.font = UIFont(name: "Helvetica", size: 10)
                 view.addSubview(accelerationLabel)
                 accelerationLabel.sizeToFit()
                 accelerationLabel.center = accelerationChart.center
                 
                 
-                velocityChart = LineChart(frame: CGRectMake(spriteView.frame.size.width - 100, spriteView.frame.origin.y, 100, 100))
+                velocityChart = LineChart(frame: CGRect(x: spriteView.frame.size.width - 100, y: spriteView.frame.origin.y, width: 100, height: 100))
                 velocityChart.addLine([0])
                 
                 velocityChart.animation.enabled = false
                 velocityChart.lineWidth = 1
                 velocityChart.dots.innerRadiusHighlighted = 0
-                velocityChart.colors = [UIColor.redColor()]
+                velocityChart.colors = [UIColor.red]
                 
                 view.addSubview(velocityChart)
                 
                 let velocityLabel = UILabel()
                 velocityLabel.text = "Speed"
                 
-                velocityLabel.textColor = UIColor.redColor()
+                velocityLabel.textColor = UIColor.red
                 velocityLabel.font = UIFont(name: "Helvetica", size: 10)
                 view.addSubview(velocityLabel)
                 velocityLabel.sizeToFit()

@@ -18,7 +18,7 @@ import GameplayKit
 
 class Neutron: SKShapeNode {
     var passesFirstMedium = false
-    var startVelocity: CGVector = CGVectorMake(0, 0)
+    var startVelocity: CGVector = CGVector(dx: 0, dy: 0)
 }
 
 class NeutronScene: SKScene, SKPhysicsContactDelegate {
@@ -48,15 +48,15 @@ class NeutronScene: SKScene, SKPhysicsContactDelegate {
     
     var layer2Y: CGFloat = 0
     
-    override func didMoveToView(view: SKView) {
-        super.didMoveToView(view)
+    override func didMove(to view: SKView) {
+        super.didMove(to: view)
                 
         backgroundColor = UIColor(red: 1, green: 230/255, blue: 179/255, alpha: 1)
         
         physicsWorld.contactDelegate = self
-        physicsWorld.gravity = CGVectorMake(0, 0)
+        physicsWorld.gravity = CGVector(dx: 0, dy: 0)
         
-        physicsBody = SKPhysicsBody(edgeLoopFromRect: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+        physicsBody = SKPhysicsBody(edgeLoopFrom: CGRect(x: 0, y: 0, width: size.width, height: size.height))
         physicsBody?.restitution = 0
         physicsBody?.collisionBitMask = 0xFFFFFF
         
@@ -64,23 +64,23 @@ class NeutronScene: SKScene, SKPhysicsContactDelegate {
         
      
         //try makeing size zero
-        shootAnchor = SKSpriteNode(color: UIColor.clearColor(), size: CGSizeMake(10, 10))
-        shootAnchor.anchorPoint = CGPointMake(0.5, 0.5)
-        shootAnchor.position = CGPointMake(size.width / 2, layerY)
+        shootAnchor = SKSpriteNode(color: UIColor.clear, size: CGSize(width: 10, height: 10))
+        shootAnchor.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        shootAnchor.position = CGPoint(x: size.width / 2, y: layerY)
         
         
-        detectorAnchor = SKSpriteNode(color: UIColor.clearColor(), size: CGSizeMake(10, 10))
-        detectorAnchor.anchorPoint = CGPointMake(0.5, 0.5)
-        detectorAnchor.position = CGPointMake(size.width / 2, layerY)
+        detectorAnchor = SKSpriteNode(color: UIColor.clear, size: CGSize(width: 10, height: 10))
+        detectorAnchor.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        detectorAnchor.position = CGPoint(x: size.width / 2, y: layerY)
         
         let shooterWidth = size.width / 3
-        shooter = SKSpriteNode(color: SKColor.grayColor(), size: CGSizeMake(shooterWidth, size.width / 10))
-        shooter.anchorPoint = CGPointMake(0.5, 0.5)
+        shooter = SKSpriteNode(color: SKColor.gray, size: CGSize(width: shooterWidth, height: size.width / 10))
+        shooter.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         let shooterLabel = SKLabelNode(text: "Emitter")
         shooterLabel.fontName = "Helvetica"
         shooterLabel.fontSize = 14
-        shooterLabel.horizontalAlignmentMode = .Center
-        shooterLabel.fontColor = UIColor.whiteColor()
+        shooterLabel.horizontalAlignmentMode = .center
+        shooterLabel.fontColor = UIColor.white
         shooter.addChild(shooterLabel)
         
         //watch out for the height component of the atan/...
@@ -90,20 +90,20 @@ class NeutronScene: SKScene, SKPhysicsContactDelegate {
         shooter.zRotation = shooterAngle
         
         /////
-        let detectorSize = CGSizeMake(shooterWidth, size.width / 10)
-        detector = SKSpriteNode(color: SKColor.blackColor(), size: detectorSize)
-        detector.anchorPoint = CGPointMake(0.5, 0.5)
-        detector.physicsBody = SKPhysicsBody(rectangleOfSize: detectorSize)
+        let detectorSize = CGSize(width: shooterWidth, height: size.width / 10)
+        detector = SKSpriteNode(color: SKColor.black, size: detectorSize)
+        detector.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        detector.physicsBody = SKPhysicsBody(rectangleOf: detectorSize)
         detector.physicsBody?.usesPreciseCollisionDetection = true
-        detector.physicsBody?.dynamic = false
+        detector.physicsBody?.isDynamic = false
         detector.physicsBody?.collisionBitMask = detectorBitMask
         detector.physicsBody?.contactTestBitMask = detectorBitMask
         
         let detectorLabel = SKLabelNode(text: "Detector")
         detectorLabel.fontName = "Helvetica"
         detectorLabel.fontSize = 14
-        detectorLabel.horizontalAlignmentMode = .Center
-        detectorLabel.fontColor = UIColor.whiteColor()
+        detectorLabel.horizontalAlignmentMode = .center
+        detectorLabel.fontColor = UIColor.white
         detector.addChild(detectorLabel)
         
         //watch out for the height component of the atan/...
@@ -113,9 +113,9 @@ class NeutronScene: SKScene, SKPhysicsContactDelegate {
         detector.zRotation = detectorAngle
         ////
         
-        shooter.position = CGPointMake((-size.width / 2) + (shooter.frame.size.width / 2), (frame.size.height / 2) - ((shootAnchor.size.height / 2) + (shootAnchor.position.y)))
+        shooter.position = CGPoint(x: (-size.width / 2) + (shooter.frame.size.width / 2), y: (frame.size.height / 2) - ((shootAnchor.size.height / 2) + (shootAnchor.position.y)))
         
-        detector.position = CGPointMake((size.width / 2) - (detector.frame.size.width / 2), (frame.size.height / 2) - ((detectorAnchor.size.height / 2) + (detectorAnchor.position.y)))
+        detector.position = CGPoint(x: (size.width / 2) - (detector.frame.size.width / 2), y: (frame.size.height / 2) - ((detectorAnchor.size.height / 2) + (detectorAnchor.position.y)))
         //(shooterWidth / 2) - ((size.width / 2) + (shootAnchor.size.width / 2))
         
         
@@ -126,51 +126,51 @@ class NeutronScene: SKScene, SKPhysicsContactDelegate {
         
         
         let graph = SKSpriteNode(imageNamed: "graph")
-        graph.anchorPoint = CGPointMake(0.5, 0.5)
-        graph.position = CGPointMake(size.width / 2, (size.height) - ((graph.size.height / 2) + 14))
+        graph.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        graph.position = CGPoint(x: size.width / 2, y: (size.height) - ((graph.size.height / 2) + 14))
         addChild(graph)
 
         
 //        addChild(shooter)
         
-        let mediumSize = CGSizeMake(size.width / 2, 2)
+        let mediumSize = CGSize(width: size.width / 2, height: 2)
         
-        layer1 = SKSpriteNode(color: UIColor.blackColor(), size: mediumSize)
-        layer1.anchorPoint = CGPointMake(0.5, 0)
-        layer1.position = CGPointMake(size.width / 2, layerY)
-        layer1.physicsBody = SKPhysicsBody(rectangleOfSize: mediumSize)
+        layer1 = SKSpriteNode(color: UIColor.black, size: mediumSize)
+        layer1.anchorPoint = CGPoint(x: 0.5, y: 0)
+        layer1.position = CGPoint(x: size.width / 2, y: layerY)
+        layer1.physicsBody = SKPhysicsBody(rectangleOf: mediumSize)
         layer1.physicsBody?.usesPreciseCollisionDetection = true
         layer1.physicsBody?.collisionBitMask = m1BitMask
         layer1.physicsBody?.categoryBitMask = m1BitMask
         layer1.physicsBody?.contactTestBitMask = m1BitMask
-        layer1.physicsBody?.dynamic = false
+        layer1.physicsBody?.isDynamic = false
         addChild(layer1)
         
-        layer2 = SKSpriteNode(color: UIColor.blackColor(), size: mediumSize)
-        layer2.anchorPoint = CGPointMake(0.5, 0)
-        layer2.position = CGPointMake(size.width / 2, layerY * (3/4))
+        layer2 = SKSpriteNode(color: UIColor.black, size: mediumSize)
+        layer2.anchorPoint = CGPoint(x: 0.5, y: 0)
+        layer2.position = CGPoint(x: size.width / 2, y: layerY * (3/4))
         layer2Y = layer2.position.y
-        layer2.physicsBody = SKPhysicsBody(rectangleOfSize: mediumSize)
+        layer2.physicsBody = SKPhysicsBody(rectangleOf: mediumSize)
         layer2.physicsBody?.usesPreciseCollisionDetection = true
         layer2.physicsBody?.collisionBitMask = m2BitMask
         layer2.physicsBody?.categoryBitMask = m2BitMask
         layer2.physicsBody?.contactTestBitMask = m2BitMask
-        layer2.physicsBody?.dynamic = false
+        layer2.physicsBody?.isDynamic = false
         addChild(layer2)
     }
     
-    func startNeutronBeam(intensity: Double) {
-        removeActionForKey("beam")
+    func startNeutronBeam(_ intensity: Double) {
+        removeAction(forKey: "beam")
         
-        let delay = SKAction.waitForDuration(1 / intensity)
-        let block = SKAction.runBlock {
+        let delay = SKAction.wait(forDuration: 1 / intensity)
+        let block = SKAction.run {
             let relativeAngle = self.shootAnchor.zRotation + self.shooterAngle
             
             let neutron = Neutron(circleOfRadius: 2)
             
-            neutron.fillColor = self.spinDownMode ? SKColor.blueColor() : SKColor.redColor()
-            neutron.strokeColor = self.spinDownMode ? SKColor.blueColor() : SKColor.redColor()
-            neutron.position = self.convertPoint(self.shooter.position, fromNode: self.shootAnchor)//CGPointMake(self.shooter.position.x + self.shootAnchor.position.x, self.shooter.position.y + self.shootAnchor.position.y + 10)
+            neutron.fillColor = self.spinDownMode ? SKColor.blue : SKColor.red
+            neutron.strokeColor = self.spinDownMode ? SKColor.blue : SKColor.red
+            neutron.position = self.convert(self.shooter.position, from: self.shootAnchor)//CGPointMake(self.shooter.position.x + self.shootAnchor.position.x, self.shooter.position.y + self.shootAnchor.position.y + 10)
             
             
             
@@ -198,16 +198,16 @@ class NeutronScene: SKScene, SKPhysicsContactDelegate {
         }
         
         let seq = SKAction.sequence([block, delay])
-        runAction(SKAction.repeatActionForever(seq), withKey: "beam")
+        run(SKAction.repeatForever(seq), withKey: "beam")
     }
     
     
-    func updateAngle(angle: Float) {
-        let rotate = SKAction.rotateToAngle(CGFloat(angle), duration: 0.2)
-        shootAnchor.runAction(rotate)
+    func updateAngle(_ angle: Float) {
+        let rotate = SKAction.rotate(toAngle: CGFloat(angle), duration: 0.2)
+        shootAnchor.run(rotate)
         
-        let detectorRotate = SKAction.rotateToAngle(CGFloat(-angle), duration: 0.2)
-        detectorAnchor.runAction(detectorRotate)
+        let detectorRotate = SKAction.rotate(toAngle: CGFloat(-angle), duration: 0.2)
+        detectorAnchor.run(detectorRotate)
     }
     
     
@@ -222,7 +222,7 @@ class NeutronScene: SKScene, SKPhysicsContactDelegate {
     
     
     
-    func didBeginContact(contact: SKPhysicsContact) {
+    func didBegin(_ contact: SKPhysicsContact) {
         let a = contact.bodyA
         let b = contact.bodyB
         var set: Set<SKPhysicsBody> = [a, b]
@@ -248,8 +248,8 @@ class NeutronScene: SKScene, SKPhysicsContactDelegate {
                     }
                 }
                 
-                n.fillColor = self.spinDownMode ? SKColor.blueColor() : SKColor.redColor()
-                n.strokeColor = self.spinDownMode ? SKColor.blueColor() : SKColor.redColor()
+                n.fillColor = self.spinDownMode ? SKColor.blue : SKColor.red
+                n.strokeColor = self.spinDownMode ? SKColor.blue : SKColor.red
                 
                 if spinFlip {self.spinDownMode = !self.spinDownMode}
             }
@@ -257,8 +257,8 @@ class NeutronScene: SKScene, SKPhysicsContactDelegate {
     }
     
     
-    override func willMoveFromView(view: SKView) {
-        super.willMoveFromView(view)
+    override func willMove(from view: SKView) {
+        super.willMove(from: view)
         removeAllChildren()
         removeAllActions()
     }
