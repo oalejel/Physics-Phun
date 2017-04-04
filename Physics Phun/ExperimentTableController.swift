@@ -53,7 +53,6 @@ class ExperimentTableController: UITableViewController, UINavigationControllerDe
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if section >= experiments.count {
-            print("never mind")
             return 1
         }
         return experiments[section].count

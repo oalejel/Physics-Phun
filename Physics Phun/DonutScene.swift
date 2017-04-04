@@ -124,11 +124,8 @@ class DonutScene: SKScene, SKPhysicsContactDelegate {
         pastAccelerations.append(pastAccelerations.last!)
     }
     
-    func didBegin(_ contact: SKPhysicsContact) {
-    }
-    
-    
-    
-    
+//    func didBegin(_ contact: SKPhysicsContact) {
+//    }
+//
     
 }
