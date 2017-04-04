@@ -22,7 +22,6 @@ class ResistivityPhsyicsController: UIViewController, UITextFieldDelegate {
     
     var experimentScene: ResistivityScene!
     
-    
     var rohValue: Float = 1
     var lengthValue: Float = 1
     var areaValue: Float = 1

@@ -19,7 +19,7 @@ class DonutPhsyicsController: UIViewController, UITextFieldDelegate, DirectionCo
     
     @IBOutlet var spriteView: SKView!
     
-    var visibleRect: CGRect!
+//    var visibleRect: CGRect!
     
     var drew = false
     var viewHasLoaded = false

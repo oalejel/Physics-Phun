@@ -29,14 +29,17 @@
 		3D3E09441D5E11A400E294FD /* VIRPScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3E09431D5E11A400E294FD /* VIRPScene.swift */; };
 		3D3E09471D5E752900E294FD /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3E09451D5E752900E294FD /* InfoCell.swift */; };
 		3D3E09481D5E752900E294FD /* InfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D3E09461D5E752900E294FD /* InfoCell.xib */; };
-		3D41D1651E7DBC6900E983C0 /* big_gear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D41D1641E7DBC6900E983C0 /* big_gear@2x.png */; };
 		3D41D1671E7DBD6D00E983C0 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D41D1661E7DBD6D00E983C0 /* RoundedView.swift */; };
-		3D41D1691E7E2E9C00E983C0 /* big_gear_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D41D1681E7E2E9C00E983C0 /* big_gear_highlighted@2x.png */; };
-		3D41D16D1E7E30A000E983C0 /* medium_gear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D41D16B1E7E30A000E983C0 /* medium_gear@2x.png */; };
-		3D41D1711E7E330100E983C0 /* small_gear@2x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 3D41D16F1E7E330100E983C0 /* small_gear@2x.tiff */; };
 		3D4B2FB11D40428F009B59EF /* cannon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D4B2FB01D40428F009B59EF /* cannon@2x.png */; };
 		3D4B2FB31D4042A9009B59EF /* cannon_base@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D4B2FB21D4042A9009B59EF /* cannon_base@2x.png */; };
 		3D4B2FB51D404815009B59EF /* SqueezeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4B2FB41D404815009B59EF /* SqueezeButton.swift */; };
+		3D82C5981E94070000BA5228 /* medium_gear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D82C5951E94070000BA5228 /* medium_gear@2x.png */; };
+		3D82C5991E94070000BA5228 /* large_gear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D82C5961E94070000BA5228 /* large_gear@2x.png */; };
+		3D82C59A1E94070000BA5228 /* small_gear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D82C5971E94070000BA5228 /* small_gear@2x.png */; };
+		3D82C59E1E94077A00BA5228 /* large_gear_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D82C59B1E94077A00BA5228 /* large_gear_icon.png */; };
+		3D82C59F1E94077A00BA5228 /* small_gear_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D82C59C1E94077A00BA5228 /* small_gear_icon.png */; };
+		3D82C5A01E94077A00BA5228 /* medium_gear_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D82C59D1E94077A00BA5228 /* medium_gear_icon.png */; };
+		3D82C5A21E94083B00BA5228 /* GearsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D82C5A11E94083B00BA5228 /* GearsScene.swift */; };
 		3D88C9F11D3FD001009C639F /* ExperimentTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D88C9F01D3FD001009C639F /* ExperimentTableController.swift */; };
 		3D88C9F41D3FD11B009C639F /* ExperimentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D88C9F21D3FD11B009C639F /* ExperimentCell.swift */; };
 		3D88C9F51D3FD11B009C639F /* ExperimentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D88C9F31D3FD11B009C639F /* ExperimentCell.xib */; };
@@ -101,14 +104,17 @@
 		3D3E09431D5E11A400E294FD /* VIRPScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VIRPScene.swift; sourceTree = "<group>"; };
 		3D3E09451D5E752900E294FD /* InfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoCell.swift; path = ../InfoCell.swift; sourceTree = "<group>"; };
 		3D3E09461D5E752900E294FD /* InfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = InfoCell.xib; path = ../InfoCell.xib; sourceTree = "<group>"; };
-		3D41D1641E7DBC6900E983C0 /* big_gear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "big_gear@2x.png"; sourceTree = "<group>"; };
 		3D41D1661E7DBD6D00E983C0 /* RoundedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
-		3D41D1681E7E2E9C00E983C0 /* big_gear_highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "big_gear_highlighted@2x.png"; sourceTree = "<group>"; };
-		3D41D16B1E7E30A000E983C0 /* medium_gear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "medium_gear@2x.png"; sourceTree = "<group>"; };
-		3D41D16F1E7E330100E983C0 /* small_gear@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "small_gear@2x.tiff"; sourceTree = "<group>"; };
 		3D4B2FB01D40428F009B59EF /* cannon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cannon@2x.png"; sourceTree = "<group>"; };
 		3D4B2FB21D4042A9009B59EF /* cannon_base@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cannon_base@2x.png"; sourceTree = "<group>"; };
 		3D4B2FB41D404815009B59EF /* SqueezeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SqueezeButton.swift; sourceTree = "<group>"; };
+		3D82C5951E94070000BA5228 /* medium_gear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "medium_gear@2x.png"; sourceTree = "<group>"; };
+		3D82C5961E94070000BA5228 /* large_gear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "large_gear@2x.png"; sourceTree = "<group>"; };
+		3D82C5971E94070000BA5228 /* small_gear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "small_gear@2x.png"; sourceTree = "<group>"; };
+		3D82C59B1E94077A00BA5228 /* large_gear_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = large_gear_icon.png; sourceTree = "<group>"; };
+		3D82C59C1E94077A00BA5228 /* small_gear_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = small_gear_icon.png; sourceTree = "<group>"; };
+		3D82C59D1E94077A00BA5228 /* medium_gear_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = medium_gear_icon.png; sourceTree = "<group>"; };
+		3D82C5A11E94083B00BA5228 /* GearsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GearsScene.swift; sourceTree = "<group>"; };
 		3D88C9F01D3FD001009C639F /* ExperimentTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperimentTableController.swift; sourceTree = "<group>"; };
 		3D88C9F21D3FD11B009C639F /* ExperimentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperimentCell.swift; sourceTree = "<group>"; };
 		3D88C9F31D3FD11B009C639F /* ExperimentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExperimentCell.xib; sourceTree = "<group>"; };
@@ -195,11 +201,14 @@
 		3D41D1631E7DBC5400E983C0 /* Gears */ = {
 			isa = PBXGroup;
 			children = (
-				3D41D1641E7DBC6900E983C0 /* big_gear@2x.png */,
-				3D41D1681E7E2E9C00E983C0 /* big_gear_highlighted@2x.png */,
-				3D41D16B1E7E30A000E983C0 /* medium_gear@2x.png */,
-				3D41D16F1E7E330100E983C0 /* small_gear@2x.tiff */,
+				3D82C59B1E94077A00BA5228 /* large_gear_icon.png */,
+				3D82C59C1E94077A00BA5228 /* small_gear_icon.png */,
+				3D82C59D1E94077A00BA5228 /* medium_gear_icon.png */,
+				3D82C5951E94070000BA5228 /* medium_gear@2x.png */,
+				3D82C5961E94070000BA5228 /* large_gear@2x.png */,
+				3D82C5971E94070000BA5228 /* small_gear@2x.png */,
 				3D41D1661E7DBD6D00E983C0 /* RoundedView.swift */,
+				3D82C5A11E94083B00BA5228 /* GearsScene.swift */,
 				3DAAFCBD1E61174A00BD6A92 /* GearsPhysicsController.swift */,
 				3DAAFCBE1E61174A00BD6A92 /* GearsPhysicsController.xib */,
 			);
@@ -382,25 +391,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D41D1651E7DBC6900E983C0 /* big_gear@2x.png in Resources */,
 				3D2030F31D41646800C4C3BC /* The Flying Donut_exp@2x.png in Resources */,
 				3D3E09481D5E752900E294FD /* InfoCell.xib in Resources */,
-				3D41D1691E7E2E9C00E983C0 /* big_gear_highlighted@2x.png in Resources */,
 				3DA637401D467DB200B0782F /* Polarized Neutron Reflectometry_exp@2x.png in Resources */,
 				3D2D984C1D430D99000AA1AF /* donut@2x.png in Resources */,
+				3D82C59E1E94077A00BA5228 /* large_gear_icon.png in Resources */,
+				3D82C5981E94070000BA5228 /* medium_gear@2x.png in Resources */,
 				3DE065F21CDE6DD600891A66 /* LaunchScreen.storyboard in Resources */,
 				3DB808C91D4A8C940057FEEA /* graph@2x.png in Resources */,
 				3D31747A1D4C2020006D4991 /* FireParticle.sks in Resources */,
 				3DC47F261D4E51D000F981EC /* AirBoxPhsyicsController.xib in Resources */,
-				3D41D1711E7E330100E983C0 /* small_gear@2x.tiff in Resources */,
 				3D31747B1D4C2020006D4991 /* spark.png in Resources */,
 				3DE065EF1CDE6DD600891A66 /* Assets.xcassets in Resources */,
-				3D41D16D1E7E30A000E983C0 /* medium_gear@2x.png in Resources */,
+				3D82C59F1E94077A00BA5228 /* small_gear_icon.png in Resources */,
+				3D82C5991E94070000BA5228 /* large_gear@2x.png in Resources */,
 				3DE065ED1CDE6DD600891A66 /* Main.storyboard in Resources */,
 				3D3E09421D5E119D00E294FD /* VIRPPhsyicsController.xib in Resources */,
 				3D4B2FB31D4042A9009B59EF /* cannon_base@2x.png in Resources */,
+				3D82C5A01E94077A00BA5228 /* medium_gear_icon.png in Resources */,
 				3D26BAF91CFA025A00B61EB2 /* CannonPhsyicsController.xib in Resources */,
 				3D2030FA1D41B21200C4C3BC /* DonutPhsyicsController.xib in Resources */,
+				3D82C59A1E94070000BA5228 /* small_gear@2x.png in Resources */,
 				3D0842541D47C02100F80155 /* Circuit VIRP_exp@2x.png in Resources */,
 				3D88C9F51D3FD11B009C639F /* ExperimentCell.xib in Resources */,
 				3DFE449B1D4D93B200C958A0 /* ResistivityPhsyicsController.xib in Resources */,
@@ -454,6 +465,7 @@
 				3DAACD841E9201F200817886 /* IQKeyboardManager.swift in Sources */,
 				3DE065E61CDE6DD600891A66 /* AppDelegate.swift in Sources */,
 				3D2030FC1D41BE3400C4C3BC /* DirectionControlView.swift in Sources */,
+				3D82C5A21E94083B00BA5228 /* GearsScene.swift in Sources */,
 				3DAACD8F1E92020A00817886 /* IQUITextFieldView+Additions.swift in Sources */,
 				3D3E09401D5E119600E294FD /* VIRPPhsyicsController.swift in Sources */,
 				3DC47F271D4E51D000F981EC /* AirBoxScene.swift in Sources */,
