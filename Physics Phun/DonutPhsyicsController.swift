@@ -136,7 +136,6 @@ class DonutPhsyicsController: UIViewController, UITextFieldDelegate, DirectionCo
                 accelerationLabel.sizeToFit()
                 accelerationLabel.center = accelerationChart.center
                 
-                
                 velocityChart = LineChart(frame: CGRect(x: spriteView.frame.size.width - 100, y: spriteView.frame.origin.y, width: 100, height: 100))
                 velocityChart.addLine([0])
                 
