@@ -1,0 +1,6 @@
+framework module Pods_Physics_Phun {
+  umbrella header "Pods-Physics Phun-umbrella.h"
+
+  export *
+  module * { export * }
+}

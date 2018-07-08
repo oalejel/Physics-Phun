@@ -164,7 +164,8 @@ class GearsPhysicsController: UIViewController {
         let gearRatio = Double(spriteScene.gear1Node._gearSize.rawValue) / Double(spriteScene.gear2Node._gearSize.rawValue)
         
         rpsLabel2.text = "Rotations / sec: \(round(100000 * rpsStepper.value * gearRatio) / 100000)"
-        angVelocityLabel2.text = "Angular Velocity [rad/s]: \(round(100000 * 2 * rpsStepper.value * gearRatio) / 100000)π/s"
+        let vel2 = round(100000 * 2 * rpsStepper.value * gearRatio) / 10000
+        angVelocityLabel2.text = "Angular Velocity [rad/s]: \(0)π/s"
     }
     
     
