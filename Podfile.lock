@@ -1,16 +1,20 @@
 PODS:
   - IQKeyboardManager (6.0.4)
+  - SqueezeButton (0.1.0)
 
 DEPENDENCIES:
   - IQKeyboardManager
+  - SqueezeButton
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - IQKeyboardManager
+    - SqueezeButton
 
 SPEC CHECKSUMS:
   IQKeyboardManager: 29514134ef0334a6fa33cf4eee11c36c064baeaf
+  SqueezeButton: bbf9e7049375625854fb4bead4359c98392b6709
 
-PODFILE CHECKSUM: c8d57e42499d731b13862f6956157550bb1308b0
+PODFILE CHECKSUM: c7b76c943367b797929deabc0a7b334f58f6b0d5
 
 COCOAPODS: 1.5.3

@@ -12,7 +12,7 @@ import GameplayKit
 
 class VIRPScene: SKScene {
     var resistanceLabel: SKLabelNode!
-    var resistorNode: SKShapeNode!
+    var resistorNode: SKSpriteNode!
     var circuitBorderNode: SKShapeNode!
     
     override func didMove(to view: SKView) {
@@ -24,16 +24,17 @@ class VIRPScene: SKScene {
         let circuitSize = CGSize(width: size.width / 1.3, height: size.height / 1.5)
         circuitBorderNode = borderBoxNode(circuitSize, strokeWidth: strokeWidth, fillColor: SKColor.clear)
         circuitBorderNode.position = CGPoint(x: size.width / 2, y: size.height / 2)
+        circuitBorderNode.lineJoin = .round
         addChild(circuitBorderNode)
         
         let resistorSize = CGSize(width: circuitSize.width / 2.5, height: circuitSize.width / 6)
-        resistorNode =  borderBoxNode(resistorSize, strokeWidth: 4, fillColor: backgroundColor)
+        resistorNode =  SKSpriteNode(color: .black, size: resistorSize)
         resistorNode.position = CGPoint(x: size.width / 2, y: circuitBorderNode.position.y - (circuitSize.height / 2))
         self.resistorNode.zPosition = 10
         addChild(resistorNode)
         
         resistanceLabel = SKLabelNode(text: "Ω")
-        resistanceLabel.fontColor = SKColor.black
+        resistanceLabel.fontColor = SKColor.white
         resistanceLabel.fontName = "Helvetica-Bold"
         resistanceLabel.fontSize = 15
         resistanceLabel.position = CGPoint(x: size.width / 2, y: resistorNode.position.y - (resistanceLabel.frame.size.height / 2))
@@ -117,8 +118,6 @@ class VIRPScene: SKScene {
 
     }
     
-
-    
     func borderBoxNode(_ boxSize: CGSize, strokeWidth: CGFloat, fillColor: SKColor) -> SKShapeNode {
         let boxNode = SKShapeNode(rectOf: boxSize)
         boxNode.lineWidth = strokeWidth
@@ -134,8 +133,6 @@ class VIRPScene: SKScene {
     }
     
     func updateResistorNode(_ xScaleFactor: CGFloat) {
-//        let scale = SKAction.scaleXTo(xScaleFactor, duration: 0.5)
-//        resistorNode.runAction(scale)
         resistorNode.xScale = xScaleFactor
     }
     

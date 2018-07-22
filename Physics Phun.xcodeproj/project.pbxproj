@@ -32,7 +32,7 @@
 		3D41D1671E7DBD6D00E983C0 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D41D1661E7DBD6D00E983C0 /* RoundedView.swift */; };
 		3D4B2FB11D40428F009B59EF /* cannon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D4B2FB01D40428F009B59EF /* cannon@2x.png */; };
 		3D4B2FB31D4042A9009B59EF /* cannon_base@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D4B2FB21D4042A9009B59EF /* cannon_base@2x.png */; };
-		3D4B2FB51D404815009B59EF /* SqueezeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4B2FB41D404815009B59EF /* SqueezeButton.swift */; };
+		3D7BD11D20FA716700A0C3FA /* SimulatorTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7BD11C20FA716700A0C3FA /* SimulatorTableController.swift */; };
 		3D82C5981E94070000BA5228 /* medium_gear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D82C5951E94070000BA5228 /* medium_gear@2x.png */; };
 		3D82C5991E94070000BA5228 /* large_gear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D82C5961E94070000BA5228 /* large_gear@2x.png */; };
 		3D82C59A1E94070000BA5228 /* small_gear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D82C5971E94070000BA5228 /* small_gear@2x.png */; };
@@ -64,6 +64,10 @@
 		3DFE44991D4D93AD00C958A0 /* ResistivityPhsyicsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFE44981D4D93AD00C958A0 /* ResistivityPhsyicsController.swift */; };
 		3DFE449B1D4D93B200C958A0 /* ResistivityPhsyicsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DFE449A1D4D93B200C958A0 /* ResistivityPhsyicsController.xib */; };
 		3DFE449D1D4D973B00C958A0 /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFE449C1D4D973B00C958A0 /* SceneKit.framework */; };
+		3DFFD2702104FEFA00D99775 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFD26F2104FEFA00D99775 /* MainNavigationController.swift */; };
+		3DFFD2722105013900D99775 /* PhsyicsSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFD2712105013900D99775 /* PhsyicsSplitViewController.swift */; };
+		3DFFD274210508D900D99775 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFD273210508D900D99775 /* Global.swift */; };
+		3DFFD2762105091000D99775 /* UIColor+CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFD2752105091000D99775 /* UIColor+CustomColors.swift */; };
 		460CC2D1DBF6F319E35A2981 /* Pods_Physics_Phun.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8EEE82C6972DAF6F6EA6572 /* Pods_Physics_Phun.framework */; };
 /* End PBXBuildFile section */
 
@@ -94,7 +98,7 @@
 		3D41D1661E7DBD6D00E983C0 /* RoundedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		3D4B2FB01D40428F009B59EF /* cannon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cannon@2x.png"; sourceTree = "<group>"; };
 		3D4B2FB21D4042A9009B59EF /* cannon_base@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cannon_base@2x.png"; sourceTree = "<group>"; };
-		3D4B2FB41D404815009B59EF /* SqueezeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SqueezeButton.swift; sourceTree = "<group>"; };
+		3D7BD11C20FA716700A0C3FA /* SimulatorTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorTableController.swift; sourceTree = "<group>"; };
 		3D82C5951E94070000BA5228 /* medium_gear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "medium_gear@2x.png"; sourceTree = "<group>"; };
 		3D82C5961E94070000BA5228 /* large_gear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "large_gear@2x.png"; sourceTree = "<group>"; };
 		3D82C5971E94070000BA5228 /* small_gear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "small_gear@2x.png"; sourceTree = "<group>"; };
@@ -128,6 +132,10 @@
 		3DFE44981D4D93AD00C958A0 /* ResistivityPhsyicsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResistivityPhsyicsController.swift; sourceTree = "<group>"; };
 		3DFE449A1D4D93B200C958A0 /* ResistivityPhsyicsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResistivityPhsyicsController.xib; sourceTree = "<group>"; };
 		3DFE449C1D4D973B00C958A0 /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
+		3DFFD26F2104FEFA00D99775 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		3DFFD2712105013900D99775 /* PhsyicsSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhsyicsSplitViewController.swift; sourceTree = "<group>"; };
+		3DFFD273210508D900D99775 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		3DFFD2752105091000D99775 /* UIColor+CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+CustomColors.swift"; sourceTree = "<group>"; };
 		B410564B42BBA7A7A4632C3C /* Pods-Physics Phun.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Physics Phun.release.xcconfig"; path = "Pods/Target Support Files/Pods-Physics Phun/Pods-Physics Phun.release.xcconfig"; sourceTree = "<group>"; };
 		C8EEE82C6972DAF6F6EA6572 /* Pods_Physics_Phun.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Physics_Phun.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -198,6 +206,18 @@
 			name = Gears;
 			sourceTree = "<group>";
 		};
+		3D7BD11E20FA716E00A0C3FA /* New app UI */ = {
+			isa = PBXGroup;
+			children = (
+				3DFFD273210508D900D99775 /* Global.swift */,
+				3DFFD2752105091000D99775 /* UIColor+CustomColors.swift */,
+				3D7BD11C20FA716700A0C3FA /* SimulatorTableController.swift */,
+				3DFFD26F2104FEFA00D99775 /* MainNavigationController.swift */,
+				3DFFD2712105013900D99775 /* PhsyicsSplitViewController.swift */,
+			);
+			name = "New app UI";
+			sourceTree = "<group>";
+		};
 		3DA637411D46827400B0782F /* Neutron */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,7 +274,6 @@
 			children = (
 				3DCE2CCB1D5E8F9300A9814E /* LineChart.swift */,
 				3DE065E51CDE6DD600891A66 /* AppDelegate.swift */,
-				3D4B2FB41D404815009B59EF /* SqueezeButton.swift */,
 				3D30E0AF1D4D81AE00A50418 /* InfoTextViewController.swift */,
 				3D30E0B01D4D81AE00A50418 /* InfoTextViewController.xib */,
 				3D3E09451D5E752900E294FD /* InfoCell.swift */,
@@ -263,6 +282,7 @@
 				3D88C9F31D3FD11B009C639F /* ExperimentCell.xib */,
 				3D88C9F01D3FD001009C639F /* ExperimentTableController.swift */,
 				3DE065EB1CDE6DD600891A66 /* Main.storyboard */,
+				3D7BD11E20FA716E00A0C3FA /* New app UI */,
 				3D41D1631E7DBC5400E983C0 /* Gears */,
 				3DFE44951D4D91E900C958A0 /* Resistivity */,
 				3D2030F41D41B1CF00C4C3BC /* Donut */,
@@ -331,7 +351,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = omaralejel;
 				TargetAttributes = {
 					3DE065E11CDE6DD200891A66 = {
@@ -410,10 +430,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Physics Phun/Pods-Physics Phun-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/SqueezeButton/SqueezeButton.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SqueezeButton.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -445,11 +467,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DFFD2722105013900D99775 /* PhsyicsSplitViewController.swift in Sources */,
 				3D41D1671E7DBD6D00E983C0 /* RoundedView.swift in Sources */,
 				3D88C9F41D3FD11B009C639F /* ExperimentCell.swift in Sources */,
 				3D88C9F11D3FD001009C639F /* ExperimentTableController.swift in Sources */,
 				3DA637451D468D6A00B0782F /* NeutronPhsyicsController.swift in Sources */,
-				3D4B2FB51D404815009B59EF /* SqueezeButton.swift in Sources */,
 				3D30E0B11D4D81AE00A50418 /* InfoTextViewController.swift in Sources */,
 				3D2030F81D41B20E00C4C3BC /* DonutScene.swift in Sources */,
 				3DC47F251D4E51D000F981EC /* AirBoxPhsyicsController.swift in Sources */,
@@ -463,9 +485,13 @@
 				3D2030F61D41B20700C4C3BC /* DonutPhsyicsController.swift in Sources */,
 				3DA637461D468D6A00B0782F /* NeutronScene.swift in Sources */,
 				3DE065E61CDE6DD600891A66 /* AppDelegate.swift in Sources */,
+				3DFFD274210508D900D99775 /* Global.swift in Sources */,
 				3D2030FC1D41BE3400C4C3BC /* DirectionControlView.swift in Sources */,
+				3DFFD2702104FEFA00D99775 /* MainNavigationController.swift in Sources */,
 				3D82C5A21E94083B00BA5228 /* GearsScene.swift in Sources */,
+				3DFFD2762105091000D99775 /* UIColor+CustomColors.swift in Sources */,
 				3D3E09401D5E119600E294FD /* VIRPPhsyicsController.swift in Sources */,
+				3D7BD11D20FA716700A0C3FA /* SimulatorTableController.swift in Sources */,
 				3DC47F271D4E51D000F981EC /* AirBoxScene.swift in Sources */,
 				3D3E09471D5E752900E294FD /* InfoCell.swift in Sources */,
 			);
@@ -506,12 +532,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -560,12 +588,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

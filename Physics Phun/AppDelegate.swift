@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import IQKeyboardManager
+import IQKeyboardManager
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
@@ -16,8 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // must assign delete for split controller here so that detail controller is not shown first on compact width devices
+        if let splitViewController = window?.rootViewController as? PhsyicsSplitViewController {
+            splitViewController.delegate = splitViewController // making itself a delegate FOR NOW
+        }
+        
+        
 
-        IQKeyboardManager.sharedManager().enable = true
+        IQKeyboardManager.shared().isEnabled = true
         return true
     }
     
