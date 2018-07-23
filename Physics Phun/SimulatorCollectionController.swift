@@ -8,9 +8,12 @@
 
 import UIKit
 
-class SimulatorTableController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class SimulatorCollectionController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
+    
     var collectionView: UICollectionView!
+    
+    var physicistHeaderView: PhysicistHeaderView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +25,19 @@ class SimulatorTableController: UIViewController, UICollectionViewDelegate, UICo
         let layout = customFlowLayout()
         collectionViewFrame.size.height = bounds.height - (statusBarHeight + navBarHeight)
         collectionView = UICollectionView(frame: collectionViewFrame, collectionViewLayout: layout)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.backgroundColor = .clear
+        collectionView.delaysContentTouches = false
+        
+        // register collection view nibs
+        collectionView.register(<#T##nib: UINib?##UINib?#>, forCellWithReuseIdentifier: <#T##String#>)
+        collectionView.register(UINib(nibName: "PhysicistHeaderView", bundle:  nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headerView")
+        collectionView.register(UINib(nibName: "ExperimentHeaderView", bundle:  nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "experimentView")
         view.addSubview(collectionView)
+        
+        // make our screen fade away on top and bottom edges
+        addMaskGradient()
     }
     
     
@@ -40,11 +55,24 @@ class SimulatorTableController: UIViewController, UICollectionViewDelegate, UICo
 //        let navBarHeight = navigationController!.navigationBar.frame.size.height
         let statusBarHeight = UIApplication.shared.statusBarFrame.size.height
         let bounds = UIScreen.main.bounds
-        #warning("check to make sure that our defined origin works on all kinds of screens")
         let gradLayer = CAGradientLayer()
         gradLayer.frame = CGRect(x: 0, y: 0, width: bounds.size.width, height: bounds.size.height - statusBarHeight)
         gradLayer.colors = [UIColor.themeDeepBlue.cgColor, UIColor.themeBrightBlue.cgColor]
-        view.layer.addSublayer(gradLayer)
+        view.layer.insertSublayer(gradLayer, at: 0)
+    }
+    
+    func addMaskGradient() {
+        let statusBarHeight = UIApplication.shared.statusBarFrame.size.height
+        let bounds = UIScreen.main.bounds
+        let gradLayer = CAGradientLayer()
+        let gradFrame = CGRect(x: 0, y: 0, width: bounds.size.width, height: bounds.size.height - statusBarHeight)
+        gradLayer.frame = gradFrame
+        
+        gradLayer.colors = [UIColor.clear.cgColor, UIColor.white.cgColor, UIColor.white.cgColor, UIColor.white.cgColor, UIColor.white.cgColor, UIColor.clear.cgColor]
+        
+        let maskView = UIView(frame: gradFrame)
+        maskView.layer.addSublayer(gradLayer)
+        collectionView.mask = maskView
     }
 
     /*
@@ -58,18 +86,59 @@ class SimulatorTableController: UIViewController, UICollectionViewDelegate, UICo
     */
     
     // MARK: - Collection View Datasource and Delegate
+    //NOTE: assigning the physicist header view to the first section, and everything else to section 1 onward
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        // number of themes == number of sections
+        return Experiments.list.count
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return section == 0 ? 0 : Experiments.list[section - 1].simulations.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let exampleCell = UICollectionViewCell()
+        exampleCell.reuseIdentifier = "test"
+        return exampleCell
     }
+    
+    // need a header for the "Physicist of the day" section
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionElementKindSectionHeader {
+            //
+            if indexPath.row == 0 {
+                physicistHeaderView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headerView", for: indexPath) as? PhysicistHeaderView
+                physicistHeaderView?.newPhysicist() // reload for a new person
+                return physicistHeaderView!
+            } else {
+                // should be going here after row 0 for physics view
+                // header view for a specific physics theme
+                let experimentHeader = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "experimentView", for: indexPath) as? ExperimentHeaderView
+                experimentHeader?.titleLabel.text = Experiments.list[indexPath.row - 1].title
+                return experimentHeader!
+            }
+            
+        } else {
+            return UICollectionReusableView()
+        }
+    }
+    
     
     // MARK: - Visual cusomization
     
+    @objc func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        // for the physicist info header, we return this size. otherwise, we are dealing with a title header
+        let bounds = UIScreen.main.bounds
+        if section == 0 {
+            return CGSize(width: bounds.size.width, height: bounds.size.height / 2)
+        } else {
+            return CGSize(width: bounds.size.width, height: 30)
+        }
+    }
+
+    
     func customFlowLayout() -> UICollectionViewFlowLayout {
+        
         let layout = UICollectionViewFlowLayout()
         layout.estimatedItemSize = CGSize(width: 200, height: 200)
         layout.scrollDirection = .vertical

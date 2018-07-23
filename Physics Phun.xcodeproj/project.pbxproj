@@ -32,7 +32,14 @@
 		3D41D1671E7DBD6D00E983C0 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D41D1661E7DBD6D00E983C0 /* RoundedView.swift */; };
 		3D4B2FB11D40428F009B59EF /* cannon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D4B2FB01D40428F009B59EF /* cannon@2x.png */; };
 		3D4B2FB31D4042A9009B59EF /* cannon_base@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D4B2FB21D4042A9009B59EF /* cannon_base@2x.png */; };
-		3D7BD11D20FA716700A0C3FA /* SimulatorTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7BD11C20FA716700A0C3FA /* SimulatorTableController.swift */; };
+		3D6C04832105892100E28F62 /* Experiments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6C04822105892100E28F62 /* Experiments.swift */; };
+		3D6C0486210591DE00E28F62 /* ExperimentHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6C0484210591DE00E28F62 /* ExperimentHeaderView.swift */; };
+		3D6C0487210591DE00E28F62 /* ExperimentHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D6C0485210591DE00E28F62 /* ExperimentHeaderView.xib */; };
+		3D6C048F2105977F00E28F62 /* NewExperimentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6C048D2105977F00E28F62 /* NewExperimentCell.swift */; };
+		3D6C04902105977F00E28F62 /* ExperimentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D6C048E2105977F00E28F62 /* ExperimentCell.xib */; };
+		3D6C0493210598A600E28F62 /* ExperimentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6C0491210598A500E28F62 /* ExperimentCell.swift */; };
+		3D6C0494210598A600E28F62 /* ExperimentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D6C0492210598A600E28F62 /* ExperimentCell.xib */; };
+		3D7BD11D20FA716700A0C3FA /* SimulatorCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7BD11C20FA716700A0C3FA /* SimulatorCollectionController.swift */; };
 		3D82C5981E94070000BA5228 /* medium_gear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D82C5951E94070000BA5228 /* medium_gear@2x.png */; };
 		3D82C5991E94070000BA5228 /* large_gear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D82C5961E94070000BA5228 /* large_gear@2x.png */; };
 		3D82C59A1E94070000BA5228 /* small_gear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D82C5971E94070000BA5228 /* small_gear@2x.png */; };
@@ -41,8 +48,6 @@
 		3D82C5A01E94077A00BA5228 /* medium_gear_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D82C59D1E94077A00BA5228 /* medium_gear_icon.png */; };
 		3D82C5A21E94083B00BA5228 /* GearsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D82C5A11E94083B00BA5228 /* GearsScene.swift */; };
 		3D88C9F11D3FD001009C639F /* ExperimentTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D88C9F01D3FD001009C639F /* ExperimentTableController.swift */; };
-		3D88C9F41D3FD11B009C639F /* ExperimentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D88C9F21D3FD11B009C639F /* ExperimentCell.swift */; };
-		3D88C9F51D3FD11B009C639F /* ExperimentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D88C9F31D3FD11B009C639F /* ExperimentCell.xib */; };
 		3DA637401D467DB200B0782F /* Polarized Neutron Reflectometry_exp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DA6373E1D467B3F00B0782F /* Polarized Neutron Reflectometry_exp@2x.png */; };
 		3DA637451D468D6A00B0782F /* NeutronPhsyicsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA637421D468D6A00B0782F /* NeutronPhsyicsController.swift */; };
 		3DA637461D468D6A00B0782F /* NeutronScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA637431D468D6A00B0782F /* NeutronScene.swift */; };
@@ -68,6 +73,10 @@
 		3DFFD2722105013900D99775 /* PhsyicsSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFD2712105013900D99775 /* PhsyicsSplitViewController.swift */; };
 		3DFFD274210508D900D99775 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFD273210508D900D99775 /* Global.swift */; };
 		3DFFD2762105091000D99775 /* UIColor+CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFD2752105091000D99775 /* UIColor+CustomColors.swift */; };
+		3DFFD2782105143500D99775 /* PhysicistOfTheDayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFD2772105143500D99775 /* PhysicistOfTheDayManager.swift */; };
+		3DFFD27C2105175000D99775 /* PhysicistHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFD27A2105175000D99775 /* PhysicistHeaderView.swift */; };
+		3DFFD27D2105175000D99775 /* PhysicistHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DFFD27B2105175000D99775 /* PhysicistHeaderView.xib */; };
+		3DFFD27F21051F0100D99775 /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFD27E21051F0100D99775 /* RoundImageView.swift */; };
 		460CC2D1DBF6F319E35A2981 /* Pods_Physics_Phun.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8EEE82C6972DAF6F6EA6572 /* Pods_Physics_Phun.framework */; };
 /* End PBXBuildFile section */
 
@@ -98,7 +107,14 @@
 		3D41D1661E7DBD6D00E983C0 /* RoundedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		3D4B2FB01D40428F009B59EF /* cannon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cannon@2x.png"; sourceTree = "<group>"; };
 		3D4B2FB21D4042A9009B59EF /* cannon_base@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cannon_base@2x.png"; sourceTree = "<group>"; };
-		3D7BD11C20FA716700A0C3FA /* SimulatorTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorTableController.swift; sourceTree = "<group>"; };
+		3D6C04822105892100E28F62 /* Experiments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experiments.swift; sourceTree = "<group>"; };
+		3D6C0484210591DE00E28F62 /* ExperimentHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentHeaderView.swift; sourceTree = "<group>"; };
+		3D6C0485210591DE00E28F62 /* ExperimentHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExperimentHeaderView.xib; sourceTree = "<group>"; };
+		3D6C048D2105977F00E28F62 /* NewExperimentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExperimentCell.swift; sourceTree = "<group>"; };
+		3D6C048E2105977F00E28F62 /* ExperimentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExperimentCell.xib; sourceTree = "<group>"; };
+		3D6C0491210598A500E28F62 /* ExperimentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperimentCell.swift; sourceTree = "<group>"; };
+		3D6C0492210598A600E28F62 /* ExperimentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExperimentCell.xib; path = ../../../../../../../.Trash/ExperimentCell.xib; sourceTree = "<group>"; };
+		3D7BD11C20FA716700A0C3FA /* SimulatorCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorCollectionController.swift; sourceTree = "<group>"; };
 		3D82C5951E94070000BA5228 /* medium_gear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "medium_gear@2x.png"; sourceTree = "<group>"; };
 		3D82C5961E94070000BA5228 /* large_gear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "large_gear@2x.png"; sourceTree = "<group>"; };
 		3D82C5971E94070000BA5228 /* small_gear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "small_gear@2x.png"; sourceTree = "<group>"; };
@@ -107,8 +123,6 @@
 		3D82C59D1E94077A00BA5228 /* medium_gear_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = medium_gear_icon.png; sourceTree = "<group>"; };
 		3D82C5A11E94083B00BA5228 /* GearsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GearsScene.swift; sourceTree = "<group>"; };
 		3D88C9F01D3FD001009C639F /* ExperimentTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperimentTableController.swift; sourceTree = "<group>"; };
-		3D88C9F21D3FD11B009C639F /* ExperimentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperimentCell.swift; sourceTree = "<group>"; };
-		3D88C9F31D3FD11B009C639F /* ExperimentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExperimentCell.xib; sourceTree = "<group>"; };
 		3DA6373E1D467B3F00B0782F /* Polarized Neutron Reflectometry_exp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Polarized Neutron Reflectometry_exp@2x.png"; sourceTree = "<group>"; };
 		3DA637421D468D6A00B0782F /* NeutronPhsyicsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeutronPhsyicsController.swift; sourceTree = "<group>"; };
 		3DA637431D468D6A00B0782F /* NeutronScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeutronScene.swift; sourceTree = "<group>"; };
@@ -136,6 +150,10 @@
 		3DFFD2712105013900D99775 /* PhsyicsSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhsyicsSplitViewController.swift; sourceTree = "<group>"; };
 		3DFFD273210508D900D99775 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		3DFFD2752105091000D99775 /* UIColor+CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+CustomColors.swift"; sourceTree = "<group>"; };
+		3DFFD2772105143500D99775 /* PhysicistOfTheDayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicistOfTheDayManager.swift; sourceTree = "<group>"; };
+		3DFFD27A2105175000D99775 /* PhysicistHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicistHeaderView.swift; sourceTree = "<group>"; };
+		3DFFD27B2105175000D99775 /* PhysicistHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhysicistHeaderView.xib; sourceTree = "<group>"; };
+		3DFFD27E21051F0100D99775 /* RoundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
 		B410564B42BBA7A7A4632C3C /* Pods-Physics Phun.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Physics Phun.release.xcconfig"; path = "Pods/Target Support Files/Pods-Physics Phun/Pods-Physics Phun.release.xcconfig"; sourceTree = "<group>"; };
 		C8EEE82C6972DAF6F6EA6572 /* Pods_Physics_Phun.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Physics_Phun.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -206,14 +224,28 @@
 			name = Gears;
 			sourceTree = "<group>";
 		};
+		3D6C0488210591FB00E28F62 /* Experiment Organization */ = {
+			isa = PBXGroup;
+			children = (
+				3D6C04822105892100E28F62 /* Experiments.swift */,
+				3D6C0484210591DE00E28F62 /* ExperimentHeaderView.swift */,
+				3D6C0485210591DE00E28F62 /* ExperimentHeaderView.xib */,
+				3D6C048D2105977F00E28F62 /* NewExperimentCell.swift */,
+				3D6C048E2105977F00E28F62 /* ExperimentCell.xib */,
+			);
+			name = "Experiment Organization";
+			sourceTree = "<group>";
+		};
 		3D7BD11E20FA716E00A0C3FA /* New app UI */ = {
 			isa = PBXGroup;
 			children = (
 				3DFFD273210508D900D99775 /* Global.swift */,
 				3DFFD2752105091000D99775 /* UIColor+CustomColors.swift */,
-				3D7BD11C20FA716700A0C3FA /* SimulatorTableController.swift */,
 				3DFFD26F2104FEFA00D99775 /* MainNavigationController.swift */,
 				3DFFD2712105013900D99775 /* PhsyicsSplitViewController.swift */,
+				3D7BD11C20FA716700A0C3FA /* SimulatorCollectionController.swift */,
+				3D6C0488210591FB00E28F62 /* Experiment Organization */,
+				3DFFD279210516E700D99775 /* Physicist of the Day */,
 			);
 			name = "New app UI";
 			sourceTree = "<group>";
@@ -278,8 +310,8 @@
 				3D30E0B01D4D81AE00A50418 /* InfoTextViewController.xib */,
 				3D3E09451D5E752900E294FD /* InfoCell.swift */,
 				3D3E09461D5E752900E294FD /* InfoCell.xib */,
-				3D88C9F21D3FD11B009C639F /* ExperimentCell.swift */,
-				3D88C9F31D3FD11B009C639F /* ExperimentCell.xib */,
+				3D6C0491210598A500E28F62 /* ExperimentCell.swift */,
+				3D6C0492210598A600E28F62 /* ExperimentCell.xib */,
 				3D88C9F01D3FD001009C639F /* ExperimentTableController.swift */,
 				3DE065EB1CDE6DD600891A66 /* Main.storyboard */,
 				3D7BD11E20FA716E00A0C3FA /* New app UI */,
@@ -311,6 +343,17 @@
 				3DFE449A1D4D93B200C958A0 /* ResistivityPhsyicsController.xib */,
 			);
 			name = Resistivity;
+			sourceTree = "<group>";
+		};
+		3DFFD279210516E700D99775 /* Physicist of the Day */ = {
+			isa = PBXGroup;
+			children = (
+				3DFFD2772105143500D99775 /* PhysicistOfTheDayManager.swift */,
+				3DFFD27A2105175000D99775 /* PhysicistHeaderView.swift */,
+				3DFFD27B2105175000D99775 /* PhysicistHeaderView.xib */,
+				3DFFD27E21051F0100D99775 /* RoundImageView.swift */,
+			);
+			name = "Physicist of the Day";
 			sourceTree = "<group>";
 		};
 		B8364B159EA9379F72514536 /* Pods */ = {
@@ -384,12 +427,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D6C04902105977F00E28F62 /* ExperimentCell.xib in Resources */,
 				3D2030F31D41646800C4C3BC /* The Flying Donut_exp@2x.png in Resources */,
 				3D3E09481D5E752900E294FD /* InfoCell.xib in Resources */,
 				3DA637401D467DB200B0782F /* Polarized Neutron Reflectometry_exp@2x.png in Resources */,
 				3D2D984C1D430D99000AA1AF /* donut@2x.png in Resources */,
 				3D82C59E1E94077A00BA5228 /* large_gear_icon.png in Resources */,
 				3D82C5981E94070000BA5228 /* medium_gear@2x.png in Resources */,
+				3D6C0487210591DE00E28F62 /* ExperimentHeaderView.xib in Resources */,
+				3DFFD27D2105175000D99775 /* PhysicistHeaderView.xib in Resources */,
 				3DE065F21CDE6DD600891A66 /* LaunchScreen.storyboard in Resources */,
 				3DB808C91D4A8C940057FEEA /* graph@2x.png in Resources */,
 				3D31747A1D4C2020006D4991 /* FireParticle.sks in Resources */,
@@ -407,7 +453,7 @@
 				3D2030FA1D41B21200C4C3BC /* DonutPhsyicsController.xib in Resources */,
 				3D82C59A1E94070000BA5228 /* small_gear@2x.png in Resources */,
 				3D0842541D47C02100F80155 /* Circuit VIRP_exp@2x.png in Resources */,
-				3D88C9F51D3FD11B009C639F /* ExperimentCell.xib in Resources */,
+				3D6C0494210598A600E28F62 /* ExperimentCell.xib in Resources */,
 				3DFE449B1D4D93B200C958A0 /* ResistivityPhsyicsController.xib in Resources */,
 				3D0842521D47BF9800F80155 /* Air Box_exp@2x.png in Resources */,
 				3D30E0B21D4D81AE00A50418 /* InfoTextViewController.xib in Resources */,
@@ -469,18 +515,22 @@
 			files = (
 				3DFFD2722105013900D99775 /* PhsyicsSplitViewController.swift in Sources */,
 				3D41D1671E7DBD6D00E983C0 /* RoundedView.swift in Sources */,
-				3D88C9F41D3FD11B009C639F /* ExperimentCell.swift in Sources */,
 				3D88C9F11D3FD001009C639F /* ExperimentTableController.swift in Sources */,
 				3DA637451D468D6A00B0782F /* NeutronPhsyicsController.swift in Sources */,
+				3DFFD27F21051F0100D99775 /* RoundImageView.swift in Sources */,
 				3D30E0B11D4D81AE00A50418 /* InfoTextViewController.swift in Sources */,
 				3D2030F81D41B20E00C4C3BC /* DonutScene.swift in Sources */,
 				3DC47F251D4E51D000F981EC /* AirBoxPhsyicsController.swift in Sources */,
+				3D6C0493210598A600E28F62 /* ExperimentCell.swift in Sources */,
 				3D3E09441D5E11A400E294FD /* VIRPScene.swift in Sources */,
+				3D6C04832105892100E28F62 /* Experiments.swift in Sources */,
 				3D26BAF71CFA025A00B61EB2 /* CannonScene.swift in Sources */,
 				3DFE44971D4D93A700C958A0 /* ResistivityScene.swift in Sources */,
 				3D26BAF81CFA025A00B61EB2 /* CannonPhsyicsController.swift in Sources */,
+				3DFFD2782105143500D99775 /* PhysicistOfTheDayManager.swift in Sources */,
 				3DCE2CCC1D5E8F9300A9814E /* LineChart.swift in Sources */,
 				3DFE44991D4D93AD00C958A0 /* ResistivityPhsyicsController.swift in Sources */,
+				3D6C048F2105977F00E28F62 /* NewExperimentCell.swift in Sources */,
 				3DAAFCBF1E61174A00BD6A92 /* GearsPhysicsController.swift in Sources */,
 				3D2030F61D41B20700C4C3BC /* DonutPhsyicsController.swift in Sources */,
 				3DA637461D468D6A00B0782F /* NeutronScene.swift in Sources */,
@@ -490,8 +540,10 @@
 				3DFFD2702104FEFA00D99775 /* MainNavigationController.swift in Sources */,
 				3D82C5A21E94083B00BA5228 /* GearsScene.swift in Sources */,
 				3DFFD2762105091000D99775 /* UIColor+CustomColors.swift in Sources */,
+				3D6C0486210591DE00E28F62 /* ExperimentHeaderView.swift in Sources */,
 				3D3E09401D5E119600E294FD /* VIRPPhsyicsController.swift in Sources */,
-				3D7BD11D20FA716700A0C3FA /* SimulatorTableController.swift in Sources */,
+				3DFFD27C2105175000D99775 /* PhysicistHeaderView.swift in Sources */,
+				3D7BD11D20FA716700A0C3FA /* SimulatorCollectionController.swift in Sources */,
 				3DC47F271D4E51D000F981EC /* AirBoxScene.swift in Sources */,
 				3D3E09471D5E752900E294FD /* InfoCell.swift in Sources */,
 			);
