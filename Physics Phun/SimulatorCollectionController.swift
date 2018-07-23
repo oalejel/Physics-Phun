@@ -8,12 +8,14 @@
 
 import UIKit
 
-class SimulatorCollectionController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class SimulatorCollectionController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, CALayerDelegate {
 
     
     var collectionView: UICollectionView!
     
     var physicistHeaderView: PhysicistHeaderView?
+    
+    var maskGradient: CAGradientLayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +33,7 @@ class SimulatorCollectionController: UIViewController, UICollectionViewDelegate,
         collectionView.delaysContentTouches = false
         
         // register collection view nibs
-        collectionView.register(<#T##nib: UINib?##UINib?#>, forCellWithReuseIdentifier: <#T##String#>)
+        collectionView.register(UINib(nibName: "NewExperimentCell", bundle:  nil), forCellWithReuseIdentifier: "experimentCell")
         collectionView.register(UINib(nibName: "PhysicistHeaderView", bundle:  nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headerView")
         collectionView.register(UINib(nibName: "ExperimentHeaderView", bundle:  nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "experimentView")
         view.addSubview(collectionView)
@@ -49,8 +51,6 @@ class SimulatorCollectionController: UIViewController, UICollectionViewDelegate,
         }
     }
     
-
-    
     func addGradient() {
 //        let navBarHeight = navigationController!.navigationBar.frame.size.height
         let statusBarHeight = UIApplication.shared.statusBarFrame.size.height
@@ -64,15 +64,23 @@ class SimulatorCollectionController: UIViewController, UICollectionViewDelegate,
     func addMaskGradient() {
         let statusBarHeight = UIApplication.shared.statusBarFrame.size.height
         let bounds = UIScreen.main.bounds
-        let gradLayer = CAGradientLayer()
+        maskGradient = CAGradientLayer()
         let gradFrame = CGRect(x: 0, y: 0, width: bounds.size.width, height: bounds.size.height - statusBarHeight)
-        gradLayer.frame = gradFrame
+        maskGradient!.frame = gradFrame
+        maskGradient!.delegate = self
+        maskGradient!.colors = [UIColor.clear.cgColor, UIColor.white.cgColor, UIColor.white.cgColor, UIColor.white.cgColor, UIColor.white.cgColor, UIColor.clear.cgColor]
         
-        gradLayer.colors = [UIColor.clear.cgColor, UIColor.white.cgColor, UIColor.white.cgColor, UIColor.white.cgColor, UIColor.white.cgColor, UIColor.clear.cgColor]
-        
-        let maskView = UIView(frame: gradFrame)
-        maskView.layer.addSublayer(gradLayer)
-        collectionView.mask = maskView
+        collectionView.layer.mask = maskGradient
+    }
+    
+    // must update the mask
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        maskGradient?.frame = CGRect(
+            x: 0,
+            y: scrollView.contentOffset.y,
+            width: scrollView.bounds.width,
+            height: scrollView.bounds.height
+        )
     }
 
     /*
@@ -97,9 +105,11 @@ class SimulatorCollectionController: UIViewController, UICollectionViewDelegate,
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let exampleCell = UICollectionViewCell()
-        exampleCell.reuseIdentifier = "test"
-        return exampleCell
+        let experimentCell = collectionView.dequeueReusableCell(withReuseIdentifier: "experimentCell", for: indexPath)
+        
+        
+        
+        return experimentCell
     }
     
     // need a header for the "Physicist of the day" section
@@ -151,6 +161,11 @@ class SimulatorCollectionController: UIViewController, UICollectionViewDelegate,
     
     
     
+    // MARK: - CALayer (mainly for gradient mask and avoiding animation lag)
+    
+    func action(for layer: CALayer, forKey event: String) -> CAAction? {
+        return NSNull()
+    }
     
     
     // MARK: - Other / Unused

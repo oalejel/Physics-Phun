@@ -36,7 +36,7 @@
 		3D6C0486210591DE00E28F62 /* ExperimentHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6C0484210591DE00E28F62 /* ExperimentHeaderView.swift */; };
 		3D6C0487210591DE00E28F62 /* ExperimentHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D6C0485210591DE00E28F62 /* ExperimentHeaderView.xib */; };
 		3D6C048F2105977F00E28F62 /* NewExperimentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6C048D2105977F00E28F62 /* NewExperimentCell.swift */; };
-		3D6C04902105977F00E28F62 /* ExperimentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D6C048E2105977F00E28F62 /* ExperimentCell.xib */; };
+		3D6C04902105977F00E28F62 /* NewExperimentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D6C048E2105977F00E28F62 /* NewExperimentCell.xib */; };
 		3D6C04972105997300E28F62 /* ExperimentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6C04952105997200E28F62 /* ExperimentCell.swift */; };
 		3D6C04982105997300E28F62 /* ExperimentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D6C04962105997300E28F62 /* ExperimentCell.xib */; };
 		3D7BD11D20FA716700A0C3FA /* SimulatorCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7BD11C20FA716700A0C3FA /* SimulatorCollectionController.swift */; };
@@ -111,7 +111,7 @@
 		3D6C0484210591DE00E28F62 /* ExperimentHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentHeaderView.swift; sourceTree = "<group>"; };
 		3D6C0485210591DE00E28F62 /* ExperimentHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExperimentHeaderView.xib; sourceTree = "<group>"; };
 		3D6C048D2105977F00E28F62 /* NewExperimentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExperimentCell.swift; sourceTree = "<group>"; };
-		3D6C048E2105977F00E28F62 /* ExperimentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExperimentCell.xib; sourceTree = "<group>"; };
+		3D6C048E2105977F00E28F62 /* NewExperimentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewExperimentCell.xib; sourceTree = "<group>"; };
 		3D6C04952105997200E28F62 /* ExperimentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperimentCell.swift; sourceTree = "<group>"; };
 		3D6C04962105997300E28F62 /* ExperimentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExperimentCell.xib; path = ../../../../../../../Desktop/ExperimentCell.xib; sourceTree = "<group>"; };
 		3D7BD11C20FA716700A0C3FA /* SimulatorCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorCollectionController.swift; sourceTree = "<group>"; };
@@ -231,7 +231,7 @@
 				3D6C0484210591DE00E28F62 /* ExperimentHeaderView.swift */,
 				3D6C0485210591DE00E28F62 /* ExperimentHeaderView.xib */,
 				3D6C048D2105977F00E28F62 /* NewExperimentCell.swift */,
-				3D6C048E2105977F00E28F62 /* ExperimentCell.xib */,
+				3D6C048E2105977F00E28F62 /* NewExperimentCell.xib */,
 			);
 			name = "Experiment Organization";
 			sourceTree = "<group>";
@@ -427,7 +427,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D6C04902105977F00E28F62 /* ExperimentCell.xib in Resources */,
+				3D6C04902105977F00E28F62 /* NewExperimentCell.xib in Resources */,
 				3D2030F31D41646800C4C3BC /* The Flying Donut_exp@2x.png in Resources */,
 				3D3E09481D5E752900E294FD /* InfoCell.xib in Resources */,
 				3DA637401D467DB200B0782F /* Polarized Neutron Reflectometry_exp@2x.png in Resources */,
