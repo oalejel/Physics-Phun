@@ -37,8 +37,8 @@
 		3D6C0487210591DE00E28F62 /* ExperimentHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D6C0485210591DE00E28F62 /* ExperimentHeaderView.xib */; };
 		3D6C048F2105977F00E28F62 /* NewExperimentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6C048D2105977F00E28F62 /* NewExperimentCell.swift */; };
 		3D6C04902105977F00E28F62 /* ExperimentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D6C048E2105977F00E28F62 /* ExperimentCell.xib */; };
-		3D6C0493210598A600E28F62 /* ExperimentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6C0491210598A500E28F62 /* ExperimentCell.swift */; };
-		3D6C0494210598A600E28F62 /* ExperimentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D6C0492210598A600E28F62 /* ExperimentCell.xib */; };
+		3D6C04972105997300E28F62 /* ExperimentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6C04952105997200E28F62 /* ExperimentCell.swift */; };
+		3D6C04982105997300E28F62 /* ExperimentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D6C04962105997300E28F62 /* ExperimentCell.xib */; };
 		3D7BD11D20FA716700A0C3FA /* SimulatorCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7BD11C20FA716700A0C3FA /* SimulatorCollectionController.swift */; };
 		3D82C5981E94070000BA5228 /* medium_gear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D82C5951E94070000BA5228 /* medium_gear@2x.png */; };
 		3D82C5991E94070000BA5228 /* large_gear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D82C5961E94070000BA5228 /* large_gear@2x.png */; };
@@ -112,8 +112,8 @@
 		3D6C0485210591DE00E28F62 /* ExperimentHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExperimentHeaderView.xib; sourceTree = "<group>"; };
 		3D6C048D2105977F00E28F62 /* NewExperimentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExperimentCell.swift; sourceTree = "<group>"; };
 		3D6C048E2105977F00E28F62 /* ExperimentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExperimentCell.xib; sourceTree = "<group>"; };
-		3D6C0491210598A500E28F62 /* ExperimentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperimentCell.swift; sourceTree = "<group>"; };
-		3D6C0492210598A600E28F62 /* ExperimentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExperimentCell.xib; path = ../../../../../../../.Trash/ExperimentCell.xib; sourceTree = "<group>"; };
+		3D6C04952105997200E28F62 /* ExperimentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperimentCell.swift; sourceTree = "<group>"; };
+		3D6C04962105997300E28F62 /* ExperimentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExperimentCell.xib; path = ../../../../../../../Desktop/ExperimentCell.xib; sourceTree = "<group>"; };
 		3D7BD11C20FA716700A0C3FA /* SimulatorCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorCollectionController.swift; sourceTree = "<group>"; };
 		3D82C5951E94070000BA5228 /* medium_gear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "medium_gear@2x.png"; sourceTree = "<group>"; };
 		3D82C5961E94070000BA5228 /* large_gear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "large_gear@2x.png"; sourceTree = "<group>"; };
@@ -310,8 +310,8 @@
 				3D30E0B01D4D81AE00A50418 /* InfoTextViewController.xib */,
 				3D3E09451D5E752900E294FD /* InfoCell.swift */,
 				3D3E09461D5E752900E294FD /* InfoCell.xib */,
-				3D6C0491210598A500E28F62 /* ExperimentCell.swift */,
-				3D6C0492210598A600E28F62 /* ExperimentCell.xib */,
+				3D6C04952105997200E28F62 /* ExperimentCell.swift */,
+				3D6C04962105997300E28F62 /* ExperimentCell.xib */,
 				3D88C9F01D3FD001009C639F /* ExperimentTableController.swift */,
 				3DE065EB1CDE6DD600891A66 /* Main.storyboard */,
 				3D7BD11E20FA716E00A0C3FA /* New app UI */,
@@ -453,7 +453,7 @@
 				3D2030FA1D41B21200C4C3BC /* DonutPhsyicsController.xib in Resources */,
 				3D82C59A1E94070000BA5228 /* small_gear@2x.png in Resources */,
 				3D0842541D47C02100F80155 /* Circuit VIRP_exp@2x.png in Resources */,
-				3D6C0494210598A600E28F62 /* ExperimentCell.xib in Resources */,
+				3D6C04982105997300E28F62 /* ExperimentCell.xib in Resources */,
 				3DFE449B1D4D93B200C958A0 /* ResistivityPhsyicsController.xib in Resources */,
 				3D0842521D47BF9800F80155 /* Air Box_exp@2x.png in Resources */,
 				3D30E0B21D4D81AE00A50418 /* InfoTextViewController.xib in Resources */,
@@ -521,7 +521,7 @@
 				3D30E0B11D4D81AE00A50418 /* InfoTextViewController.swift in Sources */,
 				3D2030F81D41B20E00C4C3BC /* DonutScene.swift in Sources */,
 				3DC47F251D4E51D000F981EC /* AirBoxPhsyicsController.swift in Sources */,
-				3D6C0493210598A600E28F62 /* ExperimentCell.swift in Sources */,
+				3D6C04972105997300E28F62 /* ExperimentCell.swift in Sources */,
 				3D3E09441D5E11A400E294FD /* VIRPScene.swift in Sources */,
 				3D6C04832105892100E28F62 /* Experiments.swift in Sources */,
 				3D26BAF71CFA025A00B61EB2 /* CannonScene.swift in Sources */,
