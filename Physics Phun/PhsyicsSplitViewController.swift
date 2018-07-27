@@ -23,6 +23,12 @@ class PhsyicsSplitViewController: UISplitViewController, UISplitViewControllerDe
         return true
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        get {
+            return .lightContent
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -11,11 +11,15 @@ import UIKit
 class SimulatorCollectionController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, CALayerDelegate {
 
     
-    var collectionView: UICollectionView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     var physicistHeaderView: PhysicistHeaderView?
     
     var maskGradient: CAGradientLayer?
+    
+    // we do not have enough content to necessitate continuous dequeuing of the headerview and cell
+    var headerViews: [IndexPath:UICollectionReusableView] = [:]
+//    var cells: [IndexPath:UICollectionViewCell] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +30,8 @@ class SimulatorCollectionController: UIViewController, UICollectionViewDelegate,
         var collectionViewFrame = bounds
         let layout = customFlowLayout()
         collectionViewFrame.size.height = bounds.height - (statusBarHeight + navBarHeight)
-        collectionView = UICollectionView(frame: collectionViewFrame, collectionViewLayout: layout)
+//        collectionView = UICollectionView(frame: collectionViewFrame, collectionViewLayout: layout)
+        collectionView.setCollectionViewLayout(layout, animated: false)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = .clear
@@ -82,16 +87,6 @@ class SimulatorCollectionController: UIViewController, UICollectionViewDelegate,
             height: scrollView.bounds.height
         )
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     // MARK: - Collection View Datasource and Delegate
     //NOTE: assigning the physicist header view to the first section, and everything else to section 1 onward
@@ -107,27 +102,34 @@ class SimulatorCollectionController: UIViewController, UICollectionViewDelegate,
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let experimentCell = collectionView.dequeueReusableCell(withReuseIdentifier: "experimentCell", for: indexPath)
         
-        
-        
         return experimentCell
     }
     
     // need a header for the "Physicist of the day" section
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
         if kind == UICollectionElementKindSectionHeader {
-            //
-            if indexPath.row == 0 {
+            // first check if we already have one. no reason to dequeue the few headers we have
+            if let hv = headerViews[indexPath] {
+                return hv
+            }
+            
+            var headerView: UICollectionReusableView!
+            if indexPath.section == 0 {
                 physicistHeaderView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headerView", for: indexPath) as? PhysicistHeaderView
-                physicistHeaderView?.newPhysicist() // reload for a new person
-                return physicistHeaderView!
+                headerView = physicistHeaderView
+                physicistHeaderView?.newPhysicist()
             } else {
                 // should be going here after row 0 for physics view
                 // header view for a specific physics theme
                 let experimentHeader = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "experimentView", for: indexPath) as? ExperimentHeaderView
-                experimentHeader?.titleLabel.text = Experiments.list[indexPath.row - 1].title
-                return experimentHeader!
+                experimentHeader?.titleLabel.text = Experiments.list[indexPath.section - 1].title
+                headerView = experimentHeader!
             }
             
+            // add to our dictionary and return
+            headerViews[indexPath] = headerView
+            return headerView
         } else {
             return UICollectionReusableView()
         }

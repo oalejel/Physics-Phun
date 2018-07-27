@@ -19,9 +19,13 @@ class PhysicistHeaderView: UICollectionReusableView, SFSafariViewControllerDeleg
     
     var wikiURL: URL?
     
+    var didAwakeOnce = false
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         // Initialization code
+        // Note that dequeueing header views will cause this method to be called often
         wikiButton.imageView?.contentMode = .scaleAspectFit
         wikiButton.imageEdgeInsets.left = -5
         wikiButton.imageEdgeInsets.top = 4
@@ -32,17 +36,20 @@ class PhysicistHeaderView: UICollectionReusableView, SFSafariViewControllerDeleg
     @IBAction func wikiButtonPressed(_ sender: Any) {
         if let url = wikiURL {
             let safariController = SFSafariViewController(url: url)
-            UIApplication.shared.keyWindow?.rootViewController?.show(safariController, sender: self)
+            safariController.modalPresentationCapturesStatusBarAppearance = true
+            safariController.setNeedsStatusBarAppearanceUpdate()
+            UIApplication.shared.keyWindow?.rootViewController?.present(safariController, animated: true, completion: nil)
         }
     }
     
     // call this when ready to reload our physicist
     func newPhysicist() {
-        PhysicistOfTheDayManager.shared.update { (name, description, url) in
+        PhysicistOfTheDayManager.shared.update { (name, description, url, image) in
             DispatchQueue.main.async {
                 self.wikiURL = url
                 self.physicistNameLabel.text = name
                 self.physicistDescriptionLabel.text = description
+                self.physicistImageView.image = image
             }
         }
     }
