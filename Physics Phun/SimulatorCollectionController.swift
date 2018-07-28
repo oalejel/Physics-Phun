@@ -15,6 +15,7 @@ class SimulatorCollectionController: UIViewController, UICollectionViewDelegateF
     var maskGradient: CAGradientLayer?
     // we do not have enough content to necessitate continuous dequeuing of the headerview and cell
     var headerViews: [IndexPath:UICollectionReusableView] = [:]
+    var shadowHeight: CGFloat = 18
 //    var cells: [IndexPath:UICollectionViewCell] = [:]
     
     override func viewDidLoad() {
@@ -34,7 +35,7 @@ class SimulatorCollectionController: UIViewController, UICollectionViewDelegateF
         collectionView.delaysContentTouches = false
         
         // register collection view nibs
-        collectionView.register(UINib(nibName: "NewExperimentCell", bundle:  nil), forCellWithReuseIdentifier: "experimentCell")
+        collectionView.register(UINib(nibName: "NewExperimentCell", bundle:  nil), forCellWithReuseIdentifier: "NewExperimentCell")
         collectionView.register(UINib(nibName: "PhysicistHeaderView", bundle:  nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headerView")
         collectionView.register(UINib(nibName: "ExperimentHeaderView", bundle:  nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "experimentView")
         view.addSubview(collectionView)
@@ -42,7 +43,6 @@ class SimulatorCollectionController: UIViewController, UICollectionViewDelegateF
         // make our screen fade away on top and bottom edges
         addMaskGradient()
     }
-    
     
     var didLayoutOnce = false
     override func viewDidLayoutSubviews() {
@@ -70,7 +70,6 @@ class SimulatorCollectionController: UIViewController, UICollectionViewDelegateF
         maskGradient!.frame = gradFrame
         maskGradient!.delegate = self
         maskGradient!.colors = [UIColor.clear.cgColor, UIColor.white.cgColor, UIColor.white.cgColor, UIColor.clear.cgColor]
-        let shadowHeight: CGFloat = 22
         let shadowPercent = shadowHeight / bounds.size.height
         maskGradient!.locations = [0, shadowPercent, 1 - shadowPercent, 1] as [NSNumber]
         
@@ -99,7 +98,8 @@ class SimulatorCollectionController: UIViewController, UICollectionViewDelegateF
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let experimentCell = collectionView.dequeueReusableCell(withReuseIdentifier: "experimentCell", for: indexPath)
+        let experimentCell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewExperimentCell", for: indexPath)
+        (experimentCell as? NewExperimentCell)?.experimentTitleLabel.text = Experiments.list[indexPath.section - 1].simulations[indexPath.row].name
         
         return experimentCell
     }
@@ -134,7 +134,6 @@ class SimulatorCollectionController: UIViewController, UICollectionViewDelegateF
         }
     }
     
-    
     // MARK: - Visual cusomization
     
     @objc func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
@@ -153,14 +152,21 @@ class SimulatorCollectionController: UIViewController, UICollectionViewDelegateF
 //        layout.estimatedItemSize = CGSize(width: 200, height: 200)
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 10
-        layout.sectionInset = .init(top: 8, left: 0, bottom: 0, right: 0)
+        layout.sectionInset = .init(top: 8, left: 0, bottom: shadowHeight, right: 0)
         layout.minimumInteritemSpacing = 12
         
         return layout
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (collectionView.frame.size.width - 12) / 2 //some width
+        var width = (collectionView.frame.size.width - 12) / 2
+        if traitCollection.horizontalSizeClass == .regular {
+            // for ipad, fit 3 in one row
+            width /= 1.5
+        } else if view.frame.size.width <= 320 {
+            // for iphone 5 width devices, let the cell horizontally fill screen
+            width = collectionView.frame.size.width
+        }
         let height = width * 0.8 //ratio
         return CGSize(width: width, height: height)
     }
@@ -170,7 +176,6 @@ class SimulatorCollectionController: UIViewController, UICollectionViewDelegateF
     func action(for layer: CALayer, forKey event: String) -> CAAction? {
         return NSNull()
     }
-    
     
     // MARK: - Other / Unused
     

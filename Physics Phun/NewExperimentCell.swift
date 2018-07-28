@@ -26,8 +26,11 @@ class NewExperimentCell: UICollectionViewCell {
     override func draw(_ rect: CGRect) {
         let context = UIGraphicsGetCurrentContext()
         let actualSize = NewExperimentCell.blueprintImage!.size
+        
+        let randomXOffset = -CGFloat(arc4random() % UInt32((actualSize.width - rect.size.height)))
+        let randomYOffset = -CGFloat(arc4random() % UInt32((actualSize.height - rect.size.height)))
 //        context?.saveGState() // will return to this state once we draw our image and cut part of it out
-        let offsetRect = CGRect(x: -100, y: -20, width: actualSize.width, height: actualSize.height)
+        let offsetRect = CGRect(x: randomXOffset, y: randomYOffset, width: actualSize.width, height: actualSize.height)
         context?.draw(NewExperimentCell.blueprintImage!.cgImage!, in: offsetRect)
     }
 

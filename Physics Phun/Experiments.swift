@@ -62,7 +62,7 @@ class ElectricalTheme: SimulationTheme {
     init() {
         super.init(title: "Electricity & Circuits ⚡️", simulations: [
             Simulation(name: "Circuit VIRP", controllerClass: VIRPPhsyicsController.self),
-            Simulation(name: "Resistance in a Wire", controllerClass: ResistivityPhsyicsController.self),
+            Simulation(name: "Resistivity", controllerClass: ResistivityPhsyicsController.self),
         ])
     }
 }
