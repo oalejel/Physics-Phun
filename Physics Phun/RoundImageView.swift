@@ -7,40 +7,40 @@
 //
 
 import UIKit
+import Shimmer
 
-class RoundImageView: UIView {
+class RoundImageView: FBShimmeringView {
     
     var image: UIImage? = UIImage(named: "newton_example")
     
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupView()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setupView()
-    }
-    
-    func setupView() {
-        layer.cornerRadius = frame.size.width / 2
-        layer.masksToBounds = true
-        
-        // since we may load this from a nib, we need to tell screen that this view is dirty
-        setNeedsDisplay()
-        setNeedsLayout()
-    }
+//    // Only override draw() if you perform custom drawing.
+//    // An empty implementation adversely affects performance during animation.
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//        setupView()
+//    }
+//
+//    required init?(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//        setupView()
+//    }
+//
     
     override func draw(_ rect: CGRect) {
+        layer.cornerRadius = rect.size.width / 2
+        layer.masksToBounds = true
+        
         let context = UIGraphicsGetCurrentContext()
+        let lineWidth: CGFloat = 6
         
-        image?.draw(in: rect)
+        let scale = rect.size.width / (image?.size.width ?? rect.size.width)
+        let newSize = image?.size.applying(CGAffineTransform(scaleX: scale, y: scale)) ?? .zero
+        image?.draw(in: CGRect(origin: .zero, size: newSize))
         
+//        let circleRect = CGRect(x: lineWidth / 2, y: lineWidth / 2, width: rect.size.width - lineWidth, height: rect.size.height - lineWidth)
         context?.setStrokeColor(UIColor.white.cgColor)
         context?.setFillColor(UIColor.white.cgColor)
-        context?.setLineWidth(6) // note that half this linewidth will be clipped
+        context?.setLineWidth(lineWidth) // note that half of linewidth will be clipped
         context?.addEllipse(in: rect)
         
         context?.strokePath()

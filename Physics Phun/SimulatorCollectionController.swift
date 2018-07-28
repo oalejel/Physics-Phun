@@ -8,15 +8,11 @@
 
 import UIKit
 
-class SimulatorCollectionController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, CALayerDelegate {
+class SimulatorCollectionController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, CALayerDelegate {
 
-    
     @IBOutlet weak var collectionView: UICollectionView!
-    
     var physicistHeaderView: PhysicistHeaderView?
-    
     var maskGradient: CAGradientLayer?
-    
     // we do not have enough content to necessitate continuous dequeuing of the headerview and cell
     var headerViews: [IndexPath:UICollectionReusableView] = [:]
 //    var cells: [IndexPath:UICollectionViewCell] = [:]
@@ -68,12 +64,15 @@ class SimulatorCollectionController: UIViewController, UICollectionViewDelegate,
     
     func addMaskGradient() {
         let statusBarHeight = UIApplication.shared.statusBarFrame.size.height
-        let bounds = UIScreen.main.bounds
+        let bounds = view.frame
         maskGradient = CAGradientLayer()
         let gradFrame = CGRect(x: 0, y: 0, width: bounds.size.width, height: bounds.size.height - statusBarHeight)
         maskGradient!.frame = gradFrame
         maskGradient!.delegate = self
-        maskGradient!.colors = [UIColor.clear.cgColor, UIColor.white.cgColor, UIColor.white.cgColor, UIColor.white.cgColor, UIColor.white.cgColor, UIColor.clear.cgColor]
+        maskGradient!.colors = [UIColor.clear.cgColor, UIColor.white.cgColor, UIColor.white.cgColor, UIColor.clear.cgColor]
+        let shadowHeight: CGFloat = 22
+        let shadowPercent = shadowHeight / bounds.size.height
+        maskGradient!.locations = [0, shadowPercent, 1 - shadowPercent, 1] as [NSNumber]
         
         collectionView.layer.mask = maskGradient
     }
@@ -92,7 +91,7 @@ class SimulatorCollectionController: UIViewController, UICollectionViewDelegate,
     //NOTE: assigning the physicist header view to the first section, and everything else to section 1 onward
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         // number of themes == number of sections
-        return Experiments.list.count
+        return Experiments.list.count + 1 // 1 accounts for the physicist header view
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -147,21 +146,24 @@ class SimulatorCollectionController: UIViewController, UICollectionViewDelegate,
             return CGSize(width: bounds.size.width, height: 30)
         }
     }
-
     
     func customFlowLayout() -> UICollectionViewFlowLayout {
         
         let layout = UICollectionViewFlowLayout()
-        layout.estimatedItemSize = CGSize(width: 200, height: 200)
+//        layout.estimatedItemSize = CGSize(width: 200, height: 200)
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 10
+        layout.sectionInset = .init(top: 8, left: 0, bottom: 0, right: 0)
+        layout.minimumInteritemSpacing = 12
         
         return layout
     }
     
-    
-    
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = (collectionView.frame.size.width - 12) / 2 //some width
+        let height = width * 0.8 //ratio
+        return CGSize(width: width, height: height)
+    }
     
     // MARK: - CALayer (mainly for gradient mask and avoiding animation lag)
     

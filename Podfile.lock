@@ -1,20 +1,24 @@
 PODS:
   - IQKeyboardManager (6.0.4)
+  - Shimmer (1.0.2)
   - SqueezeButton (0.1.0)
 
 DEPENDENCIES:
   - IQKeyboardManager
+  - Shimmer
   - SqueezeButton
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - IQKeyboardManager
+    - Shimmer
     - SqueezeButton
 
 SPEC CHECKSUMS:
   IQKeyboardManager: 29514134ef0334a6fa33cf4eee11c36c064baeaf
+  Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
   SqueezeButton: bbf9e7049375625854fb4bead4359c98392b6709
 
-PODFILE CHECKSUM: c7b76c943367b797929deabc0a7b334f58f6b0d5
+PODFILE CHECKSUM: 3832cabb647e56b31efb603fa61d071a71f0d7ca
 
 COCOAPODS: 1.5.3

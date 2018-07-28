@@ -13,12 +13,12 @@ class PhysicistOfTheDayManager {
     
     var currentNameIndex = -1
     var names = [
-        "Marie Curie",
-        "Isaac Newton",
-        "Albert Einstein",
-        "Richard Feynman",
-        "Rosalind Franklin",
-        "Erwin Schrödinger",
+        "Marie_Curie",
+        "Isaac_Newton",
+        "Albert_Einstein",
+        "Richard_Feynman",
+        "Rosalind_Franklin",
+        "Erwin_Schrödinger",
         "Niels_Bohr",
         "Lise_Meitner",
         "Blaise_Pascal",
@@ -86,19 +86,38 @@ class PhysicistOfTheDayManager {
                     if let title = firstPage["title"] as? String  {
                         name = title
                     }
-                    
-                    if let unparsedDescription = firstPage["extract"] as? String {
+                    /*
+                        - must remove all tabs and types of non space spaces. even newlines
+                        - everything between <> must go
+                        - all semicolons
+                        - occurrences of &#some_numbers;
+                    */
+                    if var unparsedDescription = firstPage["extract"] as? String {
+//                        print(unparsedDescription)
+
+                        removeSubstringEnclosedIn(leftCharacter: "<", rightCharacter: ">", forString: &unparsedDescription)
+                        removeSubstringEnclosedIn(leftCharacter: "(", rightCharacter: ")", forString: &unparsedDescription)
+                        removeSubstringEnclosedIn(leftCharacter: "[", rightCharacter: "]", forString: &unparsedDescription)
+                        
+                        // removes occurrences of strings
+                        unparsedDescription = unparsedDescription.replacingOccurrences(of: "&#160;", with: "")
+                        // especially double spaces
+                        unparsedDescription = unparsedDescription.replacingOccurrences(of: "  ", with: " ")
+                        
+                        // only removed individual characters
+                        let unwanted: [Character] = ["\n", "\t", ";"]
+                        unparsedDescription.removeAll { (c) -> Bool in
+                            return unwanted.contains(c)
+                        }
+                        
                         description = unparsedDescription
                     }
                     
                     if let thumbnailDict = firstPage["thumbnail"] as? NSDictionary {
                         if let thumbnailURLString = thumbnailDict["source"] as? String {
-                            
-                            
                             if let url = URL(string: thumbnailURLString) {
                                 var request = URLRequest(url: url)
                                 request.httpMethod = "GET" // should be default setting, but just making this a point
-                                //        request.timeoutInterval = 10
                                 let dataTask = session.dataTask(with: request) { (data, response, err) in
                                     if err != nil {
                                         print(err ?? "error_alt")
@@ -117,15 +136,31 @@ class PhysicistOfTheDayManager {
                                 
                                 dataTask.resume()
                             }
-                            
-                            
                         }
                     }
-                    
                 }
             }
         }
-
+    }
+    
+    func removeSubstringEnclosedIn(leftCharacter c1: Character, rightCharacter c2: Character, forString str: inout String) {
+        // #warning("change in next version of swift")
+        var removalRanges: [(String.Index?, String.Index?)] = []
+        for (index, ch) in str.enumerated().reversed() {
+            if ch == c2 {
+                // prepare for the closing angled bracket
+                let intToIndex = str.index(str.startIndex, offsetBy: index)
+                removalRanges.append((intToIndex, nil))
+            } else if ch == c1 {
+                if let lastUnpairedIndex = removalRanges.lastIndex(where: { (pair) -> Bool in
+                    return pair.1 == nil // take first pair that has no matched "<" in .1
+                }) {
+                    let intToIndex = str.index(str.startIndex, offsetBy: index)
+                    removalRanges[lastUnpairedIndex].1 = intToIndex
+                    str.removeSubrange(removalRanges[lastUnpairedIndex].1!...removalRanges[lastUnpairedIndex].0!)
+                }
+            }
+        }
     }
     
     /// decides on url for next physicist to display based on past views
@@ -134,9 +169,7 @@ class PhysicistOfTheDayManager {
         currentNameIndex = (currentNameIndex + 1) % names.count
         let nextName = names[currentNameIndex]
         
-        let urlString = "https://en.wikipedia.org/w/api.php?action=query&generator=search&format=json&exintro&exsentences=3&exlimit=max&gsrlimit=1&gsrsearch=hastemplate:\(nextName)&pithumbsize=400&pilimit=max&prop=pageimages%7Cextracts"
-        
-        let _ = "https://en.wikipedia.org/w/api.php?&action=query&generator=search&format=json&gsrnamespace=0&gsrlimit=1&prop=pageimages%7Cextracts&pilimit=1&exintro&exsentences=1&exlimit=1&continue&pithumbsize=400&gsrsearch=hastemplate:Birth_date+\(nextName.escape)"
+        let urlString = "https://en.wikipedia.org/w/api.php?action=query&generator=search&format=json&exintro&exsentences=3&exlimit=max&gsrlimit=1&gsrsearch=\(nextName)&pithumbsize=400&pilimit=max&prop=pageimages%7Cextracts"
         
         return URL(string: urlString)
     }

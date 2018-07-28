@@ -6,6 +6,7 @@ target 'Physics Phun' do
   use_frameworks!
   pod 'SqueezeButton'
   pod 'IQKeyboardManager'
+  pod 'Shimmer'
   # Pods for Physics Phun
 
 end

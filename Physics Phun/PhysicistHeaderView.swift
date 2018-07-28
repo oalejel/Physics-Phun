@@ -8,6 +8,7 @@
 
 import UIKit
 import SafariServices
+import Shimmer
 
 class PhysicistHeaderView: UICollectionReusableView, SFSafariViewControllerDelegate {
     @IBOutlet weak var wikiButton: UIButton!
@@ -18,8 +19,10 @@ class PhysicistHeaderView: UICollectionReusableView, SFSafariViewControllerDeleg
     @IBOutlet weak var featuredLabel: UILabel!
     
     var wikiURL: URL?
-    
     var didAwakeOnce = false
+    
+    // Layout formatting note
+    // Need description label to have a *minimum* size since users who have larger system font sizes will need it
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,6 +34,9 @@ class PhysicistHeaderView: UICollectionReusableView, SFSafariViewControllerDeleg
         wikiButton.imageEdgeInsets.top = 4
         wikiButton.imageEdgeInsets.bottom = 4
         featuredLabel.adjustsFontSizeToFitWidth = true
+        
+        // show loading status by shimmering
+        physicistImageView.isShimmering = true
     }
     
     @IBAction func wikiButtonPressed(_ sender: Any) {
@@ -50,6 +56,7 @@ class PhysicistHeaderView: UICollectionReusableView, SFSafariViewControllerDeleg
                 self.physicistNameLabel.text = name
                 self.physicistDescriptionLabel.text = description
                 self.physicistImageView.image = image
+                self.physicistImageView.setNeedsDisplay()
             }
         }
     }
