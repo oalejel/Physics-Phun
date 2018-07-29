@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14295.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14270.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="CreditsView" customModule="Physics_Phun" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="351" height="77"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="bbP-VU-wT9">
+                    <rect key="frame" x="0.0" y="5.5" width="351" height="66"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developed by Omar Al-Ejel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPX-zO-Q5g">
+                            <rect key="frame" x="0.0" y="0.0" width="351" height="33"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZMF-DR-VWb">
+                            <rect key="frame" x="0.0" y="33" width="351" height="33"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dgl-4O-W4Z" customClass="SqueezeButton" customModule="SqueezeButton">
+                                    <rect key="frame" x="0.0" y="0.0" width="170.5" height="33"/>
+                                    <color key="backgroundColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <state key="normal" title="Contact">
+                                        <color key="titleColor" red="0.053376498287671235" green="0.56366589937945211" blue="0.96522301599178084" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="contactDeveloper:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="MfB-GG-OQh"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUn-NK-fXW" customClass="SqueezeButton" customModule="SqueezeButton">
+                                    <rect key="frame" x="180.5" y="0.0" width="170.5" height="33"/>
+                                    <color key="backgroundColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <state key="normal" title="Rate Physics Phun">
+                                        <color key="titleColor" red="0.053376498287671235" green="0.56366589937945211" blue="0.96522301599178084" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="rateOnAppStore:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="jCr-9b-eRt"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="bbP-VU-wT9" secondAttribute="trailing" id="VrQ-9c-hsq"/>
+                <constraint firstItem="bbP-VU-wT9" firstAttribute="centerY" secondItem="VXr-Tz-HHm" secondAttribute="centerY" id="c5a-an-t3n"/>
+                <constraint firstItem="bbP-VU-wT9" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="mVX-uz-ZIe"/>
+                <constraint firstItem="bbP-VU-wT9" firstAttribute="centerX" secondItem="VXr-Tz-HHm" secondAttribute="centerX" id="nU9-fn-0Qr"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <connections>
+                <outlet property="contactButton" destination="Dgl-4O-W4Z" id="RFS-zL-bLn"/>
+            </connections>
+            <point key="canvasLocation" x="49.5" y="161.5"/>
+        </collectionReusableView>
+    </objects>
+</document>

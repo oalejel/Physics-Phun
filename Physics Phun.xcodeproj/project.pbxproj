@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3D03554A1D4E6CF000DD20AE /* Resistance in a Wire_exp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D08424F1D47BF9800F80155 /* Resistance in a Wire_exp@2x.png */; };
+		3D03554A1D4E6CF000DD20AE /* Resistivity_exp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D08424F1D47BF9800F80155 /* Resistivity_exp@2x.png */; };
 		3D0842521D47BF9800F80155 /* Air Box_exp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D0842501D47BF9800F80155 /* Air Box_exp@2x.png */; };
 		3D0842541D47C02100F80155 /* Circuit VIRP_exp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D0842531D47C02100F80155 /* Circuit VIRP_exp@2x.png */; };
 		3D2030F31D41646800C4C3BC /* The Flying Donut_exp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D2030F21D41646800C4C3BC /* The Flying Donut_exp@2x.png */; };
@@ -33,6 +33,8 @@
 		3D4B2FB11D40428F009B59EF /* cannon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D4B2FB01D40428F009B59EF /* cannon@2x.png */; };
 		3D4B2FB31D4042A9009B59EF /* cannon_base@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D4B2FB21D4042A9009B59EF /* cannon_base@2x.png */; };
 		3D5621DE210ADF09001746DF /* +SFSafariViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5621DD210ADF09001746DF /* +SFSafariViewController.swift */; };
+		3D68B812210E3E49003405C2 /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D68B810210E3E49003405C2 /* CreditsView.swift */; };
+		3D68B813210E3E49003405C2 /* CreditsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D68B811210E3E49003405C2 /* CreditsView.xib */; };
 		3D6C04832105892100E28F62 /* Experiments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6C04822105892100E28F62 /* Experiments.swift */; };
 		3D6C0486210591DE00E28F62 /* ExperimentHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6C0484210591DE00E28F62 /* ExperimentHeaderView.swift */; };
 		3D6C0487210591DE00E28F62 /* ExperimentHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D6C0485210591DE00E28F62 /* ExperimentHeaderView.xib */; };
@@ -56,7 +58,6 @@
 		3DAAFCBF1E61174A00BD6A92 /* GearsPhysicsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAAFCBD1E61174A00BD6A92 /* GearsPhysicsController.swift */; };
 		3DAAFCC01E61174A00BD6A92 /* GearsPhysicsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DAAFCBE1E61174A00BD6A92 /* GearsPhysicsController.xib */; };
 		3DB808C91D4A8C940057FEEA /* graph@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DB808C81D4A8C940057FEEA /* graph@2x.png */; };
-		3DBABD931E956D08001BC63E /* Gears_exp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DBABD921E956D08001BC63E /* Gears_exp@2x.png */; };
 		3DC47F251D4E51D000F981EC /* AirBoxPhsyicsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC47F221D4E51D000F981EC /* AirBoxPhsyicsController.swift */; };
 		3DC47F261D4E51D000F981EC /* AirBoxPhsyicsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DC47F231D4E51D000F981EC /* AirBoxPhsyicsController.xib */; };
 		3DC47F271D4E51D000F981EC /* AirBoxScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC47F241D4E51D000F981EC /* AirBoxScene.swift */; };
@@ -83,7 +84,7 @@
 
 /* Begin PBXFileReference section */
 		17C4F245B0C0F9C42CAFCDD4 /* Pods-Physics Phun.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Physics Phun.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Physics Phun/Pods-Physics Phun.debug.xcconfig"; sourceTree = "<group>"; };
-		3D08424F1D47BF9800F80155 /* Resistance in a Wire_exp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Resistance in a Wire_exp@2x.png"; sourceTree = "<group>"; };
+		3D08424F1D47BF9800F80155 /* Resistivity_exp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Resistivity_exp@2x.png"; sourceTree = "<group>"; };
 		3D0842501D47BF9800F80155 /* Air Box_exp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Air Box_exp@2x.png"; sourceTree = "<group>"; };
 		3D0842531D47C02100F80155 /* Circuit VIRP_exp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Circuit VIRP_exp@2x.png"; sourceTree = "<group>"; };
 		3D2030F21D41646800C4C3BC /* The Flying Donut_exp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "The Flying Donut_exp@2x.png"; sourceTree = "<group>"; };
@@ -109,6 +110,8 @@
 		3D4B2FB01D40428F009B59EF /* cannon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cannon@2x.png"; sourceTree = "<group>"; };
 		3D4B2FB21D4042A9009B59EF /* cannon_base@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cannon_base@2x.png"; sourceTree = "<group>"; };
 		3D5621DD210ADF09001746DF /* +SFSafariViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+SFSafariViewController.swift"; sourceTree = "<group>"; };
+		3D68B810210E3E49003405C2 /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
+		3D68B811210E3E49003405C2 /* CreditsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreditsView.xib; sourceTree = "<group>"; };
 		3D6C04822105892100E28F62 /* Experiments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experiments.swift; sourceTree = "<group>"; };
 		3D6C0484210591DE00E28F62 /* ExperimentHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentHeaderView.swift; sourceTree = "<group>"; };
 		3D6C0485210591DE00E28F62 /* ExperimentHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExperimentHeaderView.xib; sourceTree = "<group>"; };
@@ -132,7 +135,6 @@
 		3DAAFCBD1E61174A00BD6A92 /* GearsPhysicsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GearsPhysicsController.swift; path = ../GearsPhysicsController.swift; sourceTree = "<group>"; };
 		3DAAFCBE1E61174A00BD6A92 /* GearsPhysicsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GearsPhysicsController.xib; path = ../GearsPhysicsController.xib; sourceTree = "<group>"; };
 		3DB808C81D4A8C940057FEEA /* graph@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "graph@2x.png"; sourceTree = "<group>"; };
-		3DBABD921E956D08001BC63E /* Gears_exp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gears_exp@2x.png"; sourceTree = "<group>"; };
 		3DC47F221D4E51D000F981EC /* AirBoxPhsyicsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirBoxPhsyicsController.swift; sourceTree = "<group>"; };
 		3DC47F231D4E51D000F981EC /* AirBoxPhsyicsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AirBoxPhsyicsController.xib; sourceTree = "<group>"; };
 		3DC47F241D4E51D000F981EC /* AirBoxScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirBoxScene.swift; sourceTree = "<group>"; };
@@ -254,6 +256,8 @@
 				3DFFD26F2104FEFA00D99775 /* MainNavigationController.swift */,
 				3DFFD2712105013900D99775 /* PhsyicsSplitViewController.swift */,
 				3D7BD11C20FA716700A0C3FA /* SimulatorCollectionController.swift */,
+				3D68B810210E3E49003405C2 /* CreditsView.swift */,
+				3D68B811210E3E49003405C2 /* CreditsView.xib */,
 				3D6C0488210591FB00E28F62 /* Experiment Organization */,
 				3DFFD279210516E700D99775 /* Physicist of the Day */,
 			);
@@ -334,9 +338,8 @@
 				3DC47F201D4E50BE00F981EC /* VIRP */,
 				3DC47F211D4E50DB00F981EC /* Air Box */,
 				3DA6373E1D467B3F00B0782F /* Polarized Neutron Reflectometry_exp@2x.png */,
-				3DBABD921E956D08001BC63E /* Gears_exp@2x.png */,
 				3D2030F21D41646800C4C3BC /* The Flying Donut_exp@2x.png */,
-				3D08424F1D47BF9800F80155 /* Resistance in a Wire_exp@2x.png */,
+				3D08424F1D47BF9800F80155 /* Resistivity_exp@2x.png */,
 				3D0842501D47BF9800F80155 /* Air Box_exp@2x.png */,
 				3D0842531D47C02100F80155 /* Circuit VIRP_exp@2x.png */,
 				3DE065EE1CDE6DD600891A66 /* Assets.xcassets */,
@@ -452,7 +455,6 @@
 				3D31747A1D4C2020006D4991 /* FireParticle.sks in Resources */,
 				3DC47F261D4E51D000F981EC /* AirBoxPhsyicsController.xib in Resources */,
 				3D31747B1D4C2020006D4991 /* spark.png in Resources */,
-				3DBABD931E956D08001BC63E /* Gears_exp@2x.png in Resources */,
 				3DE065EF1CDE6DD600891A66 /* Assets.xcassets in Resources */,
 				3D82C59F1E94077A00BA5228 /* small_gear_icon.png in Resources */,
 				3D82C5991E94070000BA5228 /* large_gear@2x.png in Resources */,
@@ -471,7 +473,8 @@
 				3D342C8E1D3FF4C800F7BB43 /* Cannon_exp@2x.png in Resources */,
 				3DAAFCC01E61174A00BD6A92 /* GearsPhysicsController.xib in Resources */,
 				3D4B2FB11D40428F009B59EF /* cannon@2x.png in Resources */,
-				3D03554A1D4E6CF000DD20AE /* Resistance in a Wire_exp@2x.png in Resources */,
+				3D68B813210E3E49003405C2 /* CreditsView.xib in Resources */,
+				3D03554A1D4E6CF000DD20AE /* Resistivity_exp@2x.png in Resources */,
 				3DA637481D46911600B0782F /* NeutronPhsyicsController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -534,6 +537,7 @@
 				3D30E0B11D4D81AE00A50418 /* InfoTextViewController.swift in Sources */,
 				3D2030F81D41B20E00C4C3BC /* DonutScene.swift in Sources */,
 				3DC47F251D4E51D000F981EC /* AirBoxPhsyicsController.swift in Sources */,
+				3D68B812210E3E49003405C2 /* CreditsView.swift in Sources */,
 				3D6C04972105997300E28F62 /* ExperimentCell.swift in Sources */,
 				3D3E09441D5E11A400E294FD /* VIRPScene.swift in Sources */,
 				3D6C04832105892100E28F62 /* Experiments.swift in Sources */,

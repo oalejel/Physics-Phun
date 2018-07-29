@@ -1,7 +1,7 @@
 PODS:
-  - IQKeyboardManager (6.0.4)
+  - IQKeyboardManager (6.1.1)
   - Shimmer (1.0.2)
-  - SqueezeButton (0.1.0)
+  - SqueezeButton (0.2.1)
 
 DEPENDENCIES:
   - IQKeyboardManager
@@ -15,9 +15,9 @@ SPEC REPOS:
     - SqueezeButton
 
 SPEC CHECKSUMS:
-  IQKeyboardManager: 29514134ef0334a6fa33cf4eee11c36c064baeaf
+  IQKeyboardManager: 79c57795f5c2408d259d37b9da2ed07efcbb5225
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
-  SqueezeButton: bbf9e7049375625854fb4bead4359c98392b6709
+  SqueezeButton: a7993adeb46eb9d2a1b0ff7b13c0c68b9fc3824c
 
 PODFILE CHECKSUM: 3832cabb647e56b31efb603fa61d071a71f0d7ca
 

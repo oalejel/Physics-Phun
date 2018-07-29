@@ -38,6 +38,8 @@ class SimulatorCollectionController: UIViewController, UICollectionViewDelegateF
         collectionView.register(UINib(nibName: "NewExperimentCell", bundle:  nil), forCellWithReuseIdentifier: "NewExperimentCell")
         collectionView.register(UINib(nibName: "PhysicistHeaderView", bundle:  nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headerView")
         collectionView.register(UINib(nibName: "ExperimentHeaderView", bundle:  nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "experimentView")
+        collectionView.register(UINib(nibName: "CreditsView", bundle:  nil), forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: "creditsView")
+        collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: "emptyView")
         view.addSubview(collectionView)
         
         // make our screen fade away on top and bottom edges
@@ -99,7 +101,9 @@ class SimulatorCollectionController: UIViewController, UICollectionViewDelegateF
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let experimentCell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewExperimentCell", for: indexPath)
-        (experimentCell as? NewExperimentCell)?.experimentTitleLabel.text = Experiments.list[indexPath.section - 1].simulations[indexPath.row].name
+        let cellName = Experiments.list[indexPath.section - 1].simulations[indexPath.row].name
+        (experimentCell as? NewExperimentCell)?.experimentTitleLabel.text = cellName
+        (experimentCell as? NewExperimentCell)?.experimentImageView.image = UIImage(named: "\(cellName)_exp") 
         
         return experimentCell
     }
@@ -129,8 +133,26 @@ class SimulatorCollectionController: UIViewController, UICollectionViewDelegateF
             // add to our dictionary and return
             headerViews[indexPath] = headerView
             return headerView
-        } else {
-            return UICollectionReusableView()
+        }
+        
+        // else, will be a footer
+        if indexPath.section == Experiments.list.count {
+            // have a footer with credits
+            if let creditsView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionFooter, withReuseIdentifier: "creditsView", for: indexPath) as? CreditsView {
+                return creditsView
+            }
+        }
+        
+        let v = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionFooter, withReuseIdentifier: "emptyView", for: indexPath)
+        return v
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        
+        if let experimentClass = Experiments.list[indexPath.section - 1].simulations[indexPath.row].controllerClass as? UIViewController.Type {
+            let viewController = experimentClass.init()
+            navigationController?.pushViewController(viewController, animated: true)
         }
     }
     
@@ -146,10 +168,17 @@ class SimulatorCollectionController: UIViewController, UICollectionViewDelegateF
         }
     }
     
-    func customFlowLayout() -> UICollectionViewFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         
+        if section == Experiments.list.count {
+            let bounds = UIScreen.main.bounds
+            return CGSize(width: bounds.size.width, height: 100)
+        }
+        return CGSize.zero
+    }
+    
+    func customFlowLayout() -> UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
-//        layout.estimatedItemSize = CGSize(width: 200, height: 200)
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 10
         layout.sectionInset = .init(top: 8, left: 0, bottom: shadowHeight, right: 0)
