@@ -17,10 +17,8 @@ class NewExperimentCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         layer.cornerRadius = 10
         experimentImageView.contentMode = .scaleAspectFit
-//        layer.masksToBounds = true // layer clipping
         clipsToBounds = true // view clipping
     }
     
@@ -30,7 +28,6 @@ class NewExperimentCell: UICollectionViewCell {
         
         let randomXOffset = -CGFloat(arc4random() % UInt32((actualSize.width - rect.size.width)))
         let randomYOffset = -CGFloat(arc4random() % UInt32((actualSize.height - rect.size.height)))
-//        context?.saveGState() // will return to this state once we draw our image and cut part of it out
         let offsetRect = CGRect(x: randomXOffset, y: randomYOffset, width: actualSize.width, height: actualSize.height)
         context?.draw(NewExperimentCell.blueprintImage!.cgImage!, in: offsetRect)
     }
