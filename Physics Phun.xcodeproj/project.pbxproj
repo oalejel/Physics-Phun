@@ -236,16 +236,19 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
-		3D6C0488210591FB00E28F62 /* Experiment Organization */ = {
+		3D62F8C12112CA4600E63D05 /* CollectionView Items */ = {
 			isa = PBXGroup;
 			children = (
-				3D6C04822105892100E28F62 /* Experiments.swift */,
+				3DFFD27A2105175000D99775 /* PhysicistHeaderView.swift */,
+				3DFFD27B2105175000D99775 /* PhysicistHeaderView.xib */,
 				3D6C0484210591DE00E28F62 /* ExperimentHeaderView.swift */,
 				3D6C0485210591DE00E28F62 /* ExperimentHeaderView.xib */,
 				3D6C048D2105977F00E28F62 /* NewExperimentCell.swift */,
 				3D6C048E2105977F00E28F62 /* NewExperimentCell.xib */,
+				3D68B810210E3E49003405C2 /* CreditsView.swift */,
+				3D68B811210E3E49003405C2 /* CreditsView.xib */,
 			);
-			name = "Experiment Organization";
+			name = "CollectionView Items";
 			sourceTree = "<group>";
 		};
 		3D7BD11E20FA716E00A0C3FA /* New app UI */ = {
@@ -253,13 +256,13 @@
 			children = (
 				3DFFD273210508D900D99775 /* Global.swift */,
 				3DFFD2752105091000D99775 /* UIColor+CustomColors.swift */,
+				3DFFD27E21051F0100D99775 /* RoundImageView.swift */,
 				3DFFD26F2104FEFA00D99775 /* MainNavigationController.swift */,
 				3DFFD2712105013900D99775 /* PhsyicsSplitViewController.swift */,
 				3D7BD11C20FA716700A0C3FA /* SimulatorCollectionController.swift */,
-				3D68B810210E3E49003405C2 /* CreditsView.swift */,
-				3D68B811210E3E49003405C2 /* CreditsView.xib */,
-				3D6C0488210591FB00E28F62 /* Experiment Organization */,
-				3DFFD279210516E700D99775 /* Physicist of the Day */,
+				3D6C04822105892100E28F62 /* Experiments.swift */,
+				3DFFD2772105143500D99775 /* PhysicistOfTheDayManager.swift */,
+				3D62F8C12112CA4600E63D05 /* CollectionView Items */,
 			);
 			name = "New app UI";
 			sourceTree = "<group>";
@@ -357,17 +360,6 @@
 				3DFE449A1D4D93B200C958A0 /* ResistivityPhsyicsController.xib */,
 			);
 			name = Resistivity;
-			sourceTree = "<group>";
-		};
-		3DFFD279210516E700D99775 /* Physicist of the Day */ = {
-			isa = PBXGroup;
-			children = (
-				3DFFD2772105143500D99775 /* PhysicistOfTheDayManager.swift */,
-				3DFFD27A2105175000D99775 /* PhysicistHeaderView.swift */,
-				3DFFD27B2105175000D99775 /* PhysicistHeaderView.xib */,
-				3DFFD27E21051F0100D99775 /* RoundImageView.swift */,
-			);
-			name = "Physicist of the Day";
 			sourceTree = "<group>";
 		};
 		B8364B159EA9379F72514536 /* Pods */ = {

@@ -106,9 +106,16 @@ class PhysicistOfTheDayManager {
                         
                         // only removed individual characters
                         let unwanted: [Character] = ["\n", "\t", ";"]
-                        unparsedDescription.removeAll { (c) -> Bool in
-                            return unwanted.contains(c)
+                        for (index, c) in unparsedDescription.enumerated().reversed() {
+                            if unwanted.contains(c) {
+                                let stringIndex = unparsedDescription.index(unparsedDescription.startIndex, offsetBy: index)
+                                unparsedDescription.remove(at: stringIndex)
+                            }
                         }
+                        
+//                        unparsedDescription.removeAll { (c) -> Bool in
+//                            return unwanted.contains(c)
+//                        }
                         
                         description = unparsedDescription
                     }
@@ -152,13 +159,35 @@ class PhysicistOfTheDayManager {
                 let intToIndex = str.index(str.startIndex, offsetBy: index)
                 removalRanges.append((intToIndex, nil))
             } else if ch == c1 {
-                if let lastUnpairedIndex = removalRanges.lastIndex(where: { (pair) -> Bool in
-                    return pair.1 == nil // take first pair that has no matched "<" in .1
-                }) {
-                    let intToIndex = str.index(str.startIndex, offsetBy: index)
-                    removalRanges[lastUnpairedIndex].1 = intToIndex
-                    str.removeSubrange(removalRanges[lastUnpairedIndex].1!...removalRanges[lastUnpairedIndex].0!)
+//                #warning("return this version in swift 4.2")
+                //                if let lastUnpairedIndex = removalRanges.lastIndex(where: { (pair) -> Bool in
+                //                    return pair.1 == nil // take first pair that has no matched "<" in .1
+                //                }) {
+                //                    let intToIndex = str.index(str.startIndex, offsetBy: index)
+                //                    removalRanges[lastUnpairedIndex].1 = intToIndex
+                //                    str.removeSubrange(removalRanges[lastUnpairedIndex].1!...removalRanges[lastUnpairedIndex].0!)
+                //                }
+                var lastUnpairedIndex: Int?
+                for (index, pair) in removalRanges.enumerated().reversed() {
+                    if pair.1 == nil {
+                        lastUnpairedIndex = index
+                        break
+                    }
                 }
+                if let i = lastUnpairedIndex {
+                    let intToIndex = str.index(str.startIndex, offsetBy: index)
+                    removalRanges[i].1 = intToIndex
+                    str.removeSubrange(removalRanges[i].1!...removalRanges[i].0!)
+                }
+
+//                #warning("return this implementation on swift 4.2 when xcode 10 apps can be published")
+//                if let lastUnpairedIndex = removalRanges.lastIndex(where: { (pair) -> Bool in
+//                    return pair.1 == nil // take first pair that has no matched "<" in .1
+//                }) {
+//                    let intToIndex = str.index(str.startIndex, offsetBy: index)
+//                    removalRanges[lastUnpairedIndex].1 = intToIndex
+//                    str.removeSubrange(removalRanges[lastUnpairedIndex].1!...removalRanges[lastUnpairedIndex].0!)
+//                }
             }
         }
     }

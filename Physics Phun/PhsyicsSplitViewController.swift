@@ -18,7 +18,7 @@ class PhsyicsSplitViewController: UISplitViewController, UISplitViewControllerDe
         
     }
     
-    #warning("will have to move our delegate somwhere else ")
+//    #warning("will have to move our delegate somwhere else ")
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
         return true
     }
