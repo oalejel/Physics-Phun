@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14295.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.3.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14270.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -51,7 +51,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Df4-aL-uZM">
-                    <rect key="frame" x="8" y="222" width="352" height="82"/>
+                    <rect key="frame" x="4" y="222" width="360" height="82"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="82" id="r5J-NO-W4B"/>
                     </constraints>
@@ -66,7 +66,7 @@
                 <constraint firstItem="VXr-Tz-HHm" firstAttribute="bottom" secondItem="k1Z-Cm-SrC" secondAttribute="bottom" constant="12" id="CJ1-wV-QF2"/>
                 <constraint firstItem="XX8-MB-iG7" firstAttribute="centerX" secondItem="VXr-Tz-HHm" secondAttribute="centerX" id="D7L-SY-Dsc"/>
                 <constraint firstItem="ser-a4-apJ" firstAttribute="width" relation="lessThanOrEqual" secondItem="U6b-Vx-4bR" secondAttribute="width" multiplier="0.4" priority="999" id="HCp-S7-6IU"/>
-                <constraint firstItem="Df4-aL-uZM" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" constant="8" id="J4u-3z-RSF"/>
+                <constraint firstItem="Df4-aL-uZM" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" constant="4" id="J4u-3z-RSF"/>
                 <constraint firstItem="Df4-aL-uZM" firstAttribute="top" secondItem="Fef-5h-cST" secondAttribute="bottom" constant="8" id="Ocu-hN-XSs"/>
                 <constraint firstItem="Fef-5h-cST" firstAttribute="top" secondItem="ser-a4-apJ" secondAttribute="bottom" constant="8" id="QS1-yJ-vij"/>
                 <constraint firstItem="k1Z-Cm-SrC" firstAttribute="centerX" secondItem="VXr-Tz-HHm" secondAttribute="centerX" id="X0l-fR-RC0"/>
@@ -74,7 +74,7 @@
                 <constraint firstItem="ser-a4-apJ" firstAttribute="top" secondItem="XX8-MB-iG7" secondAttribute="bottom" constant="6" id="gzq-mi-IFI"/>
                 <constraint firstItem="Fef-5h-cST" firstAttribute="centerX" secondItem="ser-a4-apJ" secondAttribute="centerX" id="nco-wk-hNz"/>
                 <constraint firstItem="ser-a4-apJ" firstAttribute="centerX" secondItem="VXr-Tz-HHm" secondAttribute="centerX" id="pZ5-8v-G5h"/>
-                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="Df4-aL-uZM" secondAttribute="trailing" constant="8" id="xgz-LZ-XSv"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="Df4-aL-uZM" secondAttribute="trailing" constant="4" id="xgz-LZ-XSv"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
             <connections>

@@ -44,7 +44,7 @@ class GearsPhysicsController: UIViewController {
         super.viewDidLoad()
 
         navigationItem.title = "Gears ⚙️"
-        
+
         selectedGearButton1 = largeGear1Button
         selectedGearButton2 = mediumGear2Button
         

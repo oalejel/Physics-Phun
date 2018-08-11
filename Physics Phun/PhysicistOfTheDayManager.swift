@@ -11,7 +11,8 @@ import UIKit
 /// Responsible for fetching data about an interesting physicist 
 class PhysicistOfTheDayManager {
     
-    var currentNameIndex = -1
+    var currentNameIndex = 0
+    fileprivate let currentNameKey = "currentNameKey"
     var names = [
         "Marie_Curie",
         "Isaac_Newton",
@@ -37,12 +38,31 @@ class PhysicistOfTheDayManager {
 //    var completionHandler: ((name: String, description: String, ) -> Void)?
     
     static var shared: PhysicistOfTheDayManager = PhysicistOfTheDayManager()
-    
     var session: URLSession!
     
     init() {
         let config = URLSessionConfiguration.default
         session = URLSession(configuration: config, delegate: nil, delegateQueue: nil)
+        let defaults = UserDefaults.standard
+        
+        // if no int exists for this key, we default to 0, which is good
+        currentNameIndex = defaults.integer(forKey: currentNameKey)
+    }
+    
+    /// decides on url for next physicist to display based on past views
+    func getNextURL() -> URL? {
+        // mod count since index must be < num items
+//        currentNameIndex = (currentNameIndex + 1) % names.count
+        let nextName = names[currentNameIndex]
+        
+        let urlString = "https://en.wikipedia.org/w/api.php?action=query&generator=search&format=json&exintro&exsentences=3&exlimit=max&gsrlimit=1&gsrsearch=\(nextName)&pithumbsize=400&pilimit=max&prop=pageimages%7Cextracts"
+        
+        // increment name and save for next time
+        currentNameIndex = (currentNameIndex + 1) % names.count
+        let defaults = UserDefaults.standard
+        defaults.set(currentNameIndex, forKey: currentNameKey)
+        
+        return URL(string: urlString)
     }
     
     func update(completionHandler: @escaping ((_ name: String, _ description: String, _ url: URL, _ iconImage: UIImage?) -> Void)) {
@@ -190,17 +210,6 @@ class PhysicistOfTheDayManager {
 //                }
             }
         }
-    }
-    
-    /// decides on url for next physicist to display based on past views
-    func getNextURL() -> URL? {
-        // mod count since index must be < num items
-        currentNameIndex = (currentNameIndex + 1) % names.count
-        let nextName = names[currentNameIndex]
-        
-        let urlString = "https://en.wikipedia.org/w/api.php?action=query&generator=search&format=json&exintro&exsentences=3&exlimit=max&gsrlimit=1&gsrsearch=\(nextName)&pithumbsize=400&pilimit=max&prop=pageimages%7Cextracts"
-        
-        return URL(string: urlString)
     }
     
 }

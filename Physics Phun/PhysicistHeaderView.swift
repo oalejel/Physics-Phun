@@ -36,7 +36,7 @@ class PhysicistHeaderView: UICollectionReusableView, SFSafariViewControllerDeleg
         featuredLabel.adjustsFontSizeToFitWidth = true
         
         // show loading status by shimmering
-        physicistImageView.isShimmering = true
+//        physicistImageView.isShimmering = true
     }
     
     @IBAction func wikiButtonPressed(_ sender: Any) {
