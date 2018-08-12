@@ -52,7 +52,6 @@ class ResistivityPhsyicsController: UIViewController, UITextFieldDelegate {
         sceneView.allowsCameraControl = true
         sceneView.autoenablesDefaultLighting = true
         
-        
         experimentScene = ResistivityScene()
         sceneView.scene = experimentScene
         
@@ -60,7 +59,6 @@ class ResistivityPhsyicsController: UIViewController, UITextFieldDelegate {
 //        cameraNode.camera = SCNCamera()
 //        cameraNode.position = SCNVector3Make(0, 0, 15)
 //        experimentScene.rootNode.addChildNode(cameraNode)
-        
         
         viewHasLoaded = true
         

@@ -296,7 +296,7 @@
 			name = "New app UI";
 			sourceTree = "<group>";
 		};
-		3DA637411D46827400B0782F /* Neutron */ = {
+		3DA637411D46827400B0782F /* Neutron (not available) */ = {
 			isa = PBXGroup;
 			children = (
 				3DA637431D468D6A00B0782F /* NeutronScene.swift */,
@@ -304,7 +304,7 @@
 				3DA637421D468D6A00B0782F /* NeutronPhsyicsController.swift */,
 				3DA637441D468D6A00B0782F /* NeutronPhsyicsController.xib */,
 			);
-			name = Neutron;
+			name = "Neutron (not available)";
 			sourceTree = "<group>";
 		};
 		3DC47F201D4E50BE00F981EC /* VIRP */ = {
@@ -367,7 +367,7 @@
 				3D41D1631E7DBC5400E983C0 /* Gears */,
 				3DFE44951D4D91E900C958A0 /* Resistivity */,
 				3D2030F41D41B1CF00C4C3BC /* Donut */,
-				3DA637411D46827400B0782F /* Neutron */,
+				3DA637411D46827400B0782F /* Neutron (not available) */,
 				3D26BAFC1CFA02D600B61EB2 /* Cannon */,
 				3DC47F201D4E50BE00F981EC /* VIRP */,
 				3DC47F211D4E50DB00F981EC /* Air Box */,
