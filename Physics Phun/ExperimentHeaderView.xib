@@ -1,48 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14295.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14270.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="ExperimentHeaderView" customModule="Physics_Phun" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
-            <autoresizingMask key="autoresizingMask"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="experimentView" id="aVz-e7-8Xv" customClass="ExperimentHeaderView" customModule="Physics_Phun" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="28"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TxW-KR-DWz">
-                    <rect key="frame" x="0.0" y="29" width="320" height="1"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="1" id="Z3e-Mu-xju"/>
-                    </constraints>
-                </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Motion and Forces 🚀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dc7-ci-PKx">
-                    <rect key="frame" x="0.0" y="2" width="203" height="25"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Motion and Forces" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jM-Ha-CzP">
+                    <rect key="frame" x="0.0" y="2" width="174" height="24"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hZs-A0-Dsl">
+                    <rect key="frame" x="0.0" y="26" width="375" height="2"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="Zzg-gx-75R"/>
+                    </constraints>
+                </view>
             </subviews>
             <constraints>
-                <constraint firstItem="TxW-KR-DWz" firstAttribute="trailing" secondItem="VXr-Tz-HHm" secondAttribute="trailing" id="XTI-Rw-ftu"/>
-                <constraint firstItem="Dc7-ci-PKx" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="dwe-3e-ErJ"/>
-                <constraint firstItem="Dc7-ci-PKx" firstAttribute="top" secondItem="VXr-Tz-HHm" secondAttribute="top" constant="2" id="fEf-of-L2T"/>
-                <constraint firstItem="TxW-KR-DWz" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="rld-tu-Ccb"/>
-                <constraint firstItem="TxW-KR-DWz" firstAttribute="bottom" secondItem="VXr-Tz-HHm" secondAttribute="bottom" id="t47-GI-ohV"/>
-                <constraint firstItem="TxW-KR-DWz" firstAttribute="top" secondItem="Dc7-ci-PKx" secondAttribute="bottom" constant="2" id="w5U-Hw-apJ"/>
+                <constraint firstItem="hZs-A0-Dsl" firstAttribute="bottom" secondItem="QAd-VR-Qwz" secondAttribute="bottom" id="3R1-db-tFu"/>
+                <constraint firstItem="hZs-A0-Dsl" firstAttribute="trailing" secondItem="QAd-VR-Qwz" secondAttribute="trailing" id="5dn-Zu-jOf"/>
+                <constraint firstItem="7jM-Ha-CzP" firstAttribute="top" secondItem="QAd-VR-Qwz" secondAttribute="top" constant="2" id="Wce-7x-rex"/>
+                <constraint firstItem="hZs-A0-Dsl" firstAttribute="leading" secondItem="QAd-VR-Qwz" secondAttribute="leading" id="a3y-0F-0JY"/>
+                <constraint firstItem="7jM-Ha-CzP" firstAttribute="leading" secondItem="QAd-VR-Qwz" secondAttribute="leading" id="zUH-Fr-8wb"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <viewLayoutGuide key="safeArea" id="QAd-VR-Qwz"/>
             <connections>
-                <outlet property="titleLabel" destination="Dc7-ci-PKx" id="d4i-2F-hyT"/>
+                <outlet property="titleLabel" destination="7jM-Ha-CzP" id="Y3W-r0-fHP"/>
             </connections>
-            <point key="canvasLocation" x="34" y="78"/>
+            <point key="canvasLocation" x="78.5" y="213"/>
         </collectionReusableView>
     </objects>
 </document>

@@ -160,7 +160,9 @@ class SimulatorCollectionController: UIViewController, UICollectionViewDelegateF
                 // should be going here after row 0 for physics view
                 // header view for a specific physics theme
                 let experimentHeader = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "experimentView", for: indexPath) as? ExperimentHeaderView
-                experimentHeader?.titleLabel.text = Experiments.list[indexPath.section - 1].title
+                let x = Experiments.list[indexPath.section - 1]
+                let title = x.title
+                experimentHeader?.titleLabel.text = title
                 headerView = experimentHeader!
             }
             
