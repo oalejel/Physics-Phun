@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.3.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.3.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -30,10 +31,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dwO-9s-nuD">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="348.5"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="349.5"/>
                 </sceneKitView>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Wv1-dF-d9U">
-                    <rect key="frame" x="8" y="381" width="359" height="29"/>
+                    <rect key="frame" x="8" y="382" width="359" height="29"/>
                     <segments>
                         <segment title="Lock P"/>
                         <segment title="Lock V"/>
@@ -45,7 +46,7 @@
                     </connections>
                 </segmentedControl>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="jMQ-XH-wmW">
-                    <rect key="frame" x="8" y="417" width="359" height="241"/>
+                    <rect key="frame" x="8" y="418" width="359" height="241"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="SMN-eu-Num">
                             <rect key="frame" x="0.0" y="0.0" width="359" height="58"/>
@@ -180,7 +181,7 @@
                     </constraints>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PV = nRT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0V8-cS-g6q">
-                    <rect key="frame" x="150" y="354.5" width="77" height="20.5"/>
+                    <rect key="frame" x="150" y="355.5" width="77" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -188,7 +189,7 @@
             </subviews>
             <color key="backgroundColor" red="0.27068993450000001" green="0.42892181870000001" blue="0.70698243380000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="jMQ-XH-wmW" secondAttribute="bottom" constant="9" id="1Oe-cM-cjb"/>
+                <constraint firstItem="G0p-Mw-mSK" firstAttribute="bottom" secondItem="jMQ-XH-wmW" secondAttribute="bottom" constant="8" id="1Oe-cM-cjb"/>
                 <constraint firstItem="jMQ-XH-wmW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="454-jO-fWW"/>
                 <constraint firstItem="0V8-cS-g6q" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="1" id="8PH-T9-Gcn"/>
                 <constraint firstItem="dwO-9s-nuD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="E3N-ft-f67"/>
@@ -202,6 +203,7 @@
                 <constraint firstItem="dwO-9s-nuD" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="uPM-wM-a5G"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
+            <viewLayoutGuide key="safeArea" id="G0p-Mw-mSK"/>
         </view>
     </objects>
 </document>

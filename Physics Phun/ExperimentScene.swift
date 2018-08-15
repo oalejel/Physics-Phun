@@ -11,7 +11,7 @@ import SpriteKit
 class ExperimentScene: SKScene {
     override func didMove(to view: SKView) {
         super.didMove(to: view)
-        let backgroundSprite = SKSpriteNode(imageNamed: "graph_paper")
+        let backgroundSprite = SKSpriteNode(imageNamed: "graph_paper.jpg")
         backgroundSprite.size = size
         backgroundSprite.position = .zero
         backgroundSprite.zPosition = -100// place way behind any other sprite

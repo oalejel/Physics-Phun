@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.3.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14313.3.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -32,16 +34,17 @@
             </subviews>
             <color key="backgroundColor" red="0.17350706339999999" green="0.27097602739999999" blue="0.79414597600000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="hzN-hb-LWa" firstAttribute="bottom" secondItem="i96-1F-ycs" secondAttribute="bottom" constant="8" id="6yQ-G1-jsf"/>
                 <constraint firstItem="mpz-D2-yz6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="7JR-PJ-1eq"/>
                 <constraint firstItem="i96-1F-ycs" firstAttribute="top" secondItem="mpz-D2-yz6" secondAttribute="bottom" constant="8" id="YNl-6U-Nbw"/>
                 <constraint firstItem="i96-1F-ycs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="ZYS-37-SDj"/>
                 <constraint firstItem="mpz-D2-yz6" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.45" constant="-28" id="b2r-y4-DMt"/>
                 <constraint firstAttribute="trailing" secondItem="mpz-D2-yz6" secondAttribute="trailing" id="diB-f0-0xq"/>
-                <constraint firstAttribute="bottom" secondItem="i96-1F-ycs" secondAttribute="bottom" constant="8" id="fQ7-M1-zU9"/>
                 <constraint firstAttribute="trailing" secondItem="i96-1F-ycs" secondAttribute="trailing" constant="8" id="jpM-zL-vxB"/>
                 <constraint firstItem="mpz-D2-yz6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="zZM-mD-Kb2"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
+            <viewLayoutGuide key="safeArea" id="hzN-hb-LWa"/>
         </view>
     </objects>
 </document>
