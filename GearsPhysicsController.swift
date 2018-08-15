@@ -9,7 +9,7 @@
 import UIKit
 import SpriteKit
 
-class GearsPhysicsController: UIViewController {
+class GearsPhysicsController: ExperimentViewController {
     
     let bounds = UIScreen.main.bounds
     
@@ -165,8 +165,8 @@ class GearsPhysicsController: UIViewController {
         
         rpsLabel2.text = "Rotations / sec: \(round(100000 * rpsStepper.value * gearRatio) / 100000)"
         var vel2 = round(200000 * rpsStepper.value * gearRatio)
-        vel2 /= 10000
-        angVelocityLabel2.text = "Angular Velocity [rad/s]: \(0)π/s"
+        vel2 /= 100000
+        angVelocityLabel2.text = "Angular Velocity [rad/s]: \(vel2)π/s"
     }
     
     

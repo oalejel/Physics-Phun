@@ -63,11 +63,13 @@
 		3DC47F261D4E51D000F981EC /* AirBoxPhsyicsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DC47F231D4E51D000F981EC /* AirBoxPhsyicsController.xib */; };
 		3DC47F271D4E51D000F981EC /* AirBoxScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC47F241D4E51D000F981EC /* AirBoxScene.swift */; };
 		3DCE2CCC1D5E8F9300A9814E /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCE2CCB1D5E8F9300A9814E /* LineChart.swift */; };
+		3DDCA35A211FE3500029E006 /* ExperimentScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDCA359211FE3500029E006 /* ExperimentScene.swift */; };
 		3DE065E61CDE6DD600891A66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE065E51CDE6DD600891A66 /* AppDelegate.swift */; };
 		3DE065ED1CDE6DD600891A66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DE065EB1CDE6DD600891A66 /* Main.storyboard */; };
 		3DE065EF1CDE6DD600891A66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DE065EE1CDE6DD600891A66 /* Assets.xcassets */; };
 		3DE065F21CDE6DD600891A66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DE065F01CDE6DD600891A66 /* LaunchScreen.storyboard */; };
 		3DE065FA1CDE705100891A66 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DE065F91CDE705100891A66 /* SpriteKit.framework */; };
+		3DF092CE2123E17B0048E7FD /* ExperimentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF092CD2123E17B0048E7FD /* ExperimentViewController.swift */; };
 		3DFE44971D4D93A700C958A0 /* ResistivityScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFE44961D4D93A700C958A0 /* ResistivityScene.swift */; };
 		3DFE44991D4D93AD00C958A0 /* ResistivityPhsyicsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFE44981D4D93AD00C958A0 /* ResistivityPhsyicsController.swift */; };
 		3DFE449B1D4D93B200C958A0 /* ResistivityPhsyicsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DFE449A1D4D93B200C958A0 /* ResistivityPhsyicsController.xib */; };
@@ -75,7 +77,7 @@
 		3DFFD2702104FEFA00D99775 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFD26F2104FEFA00D99775 /* MainNavigationController.swift */; };
 		3DFFD2722105013900D99775 /* PhsyicsSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFD2712105013900D99775 /* PhsyicsSplitViewController.swift */; };
 		3DFFD274210508D900D99775 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFD273210508D900D99775 /* Global.swift */; };
-		3DFFD2762105091000D99775 /* UIColor+CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFD2752105091000D99775 /* UIColor+CustomColors.swift */; };
+		3DFFD2762105091000D99775 /* +UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFD2752105091000D99775 /* +UIColor.swift */; };
 		3DFFD2782105143500D99775 /* PhysicistOfTheDayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFD2772105143500D99775 /* PhysicistOfTheDayManager.swift */; };
 		3DFFD27C2105175000D99775 /* PhysicistHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFD27A2105175000D99775 /* PhysicistHeaderView.swift */; };
 		3DFFD27D2105175000D99775 /* PhysicistHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DFFD27B2105175000D99775 /* PhysicistHeaderView.xib */; };
@@ -114,8 +116,8 @@
 		3D3E093F1D5E119600E294FD /* VIRPPhsyicsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VIRPPhsyicsController.swift; sourceTree = "<group>"; };
 		3D3E09411D5E119D00E294FD /* VIRPPhsyicsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIRPPhsyicsController.xib; sourceTree = "<group>"; };
 		3D3E09431D5E11A400E294FD /* VIRPScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VIRPScene.swift; sourceTree = "<group>"; };
-		3D3E09451D5E752900E294FD /* InfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoCell.swift; path = ../InfoCell.swift; sourceTree = "<group>"; };
-		3D3E09461D5E752900E294FD /* InfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = InfoCell.xib; path = ../InfoCell.xib; sourceTree = "<group>"; };
+		3D3E09451D5E752900E294FD /* InfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
+		3D3E09461D5E752900E294FD /* InfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoCell.xib; sourceTree = "<group>"; };
 		3D41D1661E7DBD6D00E983C0 /* RoundedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		3D4B2FB01D40428F009B59EF /* cannon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cannon@2x.png"; sourceTree = "<group>"; };
 		3D4B2FB21D4042A9009B59EF /* cannon_base@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cannon_base@2x.png"; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 		3DC47F231D4E51D000F981EC /* AirBoxPhsyicsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AirBoxPhsyicsController.xib; sourceTree = "<group>"; };
 		3DC47F241D4E51D000F981EC /* AirBoxScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirBoxScene.swift; sourceTree = "<group>"; };
 		3DCE2CCB1D5E8F9300A9814E /* LineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
+		3DDCA359211FE3500029E006 /* ExperimentScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentScene.swift; sourceTree = "<group>"; };
 		3DE065E21CDE6DD200891A66 /* Physics Phun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Physics Phun.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DE065E51CDE6DD600891A66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DE065EC1CDE6DD600891A66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -160,6 +163,7 @@
 		3DE065F11CDE6DD600891A66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3DE065F31CDE6DD600891A66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DE065F91CDE705100891A66 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		3DF092CD2123E17B0048E7FD /* ExperimentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentViewController.swift; sourceTree = "<group>"; };
 		3DFE44961D4D93A700C958A0 /* ResistivityScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResistivityScene.swift; sourceTree = "<group>"; };
 		3DFE44981D4D93AD00C958A0 /* ResistivityPhsyicsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResistivityPhsyicsController.swift; sourceTree = "<group>"; };
 		3DFE449A1D4D93B200C958A0 /* ResistivityPhsyicsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResistivityPhsyicsController.xib; sourceTree = "<group>"; };
@@ -167,7 +171,7 @@
 		3DFFD26F2104FEFA00D99775 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		3DFFD2712105013900D99775 /* PhsyicsSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhsyicsSplitViewController.swift; sourceTree = "<group>"; };
 		3DFFD273210508D900D99775 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
-		3DFFD2752105091000D99775 /* UIColor+CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+CustomColors.swift"; sourceTree = "<group>"; };
+		3DFFD2752105091000D99775 /* +UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+UIColor.swift"; sourceTree = "<group>"; };
 		3DFFD2772105143500D99775 /* PhysicistOfTheDayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicistOfTheDayManager.swift; sourceTree = "<group>"; };
 		3DFFD27A2105175000D99775 /* PhysicistHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicistHeaderView.swift; sourceTree = "<group>"; };
 		3DFFD27B2105175000D99775 /* PhysicistHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhysicistHeaderView.xib; sourceTree = "<group>"; };
@@ -217,6 +221,7 @@
 		3D2030F41D41B1CF00C4C3BC /* Donut */ = {
 			isa = PBXGroup;
 			children = (
+				3DCE2CCB1D5E8F9300A9814E /* LineChart.swift */,
 				3D3174781D4C2020006D4991 /* FireParticle.sks */,
 				3D3174791D4C2020006D4991 /* spark.png */,
 				3D2D984B1D430D99000AA1AF /* donut@2x.png */,
@@ -260,6 +265,7 @@
 		3D5621DF210ADF49001746DF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				3DFFD2752105091000D99775 /* +UIColor.swift */,
 				3D5621DD210ADF09001746DF /* +SFSafariViewController.swift */,
 			);
 			name = Extensions;
@@ -283,14 +289,13 @@
 		3D7BD11E20FA716E00A0C3FA /* New app UI */ = {
 			isa = PBXGroup;
 			children = (
-				3DFFD273210508D900D99775 /* Global.swift */,
-				3DFFD2752105091000D99775 /* UIColor+CustomColors.swift */,
 				3DFFD27E21051F0100D99775 /* RoundImageView.swift */,
 				3DFFD26F2104FEFA00D99775 /* MainNavigationController.swift */,
 				3DFFD2712105013900D99775 /* PhsyicsSplitViewController.swift */,
 				3D7BD11C20FA716700A0C3FA /* SimulatorCollectionController.swift */,
 				3D6C04822105892100E28F62 /* Experiments.swift */,
 				3DFFD2772105143500D99775 /* PhysicistOfTheDayManager.swift */,
+				3DF092CD2123E17B0048E7FD /* ExperimentViewController.swift */,
 				3D62F8C12112CA4600E63D05 /* CollectionView Items */,
 			);
 			name = "New app UI";
@@ -311,7 +316,6 @@
 			isa = PBXGroup;
 			children = (
 				3D3E09431D5E11A400E294FD /* VIRPScene.swift */,
-				3D3E093F1D5E119600E294FD /* VIRPPhsyicsController.swift */,
 				3D3E09411D5E119D00E294FD /* VIRPPhsyicsController.xib */,
 			);
 			name = VIRP;
@@ -320,11 +324,26 @@
 		3DC47F211D4E50DB00F981EC /* Air Box */ = {
 			isa = PBXGroup;
 			children = (
+				3D3E093F1D5E119600E294FD /* VIRPPhsyicsController.swift */,
 				3DC47F241D4E51D000F981EC /* AirBoxScene.swift */,
 				3DC47F221D4E51D000F981EC /* AirBoxPhsyicsController.swift */,
 				3DC47F231D4E51D000F981EC /* AirBoxPhsyicsController.xib */,
 			);
 			name = "Air Box";
+			sourceTree = "<group>";
+		};
+		3DDCA35C2121F0AD0029E006 /* To Remove Later */ = {
+			isa = PBXGroup;
+			children = (
+				3D30E0AF1D4D81AE00A50418 /* InfoTextViewController.swift */,
+				3D30E0B01D4D81AE00A50418 /* InfoTextViewController.xib */,
+				3D3E09451D5E752900E294FD /* InfoCell.swift */,
+				3D3E09461D5E752900E294FD /* InfoCell.xib */,
+				3D88C9F01D3FD001009C639F /* ExperimentTableController.swift */,
+				3D6C04952105997200E28F62 /* ExperimentCell.swift */,
+				3DA2479A2106E5DA001353A9 /* ExperimentCell.xib */,
+			);
+			name = "To Remove Later";
 			sourceTree = "<group>";
 		};
 		3DE065D91CDE6DD200891A66 = {
@@ -352,16 +371,11 @@
 		3DE065E41CDE6DD500891A66 /* Physics Phun */ = {
 			isa = PBXGroup;
 			children = (
-				3DCE2CCB1D5E8F9300A9814E /* LineChart.swift */,
 				3DE065E51CDE6DD600891A66 /* AppDelegate.swift */,
-				3D30E0AF1D4D81AE00A50418 /* InfoTextViewController.swift */,
-				3D30E0B01D4D81AE00A50418 /* InfoTextViewController.xib */,
-				3D3E09451D5E752900E294FD /* InfoCell.swift */,
-				3D3E09461D5E752900E294FD /* InfoCell.xib */,
-				3D6C04952105997200E28F62 /* ExperimentCell.swift */,
-				3DA2479A2106E5DA001353A9 /* ExperimentCell.xib */,
-				3D88C9F01D3FD001009C639F /* ExperimentTableController.swift */,
 				3DE065EB1CDE6DD600891A66 /* Main.storyboard */,
+				3DFFD273210508D900D99775 /* Global.swift */,
+				3DDCA359211FE3500029E006 /* ExperimentScene.swift */,
+				3DDCA35C2121F0AD0029E006 /* To Remove Later */,
 				3D5621DF210ADF49001746DF /* Extensions */,
 				3D7BD11E20FA716E00A0C3FA /* New app UI */,
 				3D41D1631E7DBC5400E983C0 /* Gears */,
@@ -603,7 +617,9 @@
 				3DC47F251D4E51D000F981EC /* AirBoxPhsyicsController.swift in Sources */,
 				3D68B812210E3E49003405C2 /* CreditsView.swift in Sources */,
 				3D6C04972105997300E28F62 /* ExperimentCell.swift in Sources */,
+				3DF092CE2123E17B0048E7FD /* ExperimentViewController.swift in Sources */,
 				3D3E09441D5E11A400E294FD /* VIRPScene.swift in Sources */,
+				3DDCA35A211FE3500029E006 /* ExperimentScene.swift in Sources */,
 				3D6C04832105892100E28F62 /* Experiments.swift in Sources */,
 				3D26BAF71CFA025A00B61EB2 /* CannonScene.swift in Sources */,
 				3DFE44971D4D93A700C958A0 /* ResistivityScene.swift in Sources */,
@@ -621,7 +637,7 @@
 				3D2030FC1D41BE3400C4C3BC /* DirectionControlView.swift in Sources */,
 				3DFFD2702104FEFA00D99775 /* MainNavigationController.swift in Sources */,
 				3D82C5A21E94083B00BA5228 /* GearsScene.swift in Sources */,
-				3DFFD2762105091000D99775 /* UIColor+CustomColors.swift in Sources */,
+				3DFFD2762105091000D99775 /* +UIColor.swift in Sources */,
 				3D6C0486210591DE00E28F62 /* ExperimentHeaderView.swift in Sources */,
 				3D3E09401D5E119600E294FD /* VIRPPhsyicsController.swift in Sources */,
 				3DFFD27C2105175000D99775 /* PhysicistHeaderView.swift in Sources */,

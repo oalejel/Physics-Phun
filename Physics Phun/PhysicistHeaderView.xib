@@ -23,19 +23,19 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" image="newton_example" translatesAutoresizingMaskIntoConstraints="NO" id="ser-a4-apJ" customClass="RoundImageView" customModule="Physics_Phun" customModuleProvider="target">
-                    <rect key="frame" x="111" y="39.5" width="146" height="146"/>
+                    <rect key="frame" x="110.5" y="39.5" width="147" height="147"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="ser-a4-apJ" secondAttribute="height" multiplier="1:1" id="l3b-EL-fvG"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Isaac Newton" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fef-5h-cST">
-                    <rect key="frame" x="128.5" y="193.5" width="111" height="20.5"/>
+                    <rect key="frame" x="128.5" y="194.5" width="111" height="20.5"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k1Z-Cm-SrC">
-                    <rect key="frame" x="77.5" y="312" width="213" height="30"/>
+                    <rect key="frame" x="77.5" y="324" width="213" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="mdz-pF-npQ"/>
                     </constraints>
@@ -51,7 +51,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Df4-aL-uZM">
-                    <rect key="frame" x="4" y="222" width="360" height="82"/>
+                    <rect key="frame" x="4" y="223" width="360" height="93"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="82" id="r5J-NO-W4B"/>
                     </constraints>
@@ -63,7 +63,7 @@
             </subviews>
             <constraints>
                 <constraint firstItem="k1Z-Cm-SrC" firstAttribute="top" secondItem="Df4-aL-uZM" secondAttribute="bottom" constant="8" id="8Uv-ik-kKl"/>
-                <constraint firstItem="VXr-Tz-HHm" firstAttribute="bottom" secondItem="k1Z-Cm-SrC" secondAttribute="bottom" constant="12" id="CJ1-wV-QF2"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="bottom" secondItem="k1Z-Cm-SrC" secondAttribute="bottom" id="CJ1-wV-QF2"/>
                 <constraint firstItem="XX8-MB-iG7" firstAttribute="centerX" secondItem="VXr-Tz-HHm" secondAttribute="centerX" id="D7L-SY-Dsc"/>
                 <constraint firstItem="ser-a4-apJ" firstAttribute="width" relation="lessThanOrEqual" secondItem="U6b-Vx-4bR" secondAttribute="width" multiplier="0.4" priority="999" id="HCp-S7-6IU"/>
                 <constraint firstItem="Df4-aL-uZM" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" constant="4" id="J4u-3z-RSF"/>

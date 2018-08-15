@@ -25,19 +25,28 @@ class Physics_PhunTests: XCTestCase {
         // ignore saved name index to start in test
         manager.currentNameIndex = 0
         
-//        var generatedURLs = [URL]()
         for index in 0..<manager.names.count {
             let url = manager.getNextURL()
             XCTAssert(url != nil, "got nil for index \(index), name \(manager.names[index])")
-//            generatedURLs.append(url!)
         }
         // check to make sure we loop back around
         XCTAssert(manager.currentNameIndex == 0, "current name index ended in \(manager.currentNameIndex)")
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    // go through all physicist urls and check that the data we get matches the form we expect
+    func testJSONCorrectness() {
+//        manager.currentNameIndex = 0
+//        repeat {
+//            print("hello")
+//            var completedRequest = false
+//            manager.update { (name, desc, url, img) in
+//                print(desc)
+//                XCTAssert(img != nil)
+//                completedRequest = true
+//            }
+//            while !completedRequest { }
+//
+//        } while manager.currentNameIndex != 0
     }
 
     func testPerformanceExample() {
@@ -46,5 +55,4 @@ class Physics_PhunTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
 }

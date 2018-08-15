@@ -83,8 +83,9 @@ class SimulatorCollectionController: UIViewController, UICollectionViewDelegateF
         customTitleLabel.font = sortedFonts.first
         customTitleLabel.sizeToFit()
         customTitleLabel.center = CGPoint(x: labelLeftPadding + customTitleLabel.frame.size.width / 2, y: navBarHeight / 2)
-        navigationItem.titleView = customTitleLabel
-        //        navigationBar.addSubview(customTitleLabel)
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: customTitleLabel)
+//        navigationController?.navigationBar.addSubview(customTitleLabel)
     }
     
     func addGradient() {

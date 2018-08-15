@@ -27,10 +27,10 @@
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i96-1F-ycs" customClass="DirectionControlView" customModule="Physics_Phun" customModuleProvider="target">
                     <rect key="frame" x="8" y="280" width="359" height="379"/>
-                    <color key="backgroundColor" red="0.072105203277295749" green="0.077253243026718238" blue="0.083845346862626347" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="1" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="0.13725490200000001" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.17350706339999999" green="0.27097602739999999" blue="0.79414597600000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="mpz-D2-yz6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="7JR-PJ-1eq"/>
                 <constraint firstItem="i96-1F-ycs" firstAttribute="top" secondItem="mpz-D2-yz6" secondAttribute="bottom" constant="8" id="YNl-6U-Nbw"/>

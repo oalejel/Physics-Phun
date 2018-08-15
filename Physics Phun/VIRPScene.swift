@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class VIRPScene: SKScene {
+class VIRPScene: ExperimentScene {
     var resistanceLabel: SKLabelNode!
     var resistorNode: SKSpriteNode!
     var circuitBorderNode: SKShapeNode!
@@ -22,7 +22,9 @@ class VIRPScene: SKScene {
 
         let strokeWidth: CGFloat = 7
         let circuitSize = CGSize(width: size.width / 1.3, height: size.height / 1.5)
-        circuitBorderNode = borderBoxNode(circuitSize, strokeWidth: strokeWidth, fillColor: SKColor.clear)
+        let cellWidth = circuitSize.width / 14
+        
+        circuitBorderNode = borderBoxNode(circuitSize, strokeWidth: strokeWidth, fillColor: SKColor.clear, gapWidth: cellWidth / 3)
         circuitBorderNode.position = CGPoint(x: size.width / 2, y: size.height / 2)
         circuitBorderNode.lineJoin = .round
         addChild(circuitBorderNode)
@@ -76,7 +78,7 @@ class VIRPScene: SKScene {
 //        let fullSequence = SKAction.sequence([speedUp, repeatAddElectron, slowDown])
         run(sequence)
         
-        let cellNode = SKSpriteNode(color: backgroundColor, size: CGSize(width: circuitSize.width / 14, height: circuitSize.width / 5.5))
+        let cellNode = SKSpriteNode(color: .clear, size: CGSize(width: cellWidth, height: circuitSize.width / 5.5))
         cellNode.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         cellNode.position = CGPoint(x: size.width  / 2, y: circuitBorderNode.position.y + (circuitBorderNode.frame.size.height / 2) - (strokeWidth / 2))
         cellNode.zPosition = 10
@@ -101,7 +103,6 @@ class VIRPScene: SKScene {
         anodeLabel.position = CGPoint(x: cellNode.position.x - (cellNode.size.width + 4), y: cellNode.position.y + (cellNode.size.height / 4))
         addChild(anodeLabel)
         
-        
         let cathodeLabel = SKLabelNode(text: "+")
         cathodeLabel.fontSize = 15
        cathodeLabel.fontColor = SKColor.black
@@ -118,11 +119,23 @@ class VIRPScene: SKScene {
 
     }
     
-    func borderBoxNode(_ boxSize: CGSize, strokeWidth: CGFloat, fillColor: SKColor) -> SKShapeNode {
+    func borderBoxNode(_ boxSize: CGSize, strokeWidth: CGFloat, fillColor: SKColor, gapWidth: CGFloat) -> SKShapeNode {
+        
         let boxNode = SKShapeNode(rectOf: boxSize)
+
+        let boxPath = UIBezierPath()
+        boxPath.move(to: CGPoint(x: (boxSize.width + gapWidth) * 0.5 - (boxSize.width / 2), y: boxSize.height - (boxSize.height / 2)))
+        boxPath.addLine(to: CGPoint(x: boxSize.width - (boxSize.width / 2), y: boxSize.height - (boxSize.height / 2)))
+        boxPath.addLine(to: CGPoint(x: boxSize.width - (boxSize.width / 2), y: 0 - (boxSize.height / 2)))
+        boxPath.addLine(to: CGPoint(x: 0 - (boxSize.width / 2), y: 0 - (boxSize.height / 2)))
+        boxPath.addLine(to: CGPoint(x: 0 - (boxSize.width / 2), y: boxSize.height - (boxSize.height / 2)))
+        boxPath.addLine(to: CGPoint(x: (boxSize.width * 0.5) - (gapWidth * 0.5) - (boxSize.width / 2), y: boxSize.height - (boxSize.height / 2)))
+        boxNode.path = boxPath.cgPath
+
         boxNode.lineWidth = strokeWidth
         boxNode.strokeColor = UIColor.black
         boxNode.fillColor = fillColor
+
         return boxNode
     }
 

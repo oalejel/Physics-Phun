@@ -69,13 +69,13 @@
                                     <rect key="frame" x="0.0" y="0.0" width="359" height="30"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Angle ˚" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHm-fU-qza">
-                                            <rect key="frame" x="0.0" y="0.0" width="56.5" height="30"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="59.5" height="30"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="45" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kVP-ko-Omk">
-                                            <rect key="frame" x="64.5" y="0.0" width="294.5" height="30"/>
+                                            <rect key="frame" x="67.5" y="0.0" width="291.5" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
                                             <connections>
@@ -86,7 +86,9 @@
                                 </stackView>
                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="45" minValue="0.0" maxValue="90" translatesAutoresizingMaskIntoConstraints="NO" id="HoP-il-BLt">
                                     <rect key="frame" x="-2" y="30" width="363" height="81"/>
-                                    <color key="tintColor" red="0.3333333432674408" green="0.3333333432674408" blue="0.3333333432674408" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="minimumTrackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="maximumTrackTintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                     <connections>
                                         <action selector="angleSliderChanged:" destination="-1" eventType="valueChanged" id="ELu-Yn-5Uo"/>
                                     </connections>
@@ -104,13 +106,13 @@
                                     <rect key="frame" x="0.0" y="0.0" width="359" height="30"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed [px/s]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LjW-th-cvl">
-                                            <rect key="frame" x="0.0" y="0.0" width="98" height="30"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="105" height="30"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="500" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MMz-cP-pJT">
-                                            <rect key="frame" x="106" y="0.0" width="253" height="30"/>
+                                            <rect key="frame" x="113" y="0.0" width="246" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
                                             <connections>
@@ -122,7 +124,9 @@
                                 </stackView>
                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="500" minValue="1" maxValue="500" translatesAutoresizingMaskIntoConstraints="NO" id="0Rw-D3-EVe">
                                     <rect key="frame" x="-2" y="30" width="363" height="81"/>
-                                    <color key="tintColor" red="0.3333333432674408" green="0.3333333432674408" blue="0.3333333432674408" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="tintColor" red="0.66571050880000004" green="0.2408285439" blue="0.13841047879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="minimumTrackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="maximumTrackTintColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <connections>
                                         <action selector="angleSliderChanged:" destination="-1" eventType="valueChanged" id="CfX-ds-qJ3"/>
                                         <action selector="speedSliderChanged:" destination="-1" eventType="valueChanged" id="4dE-RP-hai"/>
@@ -141,13 +145,13 @@
                                     <rect key="frame" x="0.0" y="0.0" width="359" height="30"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grav. Field Strength [g]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1U2-6e-HWv">
-                                            <rect key="frame" x="0.0" y="0.0" width="177.5" height="30"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="191" height="30"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mcD-Z9-vYq">
-                                            <rect key="frame" x="185.5" y="0.0" width="173.5" height="30"/>
+                                            <rect key="frame" x="199" y="0.0" width="160" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
                                             <connections>
@@ -159,7 +163,9 @@
                                 </stackView>
                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="9" maxValue="40" translatesAutoresizingMaskIntoConstraints="NO" id="OVH-eC-0zm">
                                     <rect key="frame" x="-2" y="30" width="363" height="81"/>
-                                    <color key="tintColor" red="0.3333333432674408" green="0.3333333432674408" blue="0.3333333432674408" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="tintColor" red="0.66571050880000004" green="0.2408285439" blue="0.13841047879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="minimumTrackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="maximumTrackTintColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <connections>
                                         <action selector="angleSliderChanged:" destination="-1" eventType="valueChanged" id="63s-cr-3gb"/>
                                         <action selector="fieldSliderChanged:" destination="-1" eventType="valueChanged" id="89q-I9-bxb"/>
@@ -179,7 +185,7 @@
                     </constraints>
                 </stackView>
             </subviews>
-            <color key="backgroundColor" red="0.13725490200000001" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.17350706339999999" green="0.27097602739999999" blue="0.79414597600000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="qB3-8M-dRo" secondAttribute="bottom" constant="8" id="0UY-hk-X0S"/>
                 <constraint firstAttribute="bottom" secondItem="j6Y-LB-KgX" secondAttribute="bottom" constant="8" id="4by-iq-RgC"/>

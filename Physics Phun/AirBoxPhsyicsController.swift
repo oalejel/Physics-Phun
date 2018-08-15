@@ -9,7 +9,7 @@
 import UIKit
 import SceneKit
 
-class AirBoxPhsyicsController: UIViewController, UITextFieldDelegate {
+class AirBoxPhsyicsController: ExperimentViewController, UITextFieldDelegate {
 
     let bounds = UIScreen.main.bounds
     
@@ -71,8 +71,8 @@ class AirBoxPhsyicsController: UIViewController, UITextFieldDelegate {
 //        navigationItem.rightBarButtonItem?.action = #selector(CannonPhsyicsController.infoPressed)
         
         // Do any additional setup after loading the view.
-        
-        sceneView.backgroundColor = UIColor(red: 1, green: 230/255, blue: 179/255, alpha: 1)
+        sceneView.backgroundColor = .white
+//        sceneView.backgroundColor = UIColor(red: 1, green: 230/255, blue: 179/255, alpha: 1)
         sceneView.allowsCameraControl = true
         sceneView.autoenablesDefaultLighting = true
         

@@ -23,16 +23,20 @@ class DirectionControlView: UIView {
         let context = UIGraphicsGetCurrentContext()
         
         let lineOffset: CGFloat = 20
-        context!.setStrokeColor(UIColor.gray.cgColor)
-        context!.setLineWidth(2)
+        context!.setStrokeColor(UIColor.white.cgColor)
+        context!.setLineWidth(4)
         
         let path = UIBezierPath()
         path.move(to: CGPoint(x: frame.size.width / 2, y: lineOffset))
+        path.lineWidth = 2
+        path.lineCapStyle = .round
         path.addLine(to: CGPoint(x: frame.size.width / 2, y: frame.size.height - lineOffset))
         path.stroke()
         
         let path2 = UIBezierPath()
         path2.move(to: CGPoint(x: lineOffset, y: frame.size.height / 2))
+        path2.lineWidth = 2
+        path2.lineCapStyle = .round
         path2.addLine(to: CGPoint(x: frame.size.width - lineOffset, y: frame.size.height / 2))
         path2.stroke()
     
@@ -43,11 +47,10 @@ class DirectionControlView: UIView {
             
             let arrowPath = UIBezierPath()
             arrowPath.move(to: CGPoint(x: frame.size.width / 2, y: frame.size.height / 2))
+            arrowPath.lineWidth = 3
+            arrowPath.lineCapStyle = .round
             arrowPath.addLine(to: arrowHeadPoint)
             arrowPath.stroke()
-            
-            
-            
             
 //            var slope = arrowHeadPoint.y / arrowHeadPoint.x
 //            if slope > 0 && arrowHeadPoint.y < 0 && arrowHeadPoint.x < 0 {
@@ -99,9 +102,10 @@ class DirectionControlView: UIView {
             
             let yArrowPath = UIBezierPath()
             yArrowPath.move(to: CGPoint(x: frame.size.width / 2, y: frame.size.height / 2))
+            yArrowPath.lineWidth = 3
+            yArrowPath.lineCapStyle = .round
             yArrowPath.addLine(to: CGPoint(x: frame.size.width / 2, y: arrowHeadPoint.y))
             yArrowPath.stroke()
-            
             
             ///
             let negativeY = (arrowHeadPoint.y < (frame.size.height / 2)) ? true : false
@@ -139,6 +143,8 @@ class DirectionControlView: UIView {
             
             let xArrowPath = UIBezierPath()
             xArrowPath.move(to: CGPoint(x: frame.size.width / 2, y: frame.size.height / 2))
+            xArrowPath.lineWidth = 3
+            xArrowPath.lineCapStyle = .round
             xArrowPath.addLine(to: CGPoint(x: arrowHeadPoint.x, y: frame.size.height / 2))
             xArrowPath.stroke()
             

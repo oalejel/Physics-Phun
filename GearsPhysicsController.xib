@@ -50,7 +50,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="XRw-M7-eBh">
                                             <rect key="frame" x="8" y="8" width="343" height="213.5"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Gear" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Y0-rq-633">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Left Gear" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Y0-rq-633">
                                                     <rect key="frame" x="0.0" y="0.0" width="343" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="r8F-SL-ElC"/>
@@ -174,7 +174,7 @@
                                                             </connections>
                                                         </stepper>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="0.20000000000000001" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" white="0.40000000000000002" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="aZN-kq-Tpl" firstAttribute="leading" secondItem="UyT-dG-7hb" secondAttribute="leading" constant="8" id="39m-hd-jQr"/>
                                                         <constraint firstItem="sx7-uz-SZh" firstAttribute="leading" secondItem="UyT-dG-7hb" secondAttribute="leading" constant="8" id="6Fj-hE-AfM"/>
@@ -192,7 +192,7 @@
                                             </constraints>
                                         </stackView>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" white="1" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="XRw-M7-eBh" firstAttribute="leading" secondItem="D7D-NA-6BN" secondAttribute="leading" constant="8" id="JP8-rL-Qio"/>
                                         <constraint firstItem="XRw-M7-eBh" firstAttribute="top" secondItem="D7D-NA-6BN" secondAttribute="top" constant="8" id="Zwc-NF-MPp"/>
@@ -211,7 +211,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="YwF-tT-GmM">
                                             <rect key="frame" x="8" y="8" width="343" height="213.5"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Second Gear" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R71-RJ-vec">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Right Gear" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R71-RJ-vec">
                                                     <rect key="frame" x="0.0" y="0.0" width="343" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="1At-Fa-J7M"/>
@@ -325,7 +325,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" white="0.40000000000000002" alpha="0.29999999999999999" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstItem="QOO-Zu-0A1" firstAttribute="top" secondItem="AWQ-ch-yBK" secondAttribute="top" constant="8" id="8Kl-pX-202"/>
                                                         <constraint firstAttribute="height" constant="65" id="cKm-Ol-hcA"/>
@@ -341,7 +341,7 @@
                                             </constraints>
                                         </stackView>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.20000000000000001" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" white="1" alpha="0.29999999999999999" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="YwF-tT-GmM" secondAttribute="trailing" constant="8" id="2At-4A-Fdy"/>
                                         <constraint firstItem="YwF-tT-GmM" firstAttribute="leading" secondItem="5Y1-aW-hX1" secondAttribute="leading" constant="8" id="EvD-W3-eZ9"/>
@@ -359,7 +359,7 @@
                     </constraints>
                 </stackView>
             </subviews>
-            <color key="backgroundColor" red="0.13725490200000001" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.27068993450000001" green="0.42892181870000001" blue="0.70698243380000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="qUo-gb-TrG" secondAttribute="trailing" id="HBI-Zg-oXJ"/>
                 <constraint firstItem="qUo-gb-TrG" firstAttribute="top" secondItem="7j5-Yp-Zzr" secondAttribute="top" id="Uoj-ro-XrA"/>

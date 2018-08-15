@@ -34,16 +34,16 @@
                             <rect key="frame" x="0.0" y="0.0" width="351" height="61.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R: Resistance [Ω] = 1Ω" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9VJ-G1-auP">
-                                    <rect key="frame" x="89.5" y="10" width="172.5" height="42"/>
+                                    <rect key="frame" x="84.5" y="10" width="182.5" height="42"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="42" id="xfl-LR-XGD"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" white="1" alpha="0.29999999999999999" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="9VJ-G1-auP" firstAttribute="centerX" secondItem="KA8-fa-tw8" secondAttribute="centerX" id="4Y5-nw-qmn"/>
                                 <constraint firstItem="9VJ-G1-auP" firstAttribute="centerY" secondItem="KA8-fa-tw8" secondAttribute="centerY" id="Qwv-4W-HUm"/>
@@ -60,7 +60,9 @@
                                 </label>
                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.29999999999999999" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="adP-NI-O8i">
                                     <rect key="frame" x="-2" y="35" width="355" height="27.5"/>
-                                    <color key="tintColor" red="0.016552440066006324" green="0.021964372187736402" blue="0.83244554924242431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="tintColor" red="0.83244554924242431" green="0.30008173469852056" blue="0.17439881553968445" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="minimumTrackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="maximumTrackTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <connections>
                                         <action selector="resistivitySliderMoved:" destination="-1" eventType="valueChanged" id="5ZC-0O-1nc"/>
                                     </connections>
@@ -78,7 +80,9 @@
                                 </label>
                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.29999999999999999" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="xOc-Gu-3uL">
                                     <rect key="frame" x="-2" y="35" width="355" height="27.5"/>
-                                    <color key="tintColor" red="0.016552440066006324" green="0.021964372187736402" blue="0.83244554924242431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="tintColor" red="0.66571050882339478" green="0.24082854390144348" blue="0.13841047883033752" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="minimumTrackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="maximumTrackTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <connections>
                                         <action selector="lengthSliderMoved:" destination="-1" eventType="valueChanged" id="5s1-nA-ynl"/>
                                     </connections>
@@ -96,7 +100,9 @@
                                 </label>
                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.29999999999999999" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="h87-SC-Kxt">
                                     <rect key="frame" x="-2" y="35" width="355" height="27.5"/>
-                                    <color key="tintColor" red="0.016552440066006324" green="0.021964372187736402" blue="0.83244554924242431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="tintColor" red="0.66571050882339478" green="0.24082854390144348" blue="0.13841047883033752" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="minimumTrackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="maximumTrackTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <connections>
                                         <action selector="areaSliderMoved:" destination="-1" eventType="valueChanged" id="tRi-Xe-ydq"/>
                                     </connections>
@@ -114,7 +120,7 @@
                     </constraints>
                 </stackView>
             </subviews>
-            <color key="backgroundColor" red="0.13725490200000001" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.17350706339999999" green="0.27097602739999999" blue="0.79414597600000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="dwO-9s-nuD" secondAttribute="bottom" constant="294" id="0Uo-0N-zGO"/>
                 <constraint firstItem="dwO-9s-nuD" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="KH8-X0-ZQF"/>

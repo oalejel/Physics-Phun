@@ -9,7 +9,7 @@
 import UIKit
 import SpriteKit
 
-class VIRPPhsyicsController: UIViewController, UITextFieldDelegate {
+class VIRPPhsyicsController: ExperimentViewController, UITextFieldDelegate {
 
     let bounds = UIScreen.main.bounds
     
@@ -56,7 +56,6 @@ class VIRPPhsyicsController: UIViewController, UITextFieldDelegate {
 //        navigationItem.rightBarButtonItem?.action = #selector(CannonPhsyicsController.infoPressed)
         
         // Do any nadditional setup after loading the view.
-        
         
         spriteView.showsFPS = false
         spriteView.showsNodeCount = false

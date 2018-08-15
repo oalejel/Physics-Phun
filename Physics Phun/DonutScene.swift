@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class DonutScene: SKScene, SKPhysicsContactDelegate {
+class DonutScene: ExperimentScene, SKPhysicsContactDelegate {
     var donutNode: SKSpriteNode!
     var emitter: SKEmitterNode!
     
@@ -71,6 +71,13 @@ class DonutScene: SKScene, SKPhysicsContactDelegate {
         
         if !didDraw {
             didDraw = true
+            
+            let backgroundSprite = SKSpriteNode(imageNamed: "space")
+            backgroundSprite.size = size
+            backgroundSprite.position = .zero
+            backgroundSprite.zPosition = -100// place way behind any other sprite
+            backgroundSprite.anchorPoint = CGPoint(x: 0, y: 0)
+            addChild(backgroundSprite)
             
             backgroundColor = UIColor(red: 1, green: 230/255, blue: 179/255, alpha: 1)
             

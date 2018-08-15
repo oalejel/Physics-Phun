@@ -39,7 +39,7 @@
                         <segment title="Lock V"/>
                         <segment title="Lock T"/>
                     </segments>
-                    <color key="tintColor" red="0.95565025250000002" green="0.92653910250000004" blue="0.2615988172" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <action selector="lockSegmentChanged:" destination="-1" eventType="valueChanged" id="LyI-xb-iNB"/>
                     </connections>
@@ -69,7 +69,7 @@
                                         </textField>
                                         <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="19.800000000000001" minimumValue="9.9000000000000004" maximumValue="19.800000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="E37-aO-o4a">
                                             <rect key="frame" x="265" y="0.0" width="94" height="29"/>
-                                            <color key="tintColor" red="0.95565025250000002" green="0.92653910250000004" blue="0.2615988172" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <action selector="pressureStepperChanged:" destination="-1" eventType="valueChanged" id="Vbd-i9-1Jh"/>
                                             </connections>
@@ -100,7 +100,7 @@
                                         </textField>
                                         <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minimumValue="1" maximumValue="10" stepValue="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ub0-xE-Ics">
                                             <rect key="frame" x="265" y="0.0" width="94" height="29"/>
-                                            <color key="tintColor" red="0.95565025250000002" green="0.92653910250000004" blue="0.2615988172" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <action selector="volumeStepperChanged:" destination="-1" eventType="valueChanged" id="erD-Yd-RD2"/>
                                             </connections>
@@ -131,7 +131,7 @@
                                         </textField>
                                         <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minimumValue="3" maximumValue="6" stepValue="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Lqw-EP-MOf">
                                             <rect key="frame" x="265" y="0.0" width="94" height="29"/>
-                                            <color key="tintColor" red="0.95565025250000002" green="0.92653910250000004" blue="0.2615988172" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <action selector="molesStepperChanged:" destination="-1" eventType="valueChanged" id="ufR-L5-HC6"/>
                                             </connections>
@@ -162,7 +162,7 @@
                                         </textField>
                                         <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="400" minimumValue="200" maximumValue="400" stepValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="fZa-2u-nKd">
                                             <rect key="frame" x="265" y="0.0" width="94" height="29"/>
-                                            <color key="tintColor" red="0.95565025250000002" green="0.92653910250000004" blue="0.2615988172" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <action selector="temperatureStepperChanged:" destination="-1" eventType="valueChanged" id="VKE-hm-I4i"/>
                                             </connections>
@@ -180,13 +180,13 @@
                     </constraints>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PV = nRT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0V8-cS-g6q">
-                    <rect key="frame" x="152.5" y="354.5" width="72" height="20.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <rect key="frame" x="150" y="354.5" width="77" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="0.13725490200000001" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.27068993450000001" green="0.42892181870000001" blue="0.70698243380000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="jMQ-XH-wmW" secondAttribute="bottom" constant="9" id="1Oe-cM-cjb"/>
                 <constraint firstItem="jMQ-XH-wmW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="454-jO-fWW"/>

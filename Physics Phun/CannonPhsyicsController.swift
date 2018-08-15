@@ -9,7 +9,7 @@
 import UIKit
 import SpriteKit
 
-class CannonPhsyicsController: UIViewController, UITextFieldDelegate {
+class CannonPhsyicsController: ExperimentViewController, UITextFieldDelegate {
 
     let bounds = UIScreen.main.bounds
     

@@ -25,7 +25,6 @@ class Particle: SCNNode {
         physicsBody?.velocity = storedVelocity
         motionPaused = false
     }
-    
 
 }
 

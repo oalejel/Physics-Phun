@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class CannonScene: SKScene, SKPhysicsContactDelegate {
+class CannonScene: ExperimentScene, SKPhysicsContactDelegate {
     var cannon: SKSpriteNode!
     var cannonBase: SKSpriteNode!
     var ball: SKShapeNode!
@@ -157,29 +157,30 @@ class CannonScene: SKScene, SKPhysicsContactDelegate {
             
             timeLabel = SKLabelNode(text: "∆t: \(round(seconds * 100) / 100) seconds")
             timeLabel?.fontColor = SKColor.black
-            timeLabel?.fontName = "Helvetica"
-            timeLabel?.fontSize = 10
+            timeLabel?.fontName = "Helvetica-Bold"
+            timeLabel?.fontSize = 12
             timeLabel?.horizontalAlignmentMode = .right
             
             heightLabel = SKLabelNode(text: "Max Height: \(round(maxHeight * 100) / 100) pixels")
             heightLabel?.fontColor = SKColor.black
-            heightLabel?.fontName = "Helvetica"
-            heightLabel?.fontSize = 10
+            heightLabel?.fontName = "Helvetica-Bold"
+            heightLabel?.fontSize = 12
             heightLabel?.horizontalAlignmentMode = .right
             
             distanceLabel = SKLabelNode(text: "Distance: \(round(distance * 100) / 100) pixels")
             distanceLabel?.fontColor = SKColor.black
-            distanceLabel?.fontName = "Helvetica"
-            distanceLabel?.fontSize = 10
+            distanceLabel?.fontName = "Helvetica-Bold"
+            distanceLabel?.fontSize = 12
             distanceLabel?.horizontalAlignmentMode = .right
             
-            timeLabel?.position = CGPoint(x: frame.size.width, y: frame.size.height - 20)
+            let labelOffset: CGFloat = 8
+            timeLabel?.position = CGPoint(x: frame.size.width - labelOffset, y: frame.size.height - 20)
             addChild(timeLabel!)
             
-            heightLabel?.position = CGPoint(x: frame.size.width, y: frame.size.height - 40)
+            heightLabel?.position = CGPoint(x: frame.size.width - labelOffset, y: frame.size.height - 40)
             addChild(heightLabel!)
             
-            distanceLabel?.position = CGPoint(x: frame.size.width, y: frame.size.height - 60)
+            distanceLabel?.position = CGPoint(x: frame.size.width - labelOffset, y: frame.size.height - 60)
             addChild(distanceLabel!)
             
 //            heightLabel?.position = CGPointMake(frame.size.width, frame.size.height - timelabel.frame.size.height)

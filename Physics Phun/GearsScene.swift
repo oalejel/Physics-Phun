@@ -19,7 +19,7 @@ class GearNode: SKSpriteNode {
     var _gearSize: GearSize = .large
 }
 
-class GearsScene: SKScene {
+class GearsScene: ExperimentScene {
     
     var gear1Node: GearNode!
     var gear2Node: GearNode!

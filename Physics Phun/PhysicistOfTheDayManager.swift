@@ -19,7 +19,6 @@ class PhysicistOfTheDayManager {
         "Albert_Einstein",
         "Richard_Feynman",
         "Rosalind_Franklin",
-        "Erwin_Schrödinger",
         "Niels_Bohr",
         "Lise_Meitner",
         "Blaise_Pascal",
@@ -28,14 +27,13 @@ class PhysicistOfTheDayManager {
         "James_Chadwick",
         "Carl_Sagan",
         "Georg_Ohm",
-        "Eva_Silverstein",
+//        "Eva_Silverstein",
         "Satyendra_Nath_Bose",
         "Wolfgang_Pauli",
         "Christiaan_Huygens",
-        "Louis_de_Broglie"
+        "Louis_de_Broglie",
+        "Erwin_Schrodinger"
     ]
-    
-//    var completionHandler: ((name: String, description: String, ) -> Void)?
     
     static var shared: PhysicistOfTheDayManager = PhysicistOfTheDayManager()
     var session: URLSession!

@@ -9,7 +9,7 @@
 import UIKit
 import SpriteKit
 
-class DonutPhsyicsController: UIViewController, UITextFieldDelegate, DirectionControlDelegate {
+class DonutPhsyicsController: ExperimentViewController, UITextFieldDelegate, DirectionControlDelegate {
 
     let bounds = UIScreen.main.bounds
     
@@ -130,11 +130,10 @@ class DonutPhsyicsController: UIViewController, UITextFieldDelegate, DirectionCo
                 let accelerationLabel = UILabel()
                 accelerationLabel.text = "Acceleration"
                 
-                accelerationLabel.textColor = UIColor.blue
-                accelerationLabel.font = UIFont(name: "Helvetica", size: 10)
+                accelerationLabel.textColor = UIColor(red: 0.2, green: 0.2, blue: 1, alpha: 1)
+                accelerationLabel.font = UIFont.systemFont(ofSize: 10, weight: .bold)
                 view.addSubview(accelerationLabel)
                 accelerationLabel.sizeToFit()
-                accelerationLabel.center = accelerationChart.center
                 
                 velocityChart = LineChart(frame: CGRect(x: spriteView.frame.size.width - 100, y: spriteView.frame.origin.y, width: 100, height: 100))
                 velocityChart.addLine([0])
@@ -150,10 +149,14 @@ class DonutPhsyicsController: UIViewController, UITextFieldDelegate, DirectionCo
                 velocityLabel.text = "Speed"
                 
                 velocityLabel.textColor = UIColor.red
-                velocityLabel.font = UIFont(name: "Helvetica", size: 10)
+                velocityLabel.font = UIFont.systemFont(ofSize: 10, weight: .bold)
                 view.addSubview(velocityLabel)
                 velocityLabel.sizeToFit()
-                velocityLabel.center = velocityChart.center
+                
+                let labelCenterY = accelerationChart.frame.origin.y + accelerationChart.frame.size.height + (accelerationLabel.frame.size.height / 2) - 4
+                
+                velocityLabel.center = CGPoint(x: velocityChart.center.x, y: labelCenterY)
+                accelerationLabel.center = CGPoint(x: accelerationChart.center.x, y: labelCenterY)
             }
         } else {
             spriteScene.size = spriteView.frame.size
